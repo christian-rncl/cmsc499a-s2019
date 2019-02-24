@@ -234,7 +234,7 @@ class EmbeddingDotBias(nn.Module):
     def forward(self, users, items):
         um = self.u(users)* self.i(items)
         res = um.sum(1) + self.ub(users).squeeze() + self.ib(items).squeeze()
-        return F.sigmoid(res) * (self.max_score-self.min_score) + self.min_score
+        return torch.sigmoid(res) * (self.max_score-self.min_score) + self.min_score
 
 
 class CollabFilterLearner(Learner):
