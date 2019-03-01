@@ -21,7 +21,7 @@ class Engine(object):
         # tensor of 1's for comparison
         gt = torch.from_numpy(np.ones(len(idxs)))
 
-        if self.config['cuda'] = True:
+        if self.config['cuda']:
             x, y, idx = x.cuda(), y.cuda(), idxs.cuda()
         
         self.opt.zero_grad()
