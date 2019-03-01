@@ -12,13 +12,11 @@ from torch.utils.data import DataLoader, Dataset
 class SingleTaskDataset(Dataset):
     
     ## must be tensors
-    def __init__(self, interactions, virus, human):
-        self.human = human
-        self.virus = virus
-        self.interactions = interactions
+    def __init__(self, interactions, human, virus):
+        self.human = human, self.virus = virus
 
     def __getitem__(self, idx):
-        return self.human[idx], self.virus[idx], self.interactions[idx]
+        return self.human[idx], self.virus[idx]
 
     def __len__(self):
         return self.interactions.size(0)
@@ -33,18 +31,18 @@ class SingleTaskGenerator(object):
     interactions: df representing interactions
     human: np array 
     '''
-    def __init__(self, interactions, human, virus, pct_train):
+    def __init__(self, interactions, human, virus, split_settings):
         
-        self.interactions = interactions
-        self.human = human
-        self.virus = virus
+        self.interactions = interactions.values
+        self.human = human.values
+        self.virus = virus.values
         #get indices of nonzero in interactions matrix
-        self.split_data(interactions, pct_train)
+        self.split_data(interactions)
 
-    def split_data(self, interactions, pct_train):
+    def split_data(self, interactions):
         pool = interactions.loc[interactions['edge'] == 1].index.values
-        rand.shuffle(pool)
-        cutoff = int(pct_train * len(pool))
+        rand.shuffle(self.pool)
+        cutoff = int(.80 * len(self.pool))
 
         # save indices
         self.train = pool[:cutoff]
@@ -58,16 +56,11 @@ class SingleTaskGenerator(object):
         interaction_idx = []
 
         for i in range(self.N):
-            idx = int(self.train[i])
-            # print(type(idx))
-            v_idx = int(self.interactions['node1'][idx])
-            h_idx = int(self.interactions['node2'][idx])
+            idx =  self.test[i]
+            h_idx = int(self.interactions['node1'][idx])
+            v_idx = int(self.interactions['node2'][idx])
 
             human.append(torch.from_numpy(self.human[h_idx, :]))
             virus.append(torch.from_numpy(self.virus[v_idx, :]))
-            interaction_idx.append(idx)
-
-        interaction_idx = torch.from_numpy(np.array(interaction_idx))
-        dset = SingleTaskDataset(interaction_idx, virus, human)
-
-        return DataLoader(dset, batch_size=bs, shuffle=True)
+            interaction_idx.append(torch.long(idx))
+        print(human, virus, interaction_idx)
