@@ -1,6 +1,7 @@
 '''
-Leiserson Research Group 2/28/2019
 Author(s): Christian Roncal
+Leiserson Research Group 2/28/2019
+Based on: https://github.com/LaceyChen17/neural-collaborative-filtering
 '''
 import torch
 import pandas as pd
