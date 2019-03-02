@@ -13,16 +13,19 @@ from torch.utils.data import DataLoader, Dataset
 class SingleTaskDataset(Dataset):
     
     ## must be tensors
-    def __init__(self, interactions, virus, human):
+    def __init__(self, virus, human, virus_nodes, human_nodes):
         self.human = human
         self.virus = virus
-        self.interactions = interactions
+        self.virus_nodes = virus_nodes
+        self.human_nodes = human_nodes
+
 
     def __getitem__(self, idx):
-        return self.human[idx], self.virus[idx], self.interactions[idx]
+        return (self.human[idx], self.virus[idx], 
+        self.virus_nodes[idx], self.human_nodes[idx])
 
     def __len__(self):
-        return self.interactions.size(0)
+        return len(self.human)
 
 '''
     Single task experiments data generator,
@@ -53,10 +56,11 @@ class SingleTaskGenerator(object):
         self.test = pool[cutoff:]
     
         
-    def create_data_loader(self, bs):
+    def create_loader(self, bs):
         human = []
         virus = []
-        interaction_idx = []
+        human_nodes = []
+        virus_nodes = []
 
         for i in range(self.N):
             idx = int(self.train[i])
@@ -66,9 +70,9 @@ class SingleTaskGenerator(object):
 
             human.append(torch.from_numpy(self.human[h_idx, :]))
             virus.append(torch.from_numpy(self.virus[v_idx, :]))
-            interaction_idx.append(idx)
+            virus_nodes.append(v_idx)
+            human_nodes.append(h_idx)
 
-        interaction_idx = torch.from_numpy(np.array(interaction_idx))
-        dset = SingleTaskDataset(interaction_idx, virus, human)
+        dset = SingleTaskDataset(virus, human, virus_nodes, human_nodes)
 
         return DataLoader(dset, batch_size=bs, shuffle=True)
