@@ -6,7 +6,10 @@ import torch
 
 def use_optimizer(network, params):
     if params['optimizer'] == 'sgd':
-        optimizer = torch.optim.SGD(network.parameters(), lr = params['sgd_lr'],  momentum=params['sgd_momentum'], weight_decay=1e-5)
+        optimizer = torch.optim.SGD(network.parameters(), 
+                                    lr = params['sgd_lr'],  
+                                    momentum=params['sgd_momentum'], 
+                                    weight_decay=1e-5)
     elif params['optimizer'] == 'adam':
         # optimizer = torch.optim.sparseAdam(network.parameters(), lr=params['adam_lr'], weight_decay=params['l2_regularization'])
         optimizer = torch.optim.sparseAdam(network.parameters())

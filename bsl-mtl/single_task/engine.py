@@ -36,7 +36,7 @@ class Engine(object):
         self.opt.step()
         
         if self.config['cuda'] is True:
-            loss = loss.data.cpu().numpy()[0]
+            loss = loss.data.cpu().numpy()
         else:
             loss = loss.data.numpy()[0]
         return loss

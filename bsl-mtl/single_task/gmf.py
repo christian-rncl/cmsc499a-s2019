@@ -28,6 +28,7 @@ class GMF(nn.Module):
                 embedding_dim = dim)
             nn.init.xavier_normal_(embedding.weight)
 
+            return embedding
 
     def __init__(self, config):
         super(GMF, self).__init__()
