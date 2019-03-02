@@ -11,6 +11,8 @@ in pytorch. The implementation and the part about "general matrix factorization"
 and learned mostly deep learning for CV with little traditional ML. The deep learning pov for
 this problem, helped a lot. I've began work on a framework that will let me do experiments easily and have made progress testing it with single task matrix factorization.</p>
 
+<p> After implementing k fold validation, and model evaluation, changing across single/multitask and using different models will be easy. </p>
+
 ### **Progress:**
 <p>
     I've started building a framework based on the implementation I found that will let me test for 
