@@ -21,18 +21,17 @@ class Engine(object):
         self.opt = use_optimizer(self.model, config)
         self.crit = nn.MSELoss()
 
-    def train_a_batch(self, x, y, idx):
+    def train_a_batch(self, x, y, x_nodes, y_nodes):
         # make sure have model attr with assert
         # tensor of 1's for comparison
-        gt = torch.from_numpy(np.ones(len(idx)))
-        x_i = self.interactions['node1'][idx]
-        y_i = self.interactions['node2'][idx]
+        gt = torch.from_numpy(np.ones(len(x))).cuda()
+
         if self.config['cuda']:
-            x, y, x_i, y_i =  x.cuda(), y.cuda(), x_i.cuda(), y_i.cuda()
+            x, y, x_nodes, y_nodes =  x.cuda(), y.cuda(), x_nodes.cuda(), y_nodes.cuda()
         
         self.opt.zero_grad()
-        pred = self.model(x, y, idx)
-        loss = self.crit(pred, gt)
+        pred = self.model(x, y, x_nodes, y_nodes)
+        loss = self.crit(gt, pred)
         loss.backward()
         self.opt.step()
         
@@ -50,14 +49,18 @@ class Engine(object):
 
         for batch_id, batch in enumerate(train_loader):
             # assert 
-            x, y, Mij = Variable(batch[0]), Variable(batch[1]), Variable(batch[2])
+            # unpack
+            n_vars = len(batch)
+            x, y, x_nodes, y_nodes = [Variable(batch[i]) for i in range(n_vars)]
 
-            if self.config['cuda'] is True:
+            if self.config['cuda']:
                 x = x.cuda()
                 y = y.cuda()
-                Mij = Mij.cuda()
+                x_nodes = x_nodes.cuda()
+                y_nodes = y_nodes.cuda()
 
-            loss = self.train_a_batch(x, y, Mij)
+            loss = self.train_a_batch(x, y, x_nodes, y_nodes)
             print('[Training Epoch {}] Batch {}, Loss {}'.format(epoch_id, batch_id, loss))
             total_loss += loss
+
         self._writer.add_scalar('model/loss', total_loss, epoch_id)

@@ -73,6 +73,6 @@ class SingleTaskGenerator(object):
             virus_nodes.append(v_idx)
             human_nodes.append(h_idx)
 
-        dset = SingleTaskDataset(virus, human, virus_nodes, human_nodes)
+        dset = SingleTaskDataset(virus, human, human_nodes, virus_nodes)
 
         return DataLoader(dset, batch_size=bs, shuffle=True)
