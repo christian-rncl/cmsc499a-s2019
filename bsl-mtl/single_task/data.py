@@ -75,7 +75,7 @@ class SingleTaskGenerator(object):
         return self.create_loader(self.Xtest, self.yTest, bs)
 
     def create_debug_loader(self, bs):
-        return self.create_loader(self.Xtest[:5], self.yVal[:5], bs)
+        return self.create_loader(self.Xtest[:10], self.yVal[:10], bs)
         
     def create_loader(self, dsetX, dsetY, bs):
         human_feats = []

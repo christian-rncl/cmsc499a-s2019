@@ -46,15 +46,17 @@ class GMF(nn.Module):
         ]
         ## TODO: experiment with bias
 
-    def forward(self, x, y, x_nodes, y_nodes):
+    def forward(self, h_idxs, v_idxs, h_feats, v_feats):
 
-        assert(len(x_nodes) == len(y_nodes))
-        U_xi = self.human(x_nodes)
-        V_yj = self.virus(y_nodes)
-        xUVy = (U_xi.double() * x.double()).sum(1) 
-        xUVy = (xUVy.double() * V_yj.t().double()).sum(1)
-        xUVy = (xUVy.double() * y).sum(1)
+        assert(len(h_idxs) == len(v_idxs))
+        U_xi = self.human(h_idxs)
+        V_yj = self.virus(v_idxs)
+        print(U_xi.shape, V_yj.shape)
+        xUVy = (U_xi.double() * h_feats.double()).sum(1)  # xU
+        xUVy = (xUVy.double() * V_yj.t().double()).sum(1) # xUV
+        xUVy = (xUVy.double() * v_feats.double()).sum(1) # xUVy
 
+        print(xUVy)
         return xUVy
 
 class GMFEngine(Engine):
