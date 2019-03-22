@@ -38,10 +38,12 @@ class SingleTaskGenerator(object):
     human: np array 
     '''
     def __init__(self, interactions, human_feats, virus_feats, pct_test):
+        # index the dataset such that node1 and node2 are continuous
+        self.index_interactions(interactions)
         self.interactions = interactions
         self.human_feats = human_feats
         self.virus_feats = virus_feats
-        self.split_data(interactions, pct_test)
+        self.split_data(self.indexed_interactions, pct_test)
 
     def split_data(self, interactions, pct_test):
         X = self.interactions.drop(['edge'], axis=1).values
@@ -49,9 +51,31 @@ class SingleTaskGenerator(object):
         self.Xtrain, self.Xtest, self.yTrain, self.yTest = train_test_split(X,y, test_size=pct_test, random_state=42)
         self.Xtrain, self.Xval, self.yTrain, self.yVal = train_test_split(self.Xtrain, self.yTrain, test_size=.10, random_state=42)
     
+    def index_interactions(self, interactions):
+        virus_idxs = sorted(interactions['node1'].unique())
+        human_idxs = sorted(interactions['node2'].unique())
+
+        self.vtoi = {v : i for i, v in enumerate(virus_idxs)}
+        self.itov = {i : v for i, v in enumerate(virus_idxs)}
+        self.htoi = {h : i for i, h in enumerate(human_idxs)}
+        self.itoh = {i : h for i, h in enumerate(human_idxs)}
+
+        self.indexed_interactions = interactions
+        self.indexed_interactions['node1'] = self.indexed_interactions['node1'].apply(lambda x: self.vtoi[x])
+        self.indexed_interactions['node2'] = self.indexed_interactions['node2'].apply(lambda x: self.htoi[x])
+
 
     def create_train_loader(self, bs):
         return self.create_loader(self.Xtrain, self.yTrain, bs)
+
+    def create_val_loader(self, bs):
+        return self.create_loader(self.Xval, self.yVal, bs)
+
+    def create_test_loader(self, bs):
+        return self.create_loader(self.Xtest, self.yTest, bs)
+
+    def create_debug_loader(self, bs):
+        return self.create_loader(self.Xtest[:5], self.yVal[:5], bs)
         
     def create_loader(self, dsetX, dsetY, bs):
         human_feats = []
