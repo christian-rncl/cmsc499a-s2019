@@ -47,6 +47,7 @@ class GMF(nn.Module):
         ## TODO: experiment with bias
 
     def forward(self, x, y, x_nodes, y_nodes):
+
         assert(len(x_nodes) == len(y_nodes))
         U_xi = self.human(x_nodes)
         V_yj = self.virus(y_nodes)

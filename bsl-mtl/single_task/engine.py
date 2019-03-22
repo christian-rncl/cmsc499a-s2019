@@ -22,9 +22,6 @@ class Engine(object):
         self.crit = nn.MSELoss()
 
     def train_a_batch(self, x, y, x_nodes, y_nodes):
-        # make sure have model attr with assert
-        # tensor of 1's for comparison
-        gt = torch.from_numpy(np.ones(len(x))).cuda()
 
         if self.config['cuda']:
             x, y, x_nodes, y_nodes =  x.cuda(), y.cuda(), x_nodes.cuda(), y_nodes.cuda()
