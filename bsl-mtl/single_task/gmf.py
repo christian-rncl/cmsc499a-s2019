@@ -51,12 +51,12 @@ class GMF(nn.Module):
         assert(len(h_idxs) == len(v_idxs))
         U_xi = self.human(h_idxs)
         V_yj = self.virus(v_idxs)
-        print(U_xi.shape, V_yj.shape)
+        # except:
         xUVy = (U_xi.double() * h_feats.double()).sum(1)  # xU
         xUVy = (xUVy.double() * V_yj.t().double()).sum(1) # xUV
         xUVy = (xUVy.double() * v_feats.double()).sum(1) # xUVy
 
-        print(xUVy)
+        # print(xUVy)
         return xUVy
 
 class GMFEngine(Engine):

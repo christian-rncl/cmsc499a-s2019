@@ -52,8 +52,8 @@ class SingleTaskGenerator(object):
         self.Xtrain, self.Xval, self.yTrain, self.yVal = train_test_split(self.Xtrain, self.yTrain, test_size=.10, random_state=42)
     
     def index_interactions(self, interactions):
-        virus_idxs = sorted(interactions['node1'].unique())
-        human_idxs = sorted(interactions['node2'].unique())
+        virus_idxs = sorted(list(interactions['node1'].unique()))
+        human_idxs = sorted(list(interactions['node2'].unique()))
 
         self.vtoi = {v : i for i, v in enumerate(virus_idxs)}
         self.itov = {i : v for i, v in enumerate(virus_idxs)}
@@ -85,8 +85,7 @@ class SingleTaskGenerator(object):
         n_train = len(dsetX)
 
         for i in range(n_train):
-            # original dset was 1 indexed, subtract 1 to offset
-            v_nodeid, h_nodeid = dsetX[i][0] - 1, dsetX[i][1] - 1
+            v_nodeid, h_nodeid = dsetX[i][0], dsetX[i][1]
 
             human_feats.append(torch.from_numpy(self.human_feats[h_nodeid, :]))
             virus_feats.append(torch.from_numpy(self.virus_feats[v_nodeid, :]))
