@@ -1,2 +1,0 @@
-data/b_anthracis_train.txt data/b_anthracis_pathway_vectors.txt data/b_anthracis_heldout.txt data/b_anthracis_test.txt
-data/y_pestis_train.txt data/y_pestis_pathway_vectors.txt data/y_pestis_heldout.txt data/y_pestis_test.txt

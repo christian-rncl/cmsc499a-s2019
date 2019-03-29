@@ -1,2 +1,0 @@
-data/task1_train.txt data/task1_pathway_vectors.txt data/task1_heldout.txt data/task1_test.txt
-data/task2_train.txt data/task2_pathway_vectors.txt data/task2_heldout.txt data/task2_test.txt
