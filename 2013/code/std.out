@@ -1,0 +1,111 @@
+Number of tasks: 2
+Reading Training data...
+Task-0 :  #Examples:6666
+[CHECK] trainFeats size: 6666	trainVals size: 6666 featsStore size:1 valsStore size:1
+Task-1 :  #Examples:8484
+[CHECK] trainFeats size: 8484	trainVals size: 8484 featsStore size:2 valsStore size:2
+Reading Held-out data...
+Task-2 :  #Examples:2020
+[CHECK] trainFeats size: 2020	trainVals size: 2020 featsStore size:3 valsStore size:3
+Task-3 :  #Examples:2020
+[CHECK] trainFeats size: 2020	trainVals size: 2020 featsStore size:4 valsStore size:4
+Reading Test data...
+Task-4 :  #Examples:2020
+[CHECK] trainFeats size: 2020	trainVals size: 2020 featsStore size:5 valsStore size:5
+Task-5 :  #Examples:2020
+[CHECK] trainFeats size: 2020	trainVals size: 2020 featsStore size:6 valsStore size:6
+[READ:] Time taken: 8933
+Reading Pathways for positive examples...
+#Unique feats in task:0 are:694715
+#Unique feats in task:1 are:886480
+Setting class cost to:100.0
+Max number of feats over all domains:886480
+Lambda-1: 0.001
+W-limits: for task0 Start:0 End:694715
+W-limits: for task1 Start:694715 End:1581195
+Total number of features:1581195
+[OPT] Starting optimization...
+		Iter#0	Function value: 20794.43261322717
+		Iter#1	Function value: 27952.584834558893
+		Iter#2	Function value: 19846.831528324397
+		Iter#3	Function value: 18536.42493857094
+		Iter#4	Function value: 13254.83338114765
+		Iter#5	Function value: 11169.161180282143
+		Iter#6	Function value: 17560.719472155495
+		Iter#7	Function value: 10440.626360841743
+		Iter#8	Function value: 8007.3886357429865
+		Iter#9	Function value: 6653.306970532707
+		Iter#10	Function value: 5064.728226980577
+		Iter#11	Function value: 3594.8956418277257
+		Iter#12	Function value: 10287.998241541138
+		Iter#13	Function value: 3386.912310184546
+		Iter#14	Function value: 2812.572097969879
+		Iter#15	Function value: 2632.1809883230153
+		Iter#16	Function value: 2526.7727776617044
+		Iter#17	Function value: 2472.5920346329367
+		Iter#18	Function value: 2321.9563079132417
+		Iter#19	Function value: 2298.7746369028328
+		Iter#20	Function value: 2252.387618615604
+		Iter#21	Function value: 2226.0941111592338
+		Iter#22	Function value: 2194.1374374764614
+		Iter#23	Function value: 2161.839631708014
+		Iter#24	Function value: 2192.4564194119944
+		Iter#25	Function value: 2145.544568469076
+		Iter#26	Function value: 2121.561048617814
+		Iter#27	Function value: 2102.1894051074373
+		Iter#28	Function value: 2086.27208744016
+		Iter#29	Function value: 2072.955196226856
+		Iter#30	Function value: 2058.659770942855
+		Iter#31	Function value: 2049.604718977193
+		Iter#32	Function value: 2042.6450109132747
+		Iter#33	Function value: 2034.658575557788
+		Iter#34	Function value: 2025.3809412834626
+		Iter#35	Function value: 2014.8453239791113
+		Iter#36	Function value: 2011.9505871555543
+		Iter#37	Function value: 2009.1120855388533
+		Iter#38	Function value: 2005.5275392711421
+		Iter#39	Function value: 2001.923619151979
+		Iter#40	Function value: 1999.424237850556
+		Iter#41	Function value: 1998.1391856486541
+		Iter#42	Function value: 1996.015490715817
+		Iter#43	Function value: 1994.156313001326
+		Iter#44	Function value: 1994.7483694641128
+		Iter#45	Function value: 1993.2876143517642
+		Iter#46	Function value: 1992.8051665344308
+		Iter#47	Function value: 1991.7984638835273
+		Iter#48	Function value: 1991.4829058787627
+		Iter#49	Function value: 1990.9624137466997
+		Iter#50	Function value: 1990.8523414782712
+Global Iter#1 Improvement:1.7976931348623157E308
+		Iter#0	Function value: 1990.8524217054767
+		Iter#1	Function value: 4130.19029382359
+		Iter#2	Function value: 1998.501172963832
+		Iter#3	Function value: 1990.7212776381753
+		Iter#4	Function value: 1990.5349233538982
+Global Iter#2 Improvement:0.31742888096096067
+Finished Optimization!
+Now testing!!
+Printing test labels...
+[TRAIN] Computing error on TRAIN data..
+[OVERALL] Task:0 Correct: 6646.0 out of: 6666 Accuracy: 0.996999699969997
+[POS CLASS] Task:0 66.0/66.0	P: 0.7674418604651163	R: 1.0	F1: 0.868421052631579
+Printing test labels...
+[TRAIN] Computing error on TRAIN data..
+[OVERALL] Task:1 Correct: 8470.0 out of: 8484 Accuracy: 0.9983498349834984
+[POS CLASS] Task:1 84.0/84.0	P: 0.8571428571428571	R: 1.0	F1: 0.923076923076923
+Printing test labels...
+[HO] Computing error on HELD-OUT data..
+[OVERALL] Task:0 Correct: 1981.0 out of: 2020 Accuracy: 0.9806930693069307
+[POS CLASS] Task:0 3.0/20.0	P: 0.12	R: 0.15	F1: 0.1333333333333333
+Printing test labels...
+[HO] Computing error on HELD-OUT data..
+[OVERALL] Task:1 Correct: 1990.0 out of: 2020 Accuracy: 0.9851485148514851
+[POS CLASS] Task:1 3.0/20.0	P: 0.1875	R: 0.15	F1: 0.16666666666666663
+Printing test labels...
+[TEST] Computing error on TEST data..
+[OVERALL] Task:0 Correct: 1978.0 out of: 2020 Accuracy: 0.9792079207920792
+[POS CLASS] Task:0 3.0/20.0	P: 0.10714285714285714	R: 0.15	F1: 0.125
+Printing test labels...
+[TEST] Computing error on TEST data..
+[OVERALL] Task:1 Correct: 1994.0 out of: 2020 Accuracy: 0.9871287128712871
+[POS CLASS] Task:1 4.0/20.0	P: 0.2857142857142857	R: 0.2	F1: 0.23529411764705882

@@ -1,0 +1,2101 @@
+Total number of unique pathways: 2100
+0	one carbon pool by folate
+1	cytokine-cytokine receptor interaction
+2	endometrial cancer
+3	focal adhesion
+4	glioma
+5	hepatitis b
+6	inositol phosphate metabolism
+7	melanoma
+8	mtor signaling pathway
+9	p53 signaling pathway
+10	pathways in cancer
+11	phosphatidylinositol signaling system
+12	pi3k-akt signaling pathway
+13	prostate cancer
+14	small cell lung cancer
+15	tgf-beta signaling pathway
+16	tight junction
+17	nicotinate and nicotinamide metabolism
+18	amino sugar and nucleotide sugar metabolism
+19	fructose and mannose metabolism
+20	metabolic pathways
+21	chemical carcinogenesis
+22	metabolism of xenobiotics by cytochrome p450
+23	steroid hormone biosynthesis
+24	bladder cancer
+25	non-small cell lung cancer
+26	arachidonic acid metabolism
+27	serotonergic synapse
+28	primary immunodeficiency
+29	cell cycle
+30	epstein-barr virus infection
+31	neurotrophin signaling pathway
+32	oocyte meiosis
+33	viral carcinogenesis
+34	pathogenic escherichia coli infection
+35	ecm-receptor interaction
+36	ribosome biogenesis in eukaryotes
+37	spliceosome
+38	arrhythmogenic right ventricular cardiomyopathy (arvc)
+39	dilated cardiomyopathy
+40	hypertrophic cardiomyopathy (hcm)
+41	viral myocarditis
+42	linoleic acid metabolism
+43	transcriptional misregulation in cancer
+44	mrna surveillance pathway
+45	rna transport
+46	complement and coagulation cascades
+47	hematopoietic cell lineage
+48	epithelial cell signaling in helicobacter pylori infection
+49	lysosome
+50	oxidative phosphorylation
+51	phagosome
+52	rheumatoid arthritis
+53	tuberculosis
+54	vibrio cholerae infection
+55	rna degradation
+56	alzheimer's disease
+57	valine, leucine and isoleucine degradation
+58	protein export
+59	fat digestion and absorption
+60	glycerolipid metabolism
+61	glycerophospholipid metabolism
+62	natural killer cell mediated cytotoxicity
+63	phenylalanine metabolism
+64	influenza a
+65	insulin signaling pathway
+66	glycolysis / gluconeogenesis
+67	pentose and glucuronate interconversions
+68	calcium signaling pathway
+69	htlv-i infection
+70	huntington's disease
+71	parkinson's disease
+72	peroxisome
+73	fatty acid metabolism
+74	glycosaminoglycan biosynthesis - chondroitin sulfate
+75	glycosaminoglycan biosynthesis - heparan sulfate
+76	ribosome
+77	primary bile acid biosynthesis
+78	retinol metabolism
+79	tryptophan metabolism
+80	staphylococcus aureus infection
+81	glycine, serine and threonine metabolism
+82	mapk signaling pathway
+83	vegf signaling pathway
+84	herpes simplex infection
+85	leishmaniasis
+86	nf-kappa b signaling pathway
+87	nod-like receptor signaling pathway
+88	osteoclast differentiation
+89	toll-like receptor signaling pathway
+90	toxoplasmosis
+91	basal transcription factors
+92	chagas disease (american trypanosomiasis)
+93	chemokine signaling pathway
+94	salmonella infection
+95	acute myeloid leukemia
+96	erbb signaling pathway
+97	hif-1 signaling pathway
+98	protein digestion and absorption
+99	tyrosine metabolism
+100	ubiquinone and other terpenoid-quinone biosynthesis
+101	cell adhesion molecules (cams)
+102	neuroactive ligand-receptor interaction
+103	gap junction
+104	riboflavin metabolism
+105	glutathione metabolism
+106	axon guidance
+107	notch signaling pathway
+108	protein processing in endoplasmic reticulum
+109	olfactory transduction
+110	pentose phosphate pathway
+111	leukocyte transendothelial migration
+112	gene expression
+113	metabolism of proteins
+114	srp-dependent cotranslational protein targeting to membrane
+115	translation
+116	fc gamma r-mediated phagocytosis
+117	alcoholism
+118	cholinergic synapse
+119	cocaine addiction
+120	dopaminergic synapse
+121	gabaergic synapse
+122	gastric acid secretion
+123	glutamatergic synapse
+124	long-term depression
+125	melanogenesis
+126	morphine addiction
+127	pertussis
+128	progesterone-mediated oocyte maturation
+129	retrograde endocannabinoid signaling
+130	synaptic vesicle cycle
+131	b cell receptor signaling pathway
+132	glycosphingolipid biosynthesis - globo series
+133	purine metabolism
+134	pyrimidine metabolism
+135	rna polymerase
+136	formation of the editosome
+137	mrna editing
+138	mrna editing: c to u conversion
+139	mrna processing
+140	collecting duct acid secretion
+141	dna replication
+142	mismatch repair
+143	nucleotide excision repair
+144	ubiquitin mediated proteolysis
+145	measles
+146	african trypanosomiasis
+147	alpha9 beta1 integrin signaling events
+148	ap-1 transcription factor network
+149	arf6 downstream pathway
+150	arf6 signaling events
+151	arf6 trafficking events
+152	beta1 integrin cell surface interactions
+153	cdc42 signaling events
+154	class i pi3k signaling events
+155	class i pi3k signaling events mediated by akt
+156	egfr-dependent endothelin signaling events
+157	egf receptor (erbb1) signaling pathway
+158	endothelins
+159	erbb1 downstream signaling
+160	erbb receptor signaling network
+161	formation of fibrin clot (clotting cascade)
+162	glypican 1 network
+163	glypican pathway
+164	gmcsf-mediated signaling events
+165	hdl-mediated lipid transport
+166	hemostasis
+167	ifn-gamma pathway
+168	igf1 pathway
+169	il3-mediated signaling events
+170	il5-mediated signaling events
+171	il6-mediated signaling events
+172	insulin pathway
+173	integrin family cell surface interactions
+174	internalization of erbb1
+175	intrinsic pathway
+176	lipid digestion, mobilization, and transport
+177	lipoprotein metabolism
+178	lkb1 signaling events
+179	metabolism
+180	metabolism of lipids and lipoproteins
+181	nectin adhesion pathway
+182	par1-mediated thrombin signaling events
+183	pdgfr-beta signaling pathway
+184	pdgf receptor signaling network
+185	plasma membrane estrogen receptor signaling
+186	platelet activation, signaling and aggregation
+187	platelet degranulation
+188	proteoglycan syndecan-mediated signaling events
+189	regulation of cdc42 activity
+190	response to elevated platelet cytosolic ca2+
+191	rho gtpase cycle
+192	malaria
+193	s1p1 pathway
+194	signaling by rho gtpases
+195	signaling events mediated by focal adhesion kinase
+196	signaling events mediated by hepatocyte growth factor receptor (c-met)
+197	signaling events mediated by vegfr1 and vegfr2
+198	signal transduction
+199	sphingosine 1-phosphate (s1p) pathway
+200	syndecan-1-mediated signaling events
+201	thrombin/protease-activated receptor (par) pathway
+202	trail signaling pathway
+203	urokinase-type plasminogen activator (upa) and upar-mediated signaling
+204	glycosphingolipid biosynthesis - lacto and neolacto series
+205	butanoate metabolism
+206	antiviral mechanism by ifn-stimulated genes
+207	cytokine signaling in immune system
+208	disease
+209	export of viral ribonucleoproteins from nucleus
+210	formation and maturation of mrna transcript
+211	glucose transport
+212	hexose transport
+213	hiv infection
+214	hiv life cycle
+215	host interactions of hiv factors
+216	immune system
+217	influenza infection
+218	influenza life cycle
+219	interactions of rev with host cellular proteins
+220	interactions of vpr with host cellular proteins
+221	interferon signaling
+222	isg15 antiviral mechanism
+223	late phase of hiv life cycle
+224	metabolism of carbohydrates
+225	metabolism of non-coding rna
+226	metabolism of rna
+227	nep/ns2 interacts with the cellular export machinery
+228	nuclear import of rev protein
+229	processing of capped intron-containing pre-mrna
+230	regulation of glucokinase by glucokinase regulatory protein
+231	rev-mediated nuclear export of hiv-1 rna
+232	slc-mediated transmembrane transport
+233	snrnp assembly
+234	transmembrane transport of small molecules
+235	transport of mature mrna derived from an intron-containing transcript
+236	transport of mature mrna derived from an intronless transcript
+237	transport of mature mrnas derived from intronless transcripts
+238	transport of mature transcript to cytoplasm
+239	transport of ribonucleoproteins into the host nucleus
+240	transport of the slbp dependant mature mrna
+241	transport of the slbp independent mature mrna
+242	vpr-mediated nuclear import of pics
+243	caffeine metabolism
+244	drug metabolism - other enzymes
+245	lysine degradation
+246	alanine, aspartate and glutamate metabolism
+247	arginine and proline metabolism
+248	d-glutamine and d-glutamate metabolism
+249	proximal tubule bicarbonate reclamation
+250	bile secretion
+251	lysine biosynthesis
+252	lysine catabolism
+253	lysine degradation ii
+254	lysine degradation v
+255	metabolism of amino acids and derivatives
+256	tryptophan catabolism
+257	amphetamine addiction
+258	histidine metabolism
+259	aldosterone-regulated sodium reabsorption
+260	amoebiasis
+261	endocrine and other factor-regulated calcium reabsorption
+262	fc epsilon ri signaling pathway
+263	gnrh signaling pathway
+264	long-term potentiation
+265	pancreatic secretion
+266	salivary secretion
+267	vascular smooth muscle contraction
+268	wnt signaling pathway
+269	base excision repair
+270	adipocytokine signaling pathway
+271	amine-derived hormones
+272	hormone biosynthesis
+273	serotonin and melatonin biosynthesis
+274	aminoacyl-trna biosynthesis
+275	mitochondrial trna aminoacylation
+276	trna aminoacylation
+277	trna charging
+278	cytosolic trna aminoacylation
+279	acyl carrier protein metabolism
+280	metabolism of vitamins and cofactors
+281	metabolism of water-soluble vitamins and cofactors
+282	pantothenate and coa biosynthesis
+283	vitamin b5 (pantothenate) metabolism
+284	regulation of actin cytoskeleton
+285	adherens junction
+286	chronic myeloid leukemia
+287	colorectal cancer
+288	endocytosis
+289	pancreatic cancer
+290	cell death signalling via nrage, nrif and nade
+291	nrage signals death through jnk
+292	p75 ntr receptor-mediated signalling
+293	regulation of retinoblastoma protein
+294	signalling by ngf
+295	4-aminobutyrate degradation i
+296	beta-alanine degradation i
+297	beta-alanine metabolism
+298	degradation of gaba
+299	gaba synthesis, release, reuptake and degradation
+300	glutamate degradation iii (via 4-aminobutyrate)
+301	neuronal system
+302	neurotransmitter release cycle
+303	propanoate metabolism
+304	synaptic transmission
+305	transmission across chemical synapses
+306	valine degradation i
+307	abc transporters
+308	cytosolic dna-sensing pathway
+309	antigen processing and presentation
+310	vitamin digestion and absorption
+311	type ii diabetes mellitus
+312	abca transporters in lipid homeostasis
+313	abc-family proteins mediated transport
+314	fatty acid, triacylglycerol, and ketone body metabolism
+315	ppara activates gene expression
+316	regulation of lipid metabolism by peroxisome proliferator-activated receptor alpha (pparalpha)
+317	retinoic acid receptors-mediated signaling
+318	rxr and rar heterodimerization with other nuclear receptor
+319	mitochondrial abc transporters
+320	bile acid and bile salt metabolism
+321	recycling of bile acids and salts
+322	synthesis of bile acids and bile salts
+323	synthesis of bile acids and bile salts via 7alpha-hydroxycholesterol
+324	abacavir transmembrane transport
+325	abacavir transport and metabolism
+326	hif-1-alpha transcription factor network
+327	hypoxic and oxygen homeostasis regulation of hif-1-alpha
+328	leukotriene synthesis
+329	prostanoid metabolism
+330	formation of platelet plug
+331	platelet activation
+332	glycosaminoglycan metabolism
+333	hyaluronan biosynthesis and export
+334	hyaluronan metabolism
+335	mps i - hurler syndrome
+336	mps ii - hunter syndrome
+337	mps iiia - sanfilippo syndrome a
+338	mps iiib - sanfilippo syndrome b
+339	mps iiic - sanfilippo syndrome c
+340	mps iiid - sanfilippo syndrome d
+341	mps iv - morquio syndrome a
+342	mps iv - morquio syndrome b
+343	mps ix - natowicz syndrome
+344	mps vii - sly syndrome
+345	mps vi - maroteaux-lamy syndrome
+346	mucopolysaccharidoses
+347	atp sensitive potassium channels
+348	diabetes pathways
+349	foxa2 and foxa3 transcription factor networks
+350	foxa transcription factor networks
+351	integration of energy metabolism
+352	inwardly rectifying k+ channels
+353	potassium channels
+354	regulation of insulin secretion
+355	alpha-linolenic acid metabolism
+356	alpha-linolenic (omega3) and linoleic (omega6) acid metabolism
+357	beta-oxidation of very long chain fatty acids
+358	linoleic acid (la) metabolism
+359	peroxisomal lipid metabolism
+360	hif-2-alpha transcription factor network
+361	iron uptake and transport
+362	trafficking of dietary sterols
+363	citrate cycle (tca cycle)
+364	triacylglycerol degradation
+365	cdp-diacylglycerol biosynthesis i
+366	hormone-sensitive lipase (hsl)-mediated triacylglycerol hydrolysis
+367	phosphatidylglycerol biosynthesis ii (non-plastidic)
+368	triacylglycerol biosynthesis
+369	alpha4 beta1 integrin signaling events
+370	e-cadherin signaling events
+371	e-cadherin signaling in the nascent adherens junction
+372	egfr1
+373	rac1 signaling pathway
+374	regulation of rac1 activity
+375	regulation of rhoa activity
+376	rhoa signaling pathway
+377	stabilization and expansion of the e-cadherin adherens junction
+378	alpha6beta4integrin
+379	atm pathway
+380	atr signaling pathway
+381	cdo in myogenesis
+382	developmental biology
+383	factors involved in megakaryocyte development and platelet production
+384	lissencephaly gene (lis1) in neuronal migration and development
+385	myogenesis
+386	n-cadherin signaling events
+387	neurotrophic factor-mediated trk receptor signaling
+388	p53 pathway
+389	p63 transcription factor network
+390	p73 transcription factor network
+391	p75(ntr)-mediated signaling
+392	posttranslational regulation of adherens junction stability and dissassembly
+393	regulation of telomerase
+394	role of abl in robo-slit signaling
+395	shigellosis
+396	signaling by robo receptor
+397	validated transcriptional targets of tap63 isoforms
+398	dcc mediated attractive signaling
+399	netrin-1 signaling
+400	histamine degradation
+401	mineral absorption
+402	g alpha (12/13) signalling events
+403	gpcr downstream signaling
+404	signaling by gpcr
+405	vasopressin-regulated water reabsorption
+406	taste transduction
+407	biosynthesis of unsaturated fatty acids
+408	fatty acid beta-oxidation i
+409	ppar signaling pathway
+410	fatty acid elongation
+411	activation of gene expression by srebp (srebf)
+412	biotin-carboxyl carrier protein assembly
+413	chrebp activates metabolic gene expression
+414	fatty acid biosynthesis
+415	pyruvate metabolism
+416	fatty acyl-coa biosynthesis
+417	regulation of cholesterol biosynthesis by srebp (srebf)
+418	triglyceride biosynthesis
+419	activated ampk stimulates fatty-acid oxidation in muscle
+420	import of palmitoyl-coa into the mitochondrial matrix
+421	steroid biosynthesis
+422	branched-chain amino acid catabolism
+423	beta oxidation of lauroyl-coa to decanoyl-coa-coa
+424	beta oxidation of myristoyl-coa to lauroyl-coa
+425	mitochondrial fatty acid beta-oxidation
+426	mitochondrial fatty acid beta-oxidation of saturated fatty acids
+427	mitochondrial fatty acid beta-oxidation of unsaturated fatty acids
+428	beta oxidation of decanoyl-coa to octanoyl-coa-coa
+429	beta oxidation of octanoyl-coa to hexanoyl-coa
+430	beta oxidation of butanoyl-coa to acetyl-coa
+431	beta oxidation of hexanoyl-coa to butanoyl-coa
+432	isoleucine degradation i
+433	activation of chaperone genes by xbp1(s)
+434	activation of chaperones by ire1alpha
+435	beta oxidation of palmitoyl-coa to myristoyl-coa
+436	unfolded protein response
+437	keratan sulfate biosynthesis
+438	keratan sulfate degradation
+439	keratan sulfate/keratin metabolism
+440	formation of acetoacetic acid
+441	glutaryl-coa degradation
+442	glyoxylate and dicarboxylate metabolism
+443	ketogenesis
+444	ketolysis
+445	ketone body metabolism
+446	mevalonate pathway i
+447	superpathway of cholesterol biosynthesis
+448	superpathway of geranylgeranyldiphosphate biosynthesis i (via mevalonate)
+449	synthesis and degradation of ketone bodies
+450	synthesis of ketone bodies
+451	terpenoid backbone biosynthesis
+452	tryptophan degradation iii (eukaryotic)
+453	utilization of ketone bodies
+454	glycosphingolipid biosynthesis - ganglio series
+455	sphingolipid metabolism
+456	chromosome maintenance
+457	meiosis
+458	meiotic synapsis
+459	packaging of telomere ends
+460	telomere maintenance
+461	renin-angiotensin system
+462	metabolism of angiotensinogen to angiotensins
+463	phospholipid metabolism
+464	sphingolipid de novo biosynthesis
+465	sphingosine and sphingosine-1-phosphate metabolism
+466	atf-2 transcription factor network
+467	glycerophospholipid biosynthesis
+468	neurotransmitter clearance in the synaptic cleft
+469	synthesis of pc
+470	phototransduction
+471	apoptosis
+472	apoptotic cleavage of cellular proteins
+473	apoptotic execution phase
+474	basal cell carcinoma
+475	hedgehog signaling pathway
+476	acetyl-coa biosynthesis iii (from citrate)
+477	2-amino-3-carboxymuconate semialdehyde degradation to glutaryl-coa
+478	tca cycle ii (eukaryotic)
+479	citric acid cycle (tca cycle)
+480	mitochondrial protein import
+481	pyruvate metabolism and citric acid (tca) cycle
+482	the citric acid (tca) cycle and respiratory electron transport
+483	oleate biosynthesis ii (animals)
+484	stearate biosynthesis i (animals)
+485	acyl-coa hydrolysis
+486	beta-oxidation of pristanoyl-coa
+487	epha2 forward signaling
+488	ephrina-epha pathway
+489	vitamin b2 (riboflavin) metabolism
+490	nad phosphorylation and dephosphorylation
+491	nad salvage pathway ii
+492	fatty acid activation
+493	gamma-linolenate biosynthesis ii (animals)
+494	synthesis of very long-chain fatty acyl-coas
+495	amino acid conjugation
+496	biological oxidations
+497	conjugation of benzoate with glycine
+498	conjugation of carboxylic acids
+499	conjugation of phenylacetate with glutamine
+500	phase ii conjugation
+501	conjugation of salicylate with glycine
+502	acetate conversion to acetyl-coa
+503	ethanol degradation ii
+504	ethanol degradation iv
+505	ethanol oxidation
+506	oxidative ethanol degradation iii
+507	phase 1 - functionalization of compounds
+508	signaling events mediated by hdac class i
+509	signaling events mediated by hdac class iii
+510	caspase cascade in apoptosis
+511	fas (cd95) signaling pathway
+512	tnf receptor signaling pathway
+513	muscle contraction
+514	smooth muscle contraction
+515	bacterial invasion of epithelial cells
+516	binding of rna by insulin-like growth factor-2 mrna binding proteins (igf2bps/imps/vickzs)
+517	chaperonin-mediated protein folding
+518	cooperation of prefoldin and tric/cct in actin and tubulin folding
+519	folding of actin by cct/tric
+520	prefoldin mediated transfer of substrate to cct/tric
+521	protein folding
+522	cardiac muscle contraction
+523	systemic lupus erythematosus
+524	integrins in angiogenesis
+525	c-myc pathway
+526	tnf alpha/nf-kb
+527	validated targets of c-myc transcriptional activation
+528	cell-cell communication
+529	cell-extracellular matrix interactions
+530	cell junction organization
+531	nephrin interactions
+532	regulation of cytoskeletal remodeling and cell spreading by ipp complex components
+533	syndecan-4-mediated signaling events
+534	activation of ampa receptors
+535	activation of nmda receptor upon glutamate binding and postsynaptic events
+536	creb phosphorylation through the activation of camkii
+537	creb phosphorylation through the activation of ras
+538	glutamate binding, activation of ampa receptors and synaptic plasticity
+539	neuroransmitter receptor binding and downstream transmission in the postsynaptic cell
+540	neurotransmitter receptor binding and downstream transmission in the postsynaptic cell
+541	post nmda receptor activation events
+542	ras activation uopn ca2+ infux through nmda receptor
+543	striated muscle contraction
+544	unblocking of nmda receptor, glutamate binding and activation
+545	adaptive immune system
+546	cell cycle, mitotic
+547	centrosome maturation
+548	g2/m transition
+549	loss of nlp from mitotic centrosomes
+550	loss of proteins required for interphase microtubule organizationÂ from the centrosome
+551	mhc class ii antigen presentation
+552	mitotic g2-g2/m phases
+553	recruitment of mitotic centrosome proteins and complexes
+554	alk1 pathway
+555	alk1 signaling events
+556	alk2 signaling events
+557	regulation of signaling by nodal
+558	signaling by nodal
+559	signaling by bmp
+560	adenine and adenosine salvage iii
+561	adenosine nucleotides degradation ii
+562	c-myb transcription factor network
+563	abacavir metabolism
+564	metabolism of nucleotides
+565	purine salvage
+566	activated notch1 transmits signal to the nucleus
+567	notch-mediated hes/hey network
+568	presenilin action in notch and wnt signaling
+569	receptor-ligand binding initiates the second proteolytic cleavage of notch receptor
+570	signaling by egfr
+571	signaling by egfr in cancer
+572	signaling by notch
+573	signaling by notch1
+574	signaling by notch2
+575	signaling by notch3
+576	signaling by notch4
+577	erbb4 signaling events
+578	growth hormone receptor signaling
+579	nuclear signaling by erbb4
+580	regulated proteolysis of p75ntr
+581	signaling by erbb4
+582	collagen biosynthesis and modifying enzymes
+583	collagen formation
+584	extracellular matrix organization
+585	ether lipid metabolism
+586	purine nucleotides degradation ii (aerobic)
+587	purine ribonucleosides degradation to ribose-1-phosphate
+588	c6 deamination of adenosine
+589	formation of editosomes by adar proteins
+590	mrna editing: a to i conversion
+591	interferon alpha/beta signaling
+592	signaling in immune system
+593	validated transcriptional targets of deltanp63 isoforms
+594	agmatine biosynthesis
+595	metabolism of polyamines
+596	putrescine biosynthesis iii
+597	activation of gabab receptors
+598	adenylate cyclase activating pathway
+599	adenylate cyclase inhibitory pathway
+600	aquaporin-mediated transport
+601	ca-dependent events
+602	calmodulin induced events
+603	cam pathway
+604	creb phosphorylation through the activation of adenylate cyclase
+605	dag and ip3 signaling
+606	dap12 interactions
+607	dap12 signaling
+608	downstream signaling of activated fgfr
+609	downstream signal transduction
+610	egfr interacts with phospholipase c-gamma
+611	gaba b receptor activation
+612	gaba receptor activation
+613	g alpha (i) signalling events
+614	g alpha (s) signalling events
+615	g alpha (z) signalling events
+616	glucagon signaling in metabolic regulation
+617	g-protein mediated events
+618	inhibition of adenylate cyclase pathway
+619	innate immune system
+620	lpa4-mediated signaling events
+621	lpa receptor mediated events
+622	ngf signalling via trka from the plasma membrane
+623	opioid signalling
+624	phospholipase c-mediated cascade
+625	pka activation
+626	pka activation in glucagon signalling
+627	pka-mediated phosphorylation of creb
+628	plc beta mediated events
+629	plcg1 events in erbb2 signaling
+630	plc-gamma1 signalling
+631	regulation of water balance by renal aquaporins
+632	signaling by erbb2
+633	signaling by fgfr
+634	signaling by fgfr in disease
+635	signaling by pdgf
+636	inhibition of insulin secretion by adrenaline/noradrenaline
+637	regulation of insulin secretion by glucagon-like peptide-1
+638	canonical wnt signaling pathway
+639	glypican 3 network
+640	noncanonical wnt signaling pathway
+641	regulation of nuclear beta catenin signaling and target gene transcription
+642	wnt signaling network
+643	activation of trka receptors
+644	class b/2 (secretin family receptors)
+645	glucagon-type ligand receptors
+646	gpcr ligand binding
+647	ngf-independant trka activation
+648	caspase-mediated cleavage of cytoskeletal proteins
+649	drug metabolism - cytochrome p450
+650	acetone degradation i (to methylglyoxal)
+651	noradrenaline and adrenaline degradation
+652	serotonin degradation
+653	formaldehyde oxidation ii (glutathione-dependent)
+654	latent infection of homo sapiens with mycobacterium tuberculosis
+655	response of mtb to phagocytosis
+656	interconversion of 2-oxoglutarate and 2-hydroxyglutarate
+657	cysteine and methionine metabolism
+658	methionine salvage pathway
+659	methylthiopropionate biosynthesis
+660	sulfur amino acid metabolism
+661	transcriptional regulation of white adipocyte differentiation
+662	adenine and adenosine salvage vi
+663	calcitonin-like ligand receptors
+664	adenosine p1 receptors
+665	class a/1 (rhodopsin-like receptors)
+666	nucleotide-like (purinergic) receptors
+667	taurine and hypotaurine metabolism
+668	adrenoceptors
+669	amine ligand-binding receptors
+670	g alpha (q) signalling events
+671	gastrin-creb signalling pathway via pkc and mapk
+672	adrenaline signalling through alpha-2 adrenergic receptor
+673	platelet aggregation (plug formation)
+674	cxcr4-mediated signaling events
+675	il8- and cxcr1-mediated signaling events
+676	il8-mediated signaling events
+677	signaling events mediated by hdac class ii
+678	signaling events mediated by the hedgehog family
+679	thromboxane a2 receptor signaling
+680	galactose metabolism
+681	inosine-5'-phosphate biosynthesis ii
+682	purine nucleotides de novo biosynthesis ii
+683	purine ribonucleoside monophosphate biosynthesis
+684	androgenreceptor
+685	jak-stat signaling pathway
+686	proteasome
+687	nad biosynthesis ii (from tryptophan)
+688	tryptophan degradation to 2-amino-3-carboxymuconate semialdehyde
+689	direct p53 effectors
+690	glucocorticoid receptor regulatory network
+691	glucocorticoid receptor signaling
+692	other glycan degradation
+693	netrin-mediated signaling events
+694	trk receptor signaling mediated by pi3k and plc-gamma
+695	n-glycan biosynthesis
+696	activated tlr4 signalling
+697	advanced glycosylation endproduct receptor signaling
+698	amb2 integrin signaling
+699	cytosolic sensors of pathogen-associated dna
+700	dai mediated induction of type i ifns
+701	innate immunity signaling
+702	myd88 cascade initiated on plasma membrane
+703	myd88 dependent cascade initiated on endosome
+704	myd88-independent cascade
+705	myd88-independent cascade initiated on plasma membrane
+706	myd88:mal cascade initiated on plasma membrane
+707	nfkb and map kinases activation mediated by tlr4 signaling repertoire
+708	rig-i/mda5 mediated induction of ifn-alpha/beta pathways
+709	rip-mediated nfkb activation via dai
+710	tak1 activates nfkb by phosphorylation and activation of ikks complex
+711	toll like receptor 10 (tlr10) cascade
+712	toll like receptor 2 cascade
+713	toll like receptor 2 (tlr2) cascade
+714	toll like receptor 3 (tlr3) cascade
+715	toll like receptor 4 (tlr4) cascade
+716	toll like receptor 5 (tlr5) cascade
+717	toll like receptor 7/8 (tlr7/8) cascade
+718	toll like receptor 9 (tlr9) cascade
+719	toll like receptor tlr1:tlr2 cascade
+720	toll like receptor tlr6:tlr2 cascade
+721	toll receptor cascades
+722	traf6 mediated induction of nfkb and map kinases upon tlr7/8 or 9 activation
+723	traf6 mediated induction of proinflammatory cytokines
+724	traf6 mediated nf-kb activation
+725	viral dsrna:tlr3:trif complex activates rip1
+726	glucose metabolism
+727	glycogen breakdown (glycogenolysis)
+728	glycogen degradation ii
+729	glycogen degradation iii
+730	starch and sucrose metabolism
+731	synthesis of pa
+732	plasmalogen biosynthesis
+733	a tetrasaccharide linker sequence is required for gag synthesis
+734	chondroitin sulfate/dermatan sulfate metabolism
+735	heparan sulfate/heparin (hs-gag) metabolism
+736	hs-gag biosynthesis
+737	hs-gag degradation
+738	ncam1 interactions
+739	ncam signaling for neurite out-growth
+740	syndecan-3-mediated signaling events
+741	peptide ligand-binding receptors
+742	angiopoietin receptor tie2-mediated signaling
+743	signaling events mediated by prl
+744	glycine biosynthesis iii
+745	glyoxylate metabolism
+746	pyrimidine catabolism
+747	carbohydrate digestion and absorption
+748	mitotic m-m/g1 phases
+749	mitotic prometaphase
+750	m phase
+751	cysteine biosynthesis iii (mammalia)
+752	methionine degradation i (to homocysteine)
+753	superpathway of methionine degradation
+754	methylation
+755	bmp receptor signaling
+756	legionellosis
+757	il4-mediated signaling events
+758	intestinal immune network for iga production
+759	salvage pathways of pyrimidine deoxyribonucleotides
+760	salvage pathways of pyrimidine ribonucleotides
+761	signaling events mediated by tcptp
+762	ceramide signaling pathway
+763	t cell receptor signaling pathway
+764	inflammasomes
+765	nucleotide-binding domain, leucine rich repeat containing receptor (nlr) signaling pathways
+766	the aim2 inflammasome
+767	notch
+768	autoimmune thyroid disease
+769	synthesis and interconversion of nucleotide di- and triphosphates
+770	calcium signaling in the cd4+ tcr pathway
+771	il1-mediated signaling events
+772	jnk signaling in the cd4+ tcr pathway
+773	p38 mapk signaling pathway
+774	ras signaling in the cd4+ tcr pathway
+775	regulation of cytoplasmic and nuclear smad2/3 signaling
+776	regulation of nuclear smad2/3 signaling
+777	regulation of p38-alpha and p38-beta
+778	role of calcineurin-dependent nfat signaling in lymphocytes
+779	tcr signaling in naive cd4+ t cells
+780	tgf-beta receptor signaling
+781	trafficking of ampa receptors
+782	validated transcriptional targets of ap1 family members fra1 and fra2
+783	tryptophan degradation x (mammalian, via tryptamine)
+784	methylglyoxal degradation iii
+785	metabolism of steroid hormones and vitamins a and d
+786	pregnenolone biosynthesis
+787	steroid hormones
+788	androgen biosynthesis
+789	estrogen biosynthesis
+790	synthesis of bile acids and bile salts via 24-hydroxycholesterol
+791	synthesis of bile acids and bile salts via 27-hydroxycholesterol
+792	bile acid biosynthesis, neutral pathway
+793	a6b1 and a6b4 integrin signaling
+794	activation of bad and translocation to mitochondria
+795	activation of bh3-only proteins
+796	akt-mediated inactivation of foxo1a
+797	akt phosphorylates targets in the cytosol
+798	akt phosphorylates targets in the nucleus
+799	androgen-mediated signaling
+800	aurora a signaling
+801	bcr signaling pathway
+802	cd28 co-stimulation
+803	cd28 dependent pi3k/akt signaling
+804	cd40/cd40l signaling
+805	constitutive pi3k/akt signaling in cancer
+806	coregulation of androgen receptor activity
+807	costimulation by the cd28 family
+808	ctla4 inhibitory signaling
+809	cxcr3-mediated signaling events
+810	destabilization of mrna by butyrate response factor 1 (brf1)
+811	destabilization of mrna by ksrp
+812	downregulation of erbb2:erbb3 signaling
+813	downstream signaling events of b cell receptor (bcr)
+814	e-cadherin signaling in keratinocytes
+815	enos activation
+816	enos activation and regulation
+817	erbb2/erbb3 signaling events
+818	fc-epsilon receptor i signaling in mast cells
+819	fgf signaling pathway
+820	foxo family signaling
+821	gab1 signalosome
+822	g beta:gamma signalling through pi3kgamma
+823	g-protein beta:gamma signalling
+824	gpvi-mediated activation cascade
+825	hedgehog signaling events mediated by gli proteins
+826	hepatitis c
+827	il2-mediated signaling events
+828	il2 signaling events mediated by pi3k
+829	il8- and cxcr2-mediated signaling events
+830	insulin-mediated glucose transport
+831	integrin alphaiib beta3 signaling
+832	integrin cell surface interactions
+833	intrinsic pathway for apoptosis
+834	kitreceptor
+835	membrane trafficking
+836	metabolism of mrna
+837	metabolism of nitric oxide
+838	negative regulation of the pi3k/akt network
+839	nephrin/neph1 signaling in the kidney podocyte
+840	nongenotropic androgen signaling
+841	pi3k/akt activation
+842	pi3k/akt signaling in cancer
+843	pi3k/akt signalling
+844	pi-3k cascade
+845	pi3k events in erbb2 signaling
+846	pi3k events in erbb4 signaling
+847	pip3 activates akt signaling
+848	platelet activation triggers
+849	plk1 signaling events
+850	polo-like kinase signaling events in the cell cycle
+851	reelin signaling pathway
+852	regulation of androgen receptor activity
+853	regulation of beta-cell development
+854	regulation of gene expression in beta cells
+855	regulation of mrna stability by proteins that bind au-rich elements
+856	renal cell carcinoma
+857	s1p3 pathway
+858	signaling by scf-kit
+859	signaling by the b cell receptor (bcr)
+860	signaling by aurora kinases
+861	signaling events mediated by ptp1b
+862	signaling events mediated by stem cell factor receptor (c-kit)
+863	syndecan-2-mediated signaling events
+864	tcr signaling in naive cd8+ t cells
+865	tetrahydrobiopterin (bh4) synthesis, recycling, salvage and regulation
+866	translocation of glut4 to the plasma membrane
+867	vegfr1 specific signals
+868	vegfr3 signaling in lymphatic endothelium
+869	activation of pkb
+870	inhibition of hsl
+871	inhibition of tsc complex formation by pkb
+872	insulin receptor signalling cascade
+873	irs-mediated signalling
+874	irs-related events
+875	mtor signalling
+876	pde3b signalling
+877	pi3k cascade
+878	pkb-mediated events
+879	signaling by insulin receptor
+880	heme biosynthesis
+881	heme biosynthesis ii
+882	porphyrin and chlorophyll metabolism
+883	metabolism of porphyrins
+884	tetrapyrrole biosynthesis ii
+885	transport of organic anions
+886	transport of vitamins, nucleosides, and related molecules
+887	l1cam interactions
+888	ascorbate and aldarate metabolism
+889	amino acid synthesis and interconversion (transamination)
+890	citrulline biosynthesis
+891	proline biosynthesis i
+892	superpathway of citrulline metabolism
+893	retinoate biosynthesis i
+894	methylglyoxal degradation vi
+895	metabolism of serotonin
+896	phenylalanine degradation iv (mammalian, via side chain)
+897	phenylethylamine degradation i
+898	putrescine degradation iii
+899	serotonin clearance from the synaptic cleft
+900	dopamine degradation
+901	fatty acid alpha-oxidation
+902	4-hydroxyproline degradation i
+903	arginine degradation i (arginase pathway)
+904	proline catabolism
+905	proline degradation
+906	choline degradation i
+907	carnitine synthesis
+908	l-carnitine biosynthesis
+909	validated targets of c-myc transcriptional repression
+910	gluconeogenesis
+911	gluconeogenesis i
+912	glycolysis
+913	glycolysis i
+914	sucrose degradation v (mammalian)
+915	fructose catabolism
+916	asparagine n-linked glycosylation
+917	biosynthesis of the n-glycan precursor (dolichol lipid-linked oligosaccharide, llo) and transfer to a nascent protein
+918	post-translational protein modification
+919	dolichyl-diphosphooligosaccharide biosynthesis
+920	synthesis of dolichyl-phosphate-glucose
+921	synthesis of substrates in n-glycan biosythesis
+922	abh2 mediated reversal of alkylation damage
+923	dna damage reversal
+924	dna repair
+925	reversal of alkylation damage by dna dioxygenases
+926	abh3 mediated reversal of alkylation damage
+927	il23-mediated signaling events
+928	leukotriene biosynthesis
+929	folate biosynthesis
+930	allograft rejection
+931	graft-versus-host disease
+932	type i diabetes mellitus
+933	rig-i-like receptor signaling pathway
+934	thyroid cancer
+935	asthma
+936	amyotrophic lateral sclerosis (als)
+937	prion diseases
+938	cleavage of growing transcript in the termination region
+939	mrna 3'-end processing
+940	mrna splicing
+941	mrna splicing - major pathway
+942	post-elongation processing of intron-containing pre-mrna
+943	post-elongation processing of the transcript
+944	rna polymerase ii transcription
+945	rna polymerase ii transcription termination
+946	transcription
+947	histidine catabolism
+948	histidine degradation iii
+949	histidine degradation vi
+950	n-acetylglucosamine degradation i
+951	n-acetylglucosamine degradation ii
+952	cell surface interactions at the vascular wall
+953	immunoregulatory interactions between a lymphoid and a non-lymphoid cell
+954	signaling by hippo
+955	regulation of autophagy
+956	glycine cleavage complex
+957	digestion of dietary carbohydrate
+958	maturity onset diabetes of the young
+959	activation of apc/c and apc/c:cdc20 mediated degradation of mitotic proteins
+960	antigen processing: ubiquitination & proteasome degradation
+961	apc/c:cdc20 mediated degradation of cyclin b
+962	apc/c:cdc20 mediated degradation of mitotic proteins
+963	apc/c:cdc20 mediated degradation of securin
+964	apc/c:cdh1 mediated degradation of cdc20 and other apc/c:cdh1 targeted proteins in late mitosis/early g1
+965	apc-cdc20 mediated degradation of nek2a
+966	apc/c-mediated degradation of cell cycle proteins
+967	autodegradation of cdh1 by cdh1:apc/c
+968	cdc20:phospho-apc/c mediated degradation of cyclin a
+969	cell cycle checkpoints
+970	class i mhc mediated antigen processing & presentation
+971	conversion from apc/c:cdc20 to apc/c:cdh1 in late anaphase
+972	inactivation of apc/c via direct inhibition of the apc/c complex
+973	inhibition of the proteolytic activity of apc/c required for the onset of anaphase by mitotic spindle checkpoint components
+974	mitotic spindle checkpoint
+975	phosphorylation of the apc/c
+976	regulation of apc/c activators between g1/s and early anaphase
+977	regulation of mitotic cell cycle
+978	tgfbr
+979	tie2 signaling
+980	chl1 interactions
+981	interaction between l1 and ankyrins
+982	neurofascin interactions
+983	nrcam interactions
+984	signal transduction by l1
+985	stabilization of mrna by hur
+986	gamma-glutamyl cycle
+987	cellular roles of anthrax toxin
+988	formyl peptide receptors bind formyl peptides and many other ligands
+989	vitamin b6 metabolism
+990	nicotine degradation ii
+991	nicotine degradation iii
+992	clathrin derived vesicle budding
+993	foxa1 transcription factor network
+994	golgi associated vesicle biogenesis
+995	lysosome vesicle biogenesis
+996	nef mediated downregulation of mhc class i complex cell surface expression
+997	nef-mediates down modulation of cell surface receptors by recruiting them to clathrin adapters
+998	the role of nef in hiv-1 replication and disease pathogenesis
+999	trans-golgi network vesicle budding
+1000	arf1 pathway
+1001	egfr downregulation
+1002	nef mediated cd4 down-regulation
+1003	nef mediated cd8 down-regulation
+1004	recycling pathway of l1
+1005	retrograde neurotrophin signalling
+1006	trafficking of glur2-containing ampa receptors
+1007	disinhibition of snare formation
+1008	formation of annular gap junctions
+1009	gap junction degradation
+1010	gap junction trafficking
+1011	gap junction trafficking and regulation
+1012	nef mediated downregulation of cd28 cell surface expression
+1013	association of tric/cct with target proteins during biosynthesis
+1014	activation of caspases through apoptosome-mediated cleavage
+1015	apoptotic factor-mediated response
+1016	cytochrome c-mediated apoptotic response
+1017	e2f transcription factor network
+1018	formation of apoptosome
+1019	hiv-1 nef: negative effector of fas and tnf-alpha
+1020	grb2:sos provides linkage to mapk signaling for intergrins
+1021	netrin mediated repulsion signals
+1022	p130cas linkage to mapk signaling for integrins
+1023	nicotine addiction
+1024	assembly of the pre-replicative complex
+1025	autodegradation of the e3 ubiquitin ligase cop1
+1026	beta-catenin phosphorylation cascade
+1027	cdk-mediated phosphorylation and removal of cdc6
+1028	cdt1 association with the cdc6:orc:origin complex
+1029	degradation of beta catenin
+1030	degradation of beta-catenin by the destruction complex
+1031	destabilization of mrna by auf1 (hnrnp d0)
+1032	dna replication pre-initiation
+1033	g1/s dna damage checkpoints
+1034	m/g1 transition
+1035	orc1 removal from chromatin
+1036	p53-dependent g1 dna damage response
+1037	p53-dependent g1/s dna damage checkpoint
+1038	p53-independent dna damage response
+1039	p53-independent g1/s dna damage checkpoint
+1040	regulation of activated pak-2p34 by proteasome mediated degradation
+1041	regulation of apoptosis
+1042	regulation of dna replication
+1043	regulation of ornithine decarboxylase (odc)
+1044	removal of licensing factors from origins
+1045	amyloids
+1046	scf-beta-trcp mediated degradation of emi1
+1047	signaling by wnt
+1048	s phase
+1049	stabilization of p53
+1050	switching of origins to a post-replicative state
+1051	synthesis of dna
+1052	ubiquitin-dependent degradation of cyclin d
+1053	ubiquitin-dependent degradation of cyclin d1
+1054	ubiquitin mediated degradation of phosphorylated cdc25a
+1055	vif-mediated degradation of apobec3g
+1056	vpu mediated degradation of cd4
+1057	wnt
+1058	base-free sugar-phosphate removal via the single-nucleotide replacement pathway
+1059	displacement of dna glycosylase by ape1
+1060	removal of dna patch containing abasic residue
+1061	resolution of abasic sites (ap sites)
+1062	resolution of ap sites via the multiple-nucleotide patch replacement pathway
+1063	resolution of ap sites via the single-nucleotide replacement pathway
+1064	a third proteolytic cleavage releases nicd
+1065	nrif signals cell death from the nucleus
+1066	s-methyl-5-thio-alpha-d-ribose 1-phosphate degradation
+1067	fanconi anemia pathway
+1068	nadh repair
+1069	chylomicron-mediated lipid transport
+1070	apobec3g mediated resistance to hiv-1 infection
+1071	ldl-mediated lipid transport
+1072	platelet homeostasis
+1073	platelet sensitization by ldl
+1074	role of dcc in regulating apoptosis
+1075	the nlrp3 inflammasome
+1076	adenine and adenosine salvage i
+1077	passive transport by aquaporins
+1078	o2/co2 exchange in erythrocytes
+1079	uptake of carbon dioxide and release of oxygen by erythrocytes
+1080	uptake of oxygen and release of carbon dioxide by erythrocytes
+1081	transport of glycerol from adipocytes to the liver by aquaporins
+1082	copi mediated transport
+1083	golgi to er retrograde transport
+1084	pi metabolism
+1085	synthesis of pips at the golgi membrane
+1086	arginine degradation vi (arginase 2 pathway)
+1087	urea cycle
+1088	generic transcription pathway
+1089	regulation of pak-2p34 activity by ps-gap/rhg10
+1090	sema4d in semaphorin signaling
+1091	sema4d mediated inhibition of cell attachment and migration
+1092	semaphorin interactions
+1093	inactivation of cdc42 and rac
+1094	axonal growth inhibition (rhoa activation)
+1095	axonal growth stimulation
+1096	p75ntr regulates axonogenesis
+1097	sema4d induced cell migration and growth-cone collapse
+1098	epha forward signaling
+1099	signaling by tgf-beta receptor complex
+1100	tgf-beta receptor signaling in emt (epithelial to mesenchymal transition)
+1101	gaba a receptor activation
+1102	ion channel transport
+1103	ligand-gated ion channel transport
+1104	cellular responses to stress
+1105	cellular response to hypoxia
+1106	bmal1:clock/npas2 activates circadian expression
+1107	circadian clock
+1108	circadian repression of expression by rev-erba
+1109	circadian rhythm - mammal
+1110	circadian rhythm pathway
+1111	rora activates circadian expression
+1112	regulation of gene expression by hypoxia-inducible factor
+1113	regulation of hypoxia-inducible factor (hif) by oxygen
+1114	nuclear receptor transcription pathway
+1115	visual signal transduction: cones
+1116	thrombin signalling through proteinase activated receptors (pars)
+1117	atypical nf-kappab pathway
+1118	canonical nf-kappab pathway
+1119	endogenous tlr signaling
+1120	il12-mediated signaling events
+1121	signaling events regulated by ret tyrosine kinase
+1122	glycosphingolipid metabolism
+1123	ptm: gamma carboxylation, hypusine formation and arylsulfatase activation
+1124	the activation of arylsulfatases
+1125	chondroitin sulfate degradation (metazoa)
+1126	cs/ds degradation
+1127	glycosaminoglycan degradation
+1128	alpha-defensins
+1129	defensins
+1130	arsenate detoxification i (glutaredoxin)
+1131	ceramide degradation
+1132	non-homologous end-joining
+1133	arginine biosynthesis iv
+1134	citrulline-nitric oxide cycle
+1135	activation of genes by atf4
+1136	asparagine biosynthesis i
+1137	perk regulated gene expression
+1138	asparagine degradation i
+1139	phenylalanine, tyrosine and tryptophan biosynthesis
+1140	creb phosphorylation
+1141	map kinase activation in tlr cascade
+1142	mapk targets/ nuclear events mediated by map kinases
+1143	nuclear events (kinase and transcription factor activation)
+1144	signaling mediated by p38-alpha and p38-beta
+1145	activation of the ap-1 family of transcription factors
+1146	id
+1147	activation of chaperone genes by atf6-alpha
+1148	activation of chaperones by atf6-alpha
+1149	negative regulators of rig-i/mda5 signaling
+1150	homologous recombination
+1151	atm mediated phosphorylation of repair proteins
+1152	atm mediated response to dna double-strand break
+1153	bard1 signaling events
+1154	double-strand break repair
+1155	g2/m checkpoints
+1156	g2/m dna damage checkpoint
+1157	homologous recombination repair
+1158	homologous recombination repair of replication-independent double-strand breaks
+1159	meiotic recombination
+1160	plk3 signaling events
+1161	recruitment of repair and signaling proteins to double-strand breaks
+1162	regulation of the fanconi anemia pathway
+1163	ion transport by p-type atpases
+1164	basigin interactions
+1165	platelet calcium homeostasis
+1166	pre-notch expression and processing
+1167	pre-notch processing in golgi
+1168	reduction of cytosolic ca++ levels
+1169	calcium transport i
+1170	formation of atp by chemiosmotic coupling
+1171	respiratory electron transport, atp synthesis by chemiosmotic coupling, and heat production by uncoupling proteins.
+1172	insulin receptor recycling
+1173	phagosomal maturation (early endosomal stage)
+1174	transferrin endocytosis and recycling
+1175	sulfur relay system
+1176	selenocompound metabolism
+1177	sulfur metabolism
+1178	activation of atr in response to replication stress
+1179	leucine degradation i
+1180	aurora b signaling
+1181	aurora c signaling
+1182	foxm1 transcription factor network
+1183	vasopressin-like receptors
+1184	antigen presentation: folding, assembly and peptide loading of class i mhc
+1185	antigen processing-cross presentation
+1186	downstream signaling in naive cd8+ t cells
+1187	endosomal/vacuolar pathway
+1188	er-phagosome pathway
+1189	interferon gamma signaling
+1190	chondroitin sulfate biosynthesis
+1191	dermatan sulfate biosynthesis
+1192	glycoaminoglycan-protein linkage region biosynthesis
+1193	heparan sulfate biosynthesis
+1194	other types of o-glycan biosynthesis
+1195	glycosaminoglycan biosynthesis - keratan sulfate
+1196	o-linked glycosylation of mucins
+1197	mucin type o-glycan biosynthesis
+1198	n-glycan antennae elongation
+1199	n-glycan antennae elongation in the medial/trans-golgi
+1200	transport to the golgi and subsequent modification
+1201	snare interactions in vesicular transport
+1202	alpha-synuclein signaling
+1203	bh3-only proteins associate with and inactivate anti-apoptotic bcl-2 members
+1204	activation and oligomerization of bak protein
+1205	2-ltr circle formation
+1206	autointegration results in viral dna circles
+1207	early phase of hiv life cycle
+1208	integration of provirus
+1209	integration of viral dna into host genomic dna
+1210	calcineurin-regulated nfat-dependent transcription in lymphocytes
+1211	activation, translocation and oligomerization of bax
+1212	activation of puma and translocation to mitochondria
+1213	valine, leucine and isoleucine biosynthesis
+1214	down-stream signal transduction
+1215	osteopontin-mediated events
+1216	synthesis, secretion, and deacylation of ghrelin
+1217	2-oxobutanoate degradation i
+1218	branched-chain alpha-keto acid dehydrogenase complex
+1219	activation of nf-kappab in b cells
+1220	downstream tcr signaling
+1221	tcr signaling
+1222	epo signaling pathway
+1223	il2 signaling events mediated by stat5
+1224	activation of bim and translocation to mitochondria
+1225	activation of bmf and translocation to mitochondria
+1226	the nlrp1 inflammasome
+1227	retinoid metabolism and transport
+1228	retinol biosynthesis
+1229	vitamin a uptake in enterocytes
+1230	signaling by fgfr1 fusion mutants
+1231	signaling by fgfr1 mutants
+1232	signaling by fgfr mutants
+1233	rna polymerase iii abortive and retractive initiation
+1234	rna polymerase iii transcription
+1235	rna polymerase iii transcription initiation
+1236	rna polymerase iii transcription initiation from type 1 promoter
+1237	rna polymerase iii transcription initiation from type 2 promoter
+1238	rna polymerase iii transcription initiation from type 3 promoter
+1239	rna polymerase i, rna polymerase iii, and mitochondrial transcription
+1240	mtb iron assimilation by chelation
+1241	glycine betaine degradation
+1242	methionine salvage ii (mammalia)
+1243	activation, myristolyation of bid and translocation to mitochondria
+1244	nod1/2 signaling pathway
+1245	antigen activates b cell receptor leading to generation of second messengers
+1246	interleukin-3, 5 and gm-csf signaling
+1247	regulation of signaling by cbl
+1248	signaling by interleukins
+1249	heme degradation
+1250	golgi cisternae pericentriolar stack reorganization
+1251	mitotic prophase
+1252	bmp signalling pathway
+1253	bont light chain types a, c1, e cleave snap-25
+1254	botulinum neurotoxicity
+1255	proteolytic cleavage of snare complex proteins
+1256	translocation of bont light chain
+1257	bont light chain types b, d, and f cleave vamp/synaptobrevin
+1258	rapoport-luebering glycolytic shunt
+1259	cytosolic sulfonation of small molecules
+1260	arms-mediated activation
+1261	frs2-mediated activation
+1262	negative regulation of fgfr signaling
+1263	prolonged erk activation events
+1264	signalling to erks
+1265	signalling to p38 via rit and rin
+1266	spry regulation of fgf signaling
+1267	trk receptor signaling mediated by the mapk pathway
+1268	homologous dna pairing and strand exchange
+1269	presynaptic phase of homologous dna pairing and strand exchange
+1270	glycosylphosphatidylinositol(gpi)-anchor biosynthesis
+1271	grb2 events in erbb2 signaling
+1272	shc1 events in erbb2 signaling
+1273	shc1 events in erbb4 signaling
+1274	biotin metabolism
+1275	alternative nf-kappab pathway
+1276	interleukin-1 signaling
+1277	prolactin receptor signaling
+1278	pyrimidine ribonucleotides de novo biosynthesis
+1279	pyrimidine ribonucleotides interconversion
+1280	thiamine metabolism
+1281	classical antibody-mediated complement activation
+1282	complement cascade
+1283	creation of c4 and c2 activators
+1284	initial triggering of complement
+1285	activation of c3 and c5
+1286	deadenylation-dependent mrna decay
+1287	deadenylation of mrna
+1288	regulation of complement cascade
+1289	alternative complement activation
+1290	beta2 integrin cell surface interactions
+1291	terminal pathway of complement
+1292	reversible hydration of carbon dioxide
+1293	energy dependent regulation of mtor by lkb1-ampk
+1294	regulation of ampk activity via lkb1
+1295	depolarization of the presynaptic terminal triggers the opening of calcium channels
+1296	adherens junctions interactions
+1297	cell-cell junction organization
+1298	nectin/necl trans heterodimerization
+1299	pyrimidine biosynthesis
+1300	uridine-5'-phosphate biosynthesis
+1301	activation of camk iv
+1302	activation of ca-permeable kainate receptor
+1303	activation of kainate receptors upon glutamate binding
+1304	camk iv-mediated phosphorylation of creb
+1305	cam-pde 1 activation
+1306	creb phosphorylation through the activation of camkk
+1307	darpp-32 events
+1308	ionotropic activity of kainate receptors
+1309	assembly of viral components at the budding site
+1310	calnexin/calreticulin cycle
+1311	n-glycan trimming in the er and calnexin/calreticulin cycle
+1312	virus assembly and release
+1313	yap1- and wwtr1 (taz)-stimulated gene expression
+1314	nonsense-mediated decay
+1315	nonsense mediated decay enhanced by the exon junction complex
+1316	deposition of new cenpa-containing nucleosomes at the centromere
+1317	nucleosome assembly
+1318	interactions of the immunoglobulin superfamily (igsf) member proteins
+1319	death receptor signalling
+1320	extrinsic pathway for apoptosis
+1321	fasl/ cd95l signaling
+1322	nf-kb activation through fadd/rip-1 pathway mediated by caspase-8 and -10
+1323	trail signaling
+1324	interleukin-1 processing
+1325	the ipaf inflammasome
+1326	nade modulates death signalling
+1327	activation of dna fragmentation factor
+1328	apoptosis induced dna fragmentation
+1329	apoptotic cleavage of cell adhesion proteins
+1330	smac binds to iaps
+1331	smac-mediated apoptotic response
+1332	smac-mediated dissociation of iap:caspase complexes
+1333	stimulation of the cell death response by pak-2p34
+1334	breakdown of the nuclear lamina
+1335	activation of pro-caspase 8
+1336	caspase-8 is formed from procaspase-8
+1337	tnf signaling
+1338	class c/3 (metabotropic glutamate/pheromone receptors)
+1339	purine catabolism
+1340	superoxide radicals degradation
+1341	nostrin mediated enos trafficking
+1342	pdgfr-alpha signaling pathway
+1343	cyanoamino acid metabolism
+1344	fgfr1b ligand binding and activation
+1345	fgfr1c and klotho ligand binding and activation
+1346	fgfr1c ligand binding and activation
+1347	fgfr1 ligand binding and activation
+1348	fgfr2b ligand binding and activation
+1349	fgfr2c ligand binding and activation
+1350	fgfr2 ligand binding and activation
+1351	fgfr3b ligand binding and activation
+1352	fgfr3c ligand binding and activation
+1353	fgfr3 ligand binding and activation
+1354	fgfr4 ligand binding and activation
+1355	fgfr ligand binding and activation
+1356	interleukin-6 signaling
+1357	regulation of kit signaling
+1358	signaling by constitutively active egfr
+1359	cysteine biosynthesis/homocysteine degradation
+1360	cysteine formation from homocysteine
+1361	rna polymerase i chain elongation
+1362	rna polymerase i transcription
+1363	abnormal metabolism in phenylketonuria
+1364	phenylalanine and tyrosine catabolism
+1365	chemokine receptors bind chemokines
+1366	cyclin a/b1 associated events during g2/m transition
+1367	cyclin a:cdk2-associated events at s phase entry
+1368	cyclin e associated events during g1/s transition
+1369	e2f mediated regulation of dna replication
+1370	g0 and early g1
+1371	g1/s-specific transcription
+1372	g1/s transition
+1373	g2 phase
+1374	mitotic g1-g1/s phases
+1375	phosphorylation of proteins involved in the g2/m transition by cyclin a:cdc2 complexes
+1376	scf(skp2)-mediated degradation of p27/p21
+1377	chk1/chk2(cds1) mediated inactivation of cyclin b:cdk1 complex
+1378	e2f-enabled inhibition of pre-replication complex formation
+1379	g2/m dna replication checkpoint
+1380	hedgehog
+1381	phosphorylation of emi1
+1382	recruitment of numa to mitotic centrosomes
+1383	cyclin b2 mediated events
+1384	notch1 intracellular domain regulates transcription
+1385	smad2/smad3:smad4 heterotrimer regulates transcription
+1386	transcriptional activity of smad2/smad3:smad4 heterotrimer
+1387	cyclin d associated events in g1
+1388	g1 phase
+1389	pre-notch transcription and translation
+1390	signaling mediated by p38-gamma and p38-delta
+1391	phosphorylation of proteins involved in g1/s transition by active cyclin e:cdk2 complexes
+1392	dual incision reaction in gg-ner
+1393	dual incision reaction in tc-ner
+1394	formation of hiv-1 elongation complex containing hiv-1 tat
+1395	formation of hiv-1 elongation complex in the absence of hiv-1 tat
+1396	formation of incision complex in gg-ner
+1397	formation of rna pol ii elongation complex
+1398	formation of the early elongation complex
+1399	formation of the hiv-1 early elongation complex
+1400	formation of transcription-coupled ner (tc-ner) repair complex
+1401	global genomic ner (gg-ner)
+1402	hiv-1 transcription elongation
+1403	hiv-1 transcription initiation
+1404	mrna capping
+1405	rna pol ii ctd phosphorylation and interaction with ce
+1406	rna pol ii ctd phosphorylation and interaction with ce - 11
+1407	rna polymerase ii hiv-1 promoter escape
+1408	rna polymerase ii pre-transcription events
+1409	rna polymerase ii promoter escape
+1410	rna polymerase ii transcription elongation
+1411	rna polymerase ii transcription initiation
+1412	rna polymerase ii transcription initiation and promoter clearance
+1413	rna polymerase ii transcription pre-initiation and promoter opening
+1414	rna polymerase i promoter clearance
+1415	rna polymerase i promoter escape
+1416	rna polymerase i transcription initiation
+1417	rna polymerase i transcription termination
+1418	tat-mediated elongation of the hiv-1 transcript
+1419	transcription-coupled ner (tc-ner)
+1420	transcription of the hiv genome
+1421	base-excision repair, ap site formation
+1422	cleavage of the damaged pyrimidine
+1423	depyrimidination
+1424	recognition and association of dna glycosylase with site containing an affected pyrimidine
+1425	elongation arrest and recovery
+1426	hiv-1 elongation arrest and recovery
+1427	interactions of tat with host cellular proteins
+1428	pausing and recovery of elongation
+1429	pausing and recovery of hiv-1 elongation
+1430	pausing and recovery of tat-mediated hiv-1 elongation
+1431	tat-mediated hiv-1 elongation arrest and recovery
+1432	beta defensins
+1433	binding and entry of hiv virion
+1434	formation of tubulin folding intermediates by cct/tric
+1435	activation of irf3/irf7 mediated by tbk1/ikk epsilon
+1436	ikk complex recruitment mediated by rip1
+1437	lps transferred from lbp carrier to cd14
+1438	traf6 mediated induction of tak1 complex
+1439	transfer of lps from lbp carrier to cd14
+1440	type i hemidesmosome assembly
+1441	cross-presentation of soluble exogenous antigens (endosomes)
+1442	generation of second messenger molecules
+1443	il12 signaling mediated by stat4
+1444	nef and signal transduction
+1445	pd-1 signaling
+1446	phosphorylation of cd3 and tcr zeta chains
+1447	translocation of zap-70 to immunological synapse
+1448	cd28 dependent vav1 pathway
+1449	collagen adhesion via gp iv
+1450	cross-presentation of particulate exogenous antigens (phagosomes)
+1451	platelet adhesion to exposed collagen
+1452	a4b7 integrin signaling
+1453	hyaluronan uptake and degradation
+1454	beta3 integrin cell surface interactions
+1455	signal regulatory protein (sirp) family interactions
+1456	pecam1 interactions
+1457	pyrimidine salvage reactions
+1458	p38 signaling mediated by mapkap kinases
+1459	polo-like kinase mediated events
+1460	ephb forward signaling
+1461	ephrinb-ephb pathway
+1462	s1p4 pathway
+1463	activation of the pre-replicative complex
+1464	dna strand elongation
+1465	unwinding of dna
+1466	association of licensing factors with the pre-replicative complex
+1467	cdc6 association with the orc:origin complex
+1468	alphae beta7 integrin cell surface interactions
+1469	s1p2 pathway
+1470	3-phosphoinositide biosynthesis
+1471	d-myo-inositol (1,4,5)-trisphosphate biosynthesis
+1472	superpathway of inositol phosphate compounds
+1473	synthesis of pi
+1474	erk1 activation
+1475	erk activation
+1476	frs2-mediated cascade
+1477	grb2 events in egfr signaling
+1478	interleukin-2 signaling
+1479	map kinase cascade
+1480	raf/map kinase cascade
+1481	shc1 events in egfr signaling
+1482	shc events in egfr signaling
+1483	shc-mediated signalling
+1484	shc-related events
+1485	signalling to ras
+1486	sos-mediated signalling
+1487	crmps in sema3a signaling
+1488	transcriptional activation of cell cycle inhibitor p21
+1489	transcriptional activation of p53 responsive genes
+1490	degradation of cysteine and homocysteine
+1491	l-cysteine degradation i
+1492	taurine biosynthesis
+1493	synthesis of pg
+1494	incretin synthesis, secretion, and inactivation
+1495	synthesis, secretion, and inactivation of glucagon-like peptide-1 (glp-1)
+1496	digestion of dietary lipid
+1497	kinesins
+1498	choline biosynthesis iii
+1499	phosphatidylcholine biosynthesis i
+1500	phosphatidylethanolamine biosynthesis ii
+1501	synthesis of pe
+1502	sema3a pak dependent axon repulsion
+1503	glycoprotein hormones
+1504	hormone ligand-binding receptors
+1505	mineralocorticoid biosynthesis
+1506	peptide hormone biosynthesis
+1507	thyroxine biosynthesis
+1508	acetylcholine neurotransmitter release cycle
+1509	endosomal sorting complex required for transport (escrt)
+1510	chondroitin and dermatan biosynthesis
+1511	chondroitin sulfate biosynthesis (late stages)
+1512	muscarinic acetylcholine receptors
+1513	regulation of insulin secretion by acetylcholine
+1514	acetylcholine binding and downstream events
+1515	activation of nicotinic acetylcholine receptors
+1516	effects of botulinum toxin
+1517	highly calcium permeable nicotinic acetylcholine receptors
+1518	highly calcium permeable postsynaptic nicotinic acetylcholine receptors
+1519	postsynaptic nicotinic acetylcholine receptors
+1520	presynaptic nicotinic acetylcholine receptors
+1521	highly sodium permeable acetylcholine nicotinic receptors
+1522	dermatan sulfate biosynthesis (late stages)
+1523	activated tak1 mediates p38 mapk activation
+1524	irak1 recruits ikk comlex
+1525	irak1 recruits ikk comlex upon tlr7/8 or 9 stimulation
+1526	irak1 recruits ikk complex
+1527	irak1 recruits ikk complex upon tlr7/8 or 9 stimulation
+1528	jnk (c-jun kinases) phosphorylation and activation mediated by activated human tak1
+1529	creatine metabolism
+1530	creatine-phosphate biosynthesis
+1531	tight junction interactions
+1532	post-elongation processing of intronless pre-mrna
+1533	processing of capped intronless pre-mrna
+1534	processing of intronless pre-mrnas
+1535	entry of influenza virion into host cell via endocytosis
+1536	activation of matrix metalloproteinases
+1537	degradation of the extracellular matrix
+1538	cmp-n-acetylneuraminate biosynthesis i (eukaryotes)
+1539	pyrimidine deoxyribonucleotides de novo biosynthesis i
+1540	glutathione conjugation
+1541	glutathione synthesis and recycling
+1542	visual signal transduction: rods
+1543	trafficking and processing of endosomal tlr
+1544	coenzyme a biosynthesis
+1545	abortive elongation of hiv-1 transcript in the absence of tat
+1546	collagen adhesion via alpha 2 beta 1 glycoprotein
+1547	dopamine clearance from the synaptic cleft
+1548	enzymatic degradation of dopamine by comt
+1549	enzymatic degradation of dopamine by monoamine oxidase
+1550	l-dopa degradation
+1551	ubiquinol-10 biosynthesis (eukaryotic)
+1552	respiratory electron transport
+1553	insulin synthesis and processing
+1554	dopamine neurotransmitter release cycle
+1555	glutamate neurotransmitter release cycle
+1556	norepinephrine neurotransmitter release cycle
+1557	serotonin neurotransmitter release cycle
+1558	metal ion slc transporters
+1559	heme biosynthesis from uroporphyrinogen-iii i
+1560	host interactions with influenza factors
+1561	inhibition of host mrna processing and rna silencing
+1562	ns1 mediated effects on host pathways
+1563	mitochondrial l-carnitine shuttle pathway
+1564	transport of glucose and other sugars, bile salts and organic acids, metal ions and amine compounds
+1565	nicd traffics to nucleus
+1566	notch-hlh transcription pathway
+1567	traf3-dependent irf activation pathway
+1568	traf6 mediated irf7 activation
+1569	rapid glucocorticoid signaling
+1570	signal attenuation
+1571	acyl chain remodelling of pg
+1572	synthesis of cl
+1573	d-glucuronate degradation i
+1574	interleukin receptor shc signaling
+1575	l-cysteine degradation ii
+1576	thyroid hormone biosynthesis
+1577	regulation of insulin-like growth factor (igf) activity by insulin-like growth factor binding proteins (igfbps)
+1578	vitamin d (calciferol) metabolism
+1579	oxygen-dependent proline hydroxylation of hypoxia-inducible factor alpha
+1580	ephrin b reverse signaling
+1581	vitamin c (ascorbate) metabolism
+1582	release of apoptotic factors from the mitochondria
+1583	cytochrome p450 - arranged by substrate type
+1584	endogenous sterols
+1585	glucocorticoid biosynthesis
+1586	xenobiotics
+1587	aromatic amines can be n-hydroxylated or n-dealkylated by cyp1a2
+1588	melatonin degradation i
+1589	superpathway of melatonin degradation
+1590	vitamins
+1591	1,25-dihydroxyvitamin d<sub>3</sub> biosynthesis
+1592	bupropion degradation
+1593	cyp2e1 reactions
+1594	fatty acids
+1595	miscellaneous substrates
+1596	alpha-tocopherol degradation
+1597	eicosanoids
+1598	cholesterol biosynthesis
+1599	cholesterol biosynthesis i
+1600	cholesterol biosynthesis iii (via desmosterol)
+1601	cholesterol biosynthesis ii (via 24,25-dihydrolanosterol)
+1602	zymosterol biosynthesis
+1603	sterols are 12-hydroxylated by cyp8b1
+1604	beta5 beta6 beta7 and beta8 integrin cell surface interactions
+1605	eicosanoid ligand-binding receptors
+1606	leukotriene receptors
+1607	d-arginine and d-ornithine metabolism
+1608	arachidonate production from dag
+1609	effects of pip2 hydrolysis
+1610	catecholamine biosynthesis
+1611	acetyl-coa biosynthesis i (pyruvate dehydrogenase complex)
+1612	dscam interactions
+1613	role of second messengers in netrin-1 signaling
+1614	fatty acid beta-oxidation iii (unsaturated, odd number)
+1615	destabilization of mrna by tristetraprolin (ttp)
+1616	mrna decay by 5' to 3' exoribonuclease
+1617	mrna decay by 3' to 5' exoribonuclease
+1618	eumelanin biosynthesis
+1619	synthesis of dopamine
+1620	synthesis, secretion, and inactivation of glucose-dependent insulinotropic polypeptide (gip)
+1621	mrna splicing - minor pathway
+1622	ceramide biosynthesis
+1623	acyl chain remodeling of dag and tag
+1624	microrna (mirna) biogenesis
+1625	regulatory rna pathways
+1626	dolichol and dolichyl phosphate biosynthesis
+1627	dtmp de novo biosynthesis
+1628	metabolism of folate and pterines
+1629	hypusine biosynthesis
+1630	hypusine synthesis from eif5a-lysine
+1631	post-translational modification: gamma carboxylation and hypusine formation
+1632	the visual cycle
+1633	2-ketoglutarate dehydrogenase complex
+1634	small interfering rna (sirna) biogenesis
+1635	regulation of thyroid hormone activity
+1636	thyroid hormone metabolism ii (via conjugation and/or degradation)
+1637	thyroid hormone metabolism i (via deiodination)
+1638	thyronamine and iodothyronamine metabolism
+1639	extension of telomeres
+1640	telomere extension by telomerase
+1641	regulation of pyruvate dehydrogenase (pdh) complex
+1642	lagging strand synthesis
+1643	processive synthesis on the c-strand of the telomere
+1644	processive synthesis on the lagging strand
+1645	removal of the flap intermediate
+1646	removal of the flap intermediate from the c-strand
+1647	telomere c-strand (lagging strand) synthesis
+1648	influenza viral rna transcription and replication
+1649	viral mrna translation
+1650	irs activation
+1651	synthesis of dolichyl-phosphate
+1652	diphthamide biosynthesis
+1653	post-translational modification: synthesis of gpi-anchored proteins
+1654	synthesis of dolichyl-phosphate mannose
+1655	synthesis of glycosylphosphatidylinositol (gpi)
+1656	thymine degradation
+1657	uracil degradation ii (reductive)
+1658	sema3a-plexin repulsion signaling by inhibiting integrin adhesion
+1659	dopamine receptors
+1660	erk/mapk targets
+1661	erks are inactivated
+1662	activation of noxa and translocation to mitochondria
+1663	inhibition of replication initiation of damaged dna by rb1/e2f1
+1664	inhibition of replication initiation of damaged dna by rb/e2f1
+1665	il27-mediated signaling events
+1666	er quality control compartment (erqc)
+1667	eukaryotic translation elongation
+1668	peptide chain elongation
+1669	mtorc1-mediated signalling
+1670	s6k1-mediated signalling
+1671	s6k1 signalling
+1672	ephrin a reverse signaling
+1673	egfr transactivation by gastrin
+1674	3' -utr-mediated translational regulation
+1675	activation of the mrna upon binding of the cap-binding complex and eifs, and subsequent binding to 43s
+1676	cap-dependent translation initiation
+1677	eukaryotic translation initiation
+1678	formation of a pool of free 40s subunits
+1679	formation of the ternary complex, and subsequently, the 43s complex
+1680	gtp hydrolysis and joining of the 60s ribosomal subunit
+1681	l13a-mediated translational silencing of ceruloplasmin expression
+1682	ribosomal scanning and start codon recognition
+1683	translation initiation complex formation
+1684	inhibition of pkr
+1685	recycling of eif2:gdp
+1686	post-transcriptional silencing by small rnas
+1687	release of eif4e
+1688	nonsense mediated decay independent of the exon junction complex
+1689	sphingomyelin metabolism
+1690	oxygen-dependent asparagine hydroxylation of hypoxia-inducible factor alpha
+1691	grb7 events in erbb2 signaling
+1692	downregulation of erbb4 signaling
+1693	eukaryotic translation termination
+1694	sulfide oxidation to sulfate
+1695	heparan sulfate biosynthesis (late stages)
+1696	common pathway
+1697	extrinsic pathway
+1698	gamma-carboxylation of protein precursors
+1699	gamma-carboxylation, transport, and amino-terminal cleavage of proteins
+1700	removal of aminoterminal propeptides from gamma-carboxylated proteins
+1701	transport of gamma-carboxylated protein precursors from the endoplasmic reticulum to the golgi apparatus
+1702	par4-mediated thrombin signaling events
+1703	anandamide degradation
+1704	eicosapentaenoate biosynthesis ii (metazoa)
+1705	tyrosine degradation i
+1706	fatty acid biosynthesis initiation ii
+1707	palmitate biosynthesis i (animals)
+1708	mitotic metaphase/anaphase transition
+1709	collagen adhesion via gpvi
+1710	epoxysqualene biosynthesis
+1711	trans, trans-farnesyl diphosphate biosynthesis
+1712	folate transformations i
+1713	free fatty acid receptors
+1714	regulation of insulin secretion by fatty acids bound to gpr40 (ffar1)
+1715	regulation of insulin secretion by free fatty acids
+1716	activated point mutants of fgfr2
+1717	regulation of gene expression in early pancreatic precursor cells
+1718	shc-mediated cascade
+1719	signaling by fgfr2 mutants
+1720	signaling by activated point mutants of fgfr3
+1721	signaling by fgfr3 mutants
+1722	signaling by activated point mutants of fgfr1
+1723	betaklotho-mediated ligand binding
+1724	klotho-mediated ligand binding
+1725	signaling by fgfr1 amplification mutants
+1726	signaling by fgfr2 amplification mutants
+1727	t(414) translocations of fgfr3
+1728	signaling by fgfr4 mutants
+1729	butirosin and neomycin biosynthesis
+1730	synthesis of pips at the early endosome membrane
+1731	synthesis of pips at the late endosome membrane
+1732	signaling by vegf
+1733	vegf binds to vegfr leading to receptor dimerization
+1734	vegf ligand-receptor interactions
+1735	tgf-beta receptor signaling activates smads
+1736	flavin biosynthesis iv (mammalian)
+1737	gp1b-ix-v activation signalling
+1738	neurophilin interactions with vegf and vegfr
+1739	fmo oxidizes nucleophiles
+1740	folate polyglutamylation
+1741	gdp-l-fucose biosynthesis ii (from l-fucose)
+1742	maturation of notch precursor via proteolytic cleavage
+1743	ngf processing
+1744	signaling by tgf beta
+1745	reactions specific to the complex n-glycan synthesis pathway
+1746	pentose phosphate pathway (hexose monophosphate shunt)
+1747	pentose phosphate pathway (oxidative branch)
+1748	activation of g protein gated potassium channels
+1749	g protein gated potassium channels
+1750	inhibition of voltage gated ca2+ channels via gbeta/gamma subunits
+1751	gaba a (rho) receptor activation
+1752	gaba synthesis
+1753	glutamate dependent acid resistance
+1754	assembly of hiv virion
+1755	membrane binding and targetting of gag proteins
+1756	minus-strand dna synthesis
+1757	plus-strand dna synthesis
+1758	reverse transcription of hiv rna
+1759	uncoating of the hiv virion
+1760	colanic acid building blocks biosynthesis
+1761	galactose catabolism
+1762	galactose degradation i (leloir pathway)
+1763	udp-n-acetyl-d-galactosamine biosynthesis i
+1764	udp-n-acetyl-d-galactosamine biosynthesis ii
+1765	sumoylation by ranbp2 regulates transcriptional repression
+1766	glycine degradation (creatine biosynthesis)
+1767	5-aminoimidazole ribonucleotide biosynthesis i
+1768	tetrahydrofolate salvage from 5,10-methenyltetrahydrofolate
+1769	glycogen biosynthesis ii (from udp-d-glucose)
+1770	glycogen synthesis
+1771	threonine degradation ii
+1772	tetrahydrobiopterin biosynthesis i
+1773	tetrahydrobiopterin biosynthesis ii
+1774	gdp-glucose biosynthesis
+1775	glucose and glucose-1-phosphate degradation
+1776	trehalose degradation ii (trehalase)
+1777	glutathione biosynthesis
+1778	glutathione synthesis
+1779	guanosine nucleotides degradation iii
+1780	synthesis of udp-n-acetyl-glucosamine
+1781	udp-n-acetyl-d-glucosamine biosynthesis ii
+1782	glutamate removal from folates
+1783	glutathione-mediated detoxification
+1784	geranylgeranyldiphosphate biosynthesis
+1785	electric transmission across gap junctions
+1786	gap junction assembly
+1787	transmission across electrical synapses
+1788	c-src mediated regulation of cx43 function and closure of gap junctions
+1789	microtubule-dependent trafficking of connexons from golgi to the plasma membrane
+1790	oligomerization of connexins into connexons
+1791	regulation of gap junction activity
+1792	transport of connexins along the secretory pathway
+1793	transport of connexons to the plasma membrane
+1794	glycerol degradation i
+1795	lactose degradation iii
+1796	methylglyoxal degradation i
+1797	ascorbate recycling (cytosolic)
+1798	glutathione redox reactions ii
+1799	glutamine degradation i
+1800	glutamate biosynthesis ii
+1801	glutamate degradation x
+1802	astrocytic glutamate-glutamine uptake and metabolism
+1803	glutamine biosynthesis i
+1804	neurotransmitter uptake and metabolism in glial cells
+1805	gdp-l-fucose biosynthesis i (from gdp-d-mannose)
+1806	gdp-mannose biosynthesis
+1807	synthesis of gdp-mannose
+1808	adp signalling through p2y purinoceptor 1
+1809	signal amplification
+1810	thromboxane signalling through tp receptor
+1811	s1p5 pathway
+1812	adp signalling through p2y purinoceptor 12
+1813	g-protein activation
+1814	olfactory signaling pathway
+1815	prostacyclin signalling through prostacyclin receptor
+1816	g beta:gamma signalling through plc beta
+1817	presynaptic function of kainate receptors
+1818	aspartate biosynthesis
+1819	aspartate degradation ii
+1820	glutamate degradation ii
+1821	vwf interaction with collagen
+1822	attachment of gpi anchor to upar
+1823	activation of rac
+1824	glypican 2 network
+1825	hydrolysis of lpc
+1826	hydrolysis of lpe
+1827	glycerol-3-phosphate shuttle
+1828	molybdenum cofactor biosynthesis
+1829	p2y receptors
+1830	prostanoid ligand receptors
+1831	alanine biosynthesis ii
+1832	alanine degradation iii
+1833	glutathione redox reactions i
+1834	activation of na-permeable kainate receptors
+1835	viral messenger rna synthesis
+1836	nitric oxide stimulates guanylate cyclase
+1837	rna polymerase i promoter opening
+1838	assembly of the rad50-mre11-nbs1 complex at dna double-strand breaks
+1839	mrn complex relocalizes to nuclear foci
+1840	budding
+1841	alpha-oxidation of phytanate
+1842	acyl chain remodeling of cl
+1843	fusion and uncoating of the influenza virion
+1844	fusion of the influenza virion to the host cell endosome
+1845	packaging of eight rna segments
+1846	release
+1847	transport of ha trimer, na tetramer and m2 tetramer from the endoplasmic reticulum to the golgi apparatus
+1848	uncoating of the influenza virion
+1849	hcn channels
+1850	orexin and neuropeptides ff and qrfp bind to their respective receptors
+1851	downregulation of smad2/3:smad4 transcriptional activity
+1852	p75ntr negatively regulates cell cycle via sc1
+1853	histamine biosynthesis
+1854	regulation of gene expression in late stage (branching morphogenesis) pancreatic bud precursor cells
+1855	dermatan sulfate degradation (metazoa)
+1856	interleukin-7 signaling
+1857	inositol pyrophosphates biosynthesis
+1858	prostanoid biosynthesis
+1859	guanine and guanosine salvage i
+1860	activation of ras in b cells
+1861	mek activation
+1862	p38mapk events
+1863	raf activation
+1864	raf phosphorylates mek
+1865	dna damage bypass
+1866	translesion synthesis by dna polymerases bypassing lesion on dna template
+1867	translesion synthesis by pol zeta
+1868	dissolution of fibrin clot
+1869	histamine receptors
+1870	prpp biosynthesis i
+1871	trna splicing
+1872	l-glutamine biosynthesis ii (trna-dependent)
+1873	phospholipases
+1874	sorbitol degradation i
+1875	protein citrullination
+1876	pyruvate fermentation to lactate
+1877	urate biosynthesis/inosine 5'-phosphate degradation
+1878	d-myo-inositol-5-phosphate metabolism
+1879	spermine biosynthesis
+1880	selenocysteine biosynthesis ii (archaea and eukaryotes)
+1881	vrnp assembly
+1882	viral rnp complexes in the host cell nucleus
+1883	serotonin receptors
+1884	nadph regeneration
+1885	sting mediated induction of type 1 ifn
+1886	regulation of ifna signaling
+1887	regulation of ifng signaling
+1888	nf-kb is activated and signals survival
+1889	p75ntr recruits signalling complexes
+1890	p75ntr signals via nf-kb
+1891	viral dsrna:tlr3:trif complex activates tbk1/ikk epsilon
+1892	localization of the pinch-ilk-parvin complex to focal adhesions
+1893	d-myo-inositol (1,4,5)-trisphosphate degradation
+1894	myo-inositol biosynthesis
+1895	superpathway of d-myo-inositol (1,4,5)-trisphosphate metabolism
+1896	3-phosphoinositide degradation
+1897	synthesis of pips at the plasma membrane
+1898	1d-myo-inositol hexakisphosphate biosynthesis ii (mammalian)
+1899	d-myo-inositol (1,3,4)-trisphosphate biosynthesis
+1900	relaxin receptors
+1901	regulation of gene expression in endocrine-committed (neurog3+) progenitor cells
+1902	shc activation
+1903	1d-myo-inositol hexakisphosphate biosynthesis v (from ins(1,3,4)p3)
+1904	d-myo-inositol (1,4,5,6)-tetrakisphosphate biosynthesis
+1905	d-myo-inositol (3,4,5,6)-tetrakisphosphate biosynthesis
+1906	traf6 mediated irf7 activation in tlr7/8 or 9 signaling
+1907	irak2 mediated activation of tak1 complex
+1908	irak2 mediated activation of tak1 complex upon tlr7/8 or 9 stimulation
+1909	irf3 mediated activation of type 1 ifn
+1910	other semaphorin interactions
+1911	alpha6 beta4 integrin-ligand interactions
+1912	nad salvage pathway iii
+1913	cgmp effects
+1914	elevation of cytosolic ca2+ levels
+1915	notch receptor binds with a ligand
+1916	voltage gated potassium channels
+1917	potassium transport channels
+1918	classical kir channels
+1919	tandem pore domain potassium channels
+1920	twik related potassium channel (trek)
+1921	tandem pore domain halothane-inhibited k+ channel (thik)
+1922	twik-related alkaline ph activated k+ channel (talk)
+1923	twik-related spinal cord k+ channel (tresk)
+1924	tandem of pore domain in a weak inwardly rectifying k+ channels (twik)
+1925	twik-releated acid-sensitive k+ channel (task)
+1926	ca2+ activated k+ channels
+1927	mitotic telophase /cytokinesis
+1928	lipoic acid metabolism
+1929	lipoate biosynthesis and incorporation ii
+1930	gap-filling dna repair synthesis and ligation in gg-ner
+1931	gap-filling dna repair synthesis and ligation in tc-ner
+1932	resolution of d-loop structures
+1933	resolution of d-loop structures through holliday junction intermediates
+1934	nonhomologous end-joining (nhej)
+1935	lipoate salvage and modification
+1936	lysosphingolipid and lpa receptors
+1937	acyl chain remodelling of pc
+1938	acyl chain remodelling of pe
+1939	acyl chain remodelling of ps
+1940	slbp dependent processing of replication-dependent histone pre-mrnas
+1941	slbp independent processing of histone pre-mrnas
+1942	lanosterol biosynthesis
+1943	rna polymerase iii chain elongation
+1944	rna polymerase iii transcription termination
+1945	amplification of signal from the kinetochores
+1946	amplification of signal from unattached kinetochores via a mad2 inhibitory signal
+1947	n-glycan trimming and elongation in the cis-golgi
+1948	progressive trimming of alpha-1,2-linked mannose residues from man9/8/7glcnac2 to produce man5glcnac2
+1949	amine oxidase reactions
+1950	melatonin degradation ii
+1951	monoamines are oxidized to aldehydes by maoa and maob, producing nh3 and h2o2
+1952	class ib pi3k non-lipid kinase events
+1953	erk2 activation
+1954	signalling to erk5
+1955	phospho-pla2 pathway
+1956	rsk activation
+1957	lectin pathway of complement activation
+1958	s-adenosyl-l-methionine biosynthesis
+1959	acyl chain remodelling of pi
+1960	methylmalonyl pathway
+1961	propionyl-coa catabolism
+1962	reactions specific to the hybrid n-glycan synthesis pathway
+1963	ampk inhibits chrebp transcriptional activation activity
+1964	pka-mediated phosphorylation of key metabolic factors
+1965	pp2a-mediated dephosphorylation of key metabolic factors
+1966	thio-molybdenum cofactor biosynthesis
+1967	cleavage of the damaged purine
+1968	depurination
+1969	recognition and association of dna glycosylase with site containing an affected purine
+1970	d-mannose degradation
+1971	l-cysteine degradation iii
+1972	s-methyl-5'-thioadenosine degradation ii
+1973	mitochondrial transcription termination
+1974	transcription from mitochondrial promoters
+1975	downregulation of tgf-beta receptor signaling
+1976	termination of o-glycan biosynthesis
+1977	nicotinate metabolism
+1978	nad biosynthesis from 2-amino-3-carboxymuconate semialdehyde
+1979	influenza virus induced apoptosis
+1980	nad biosynthesis iii
+1981	nicotinamide salvaging
+1982	acetylation
+1983	alanine biosynthesis iii
+1984	ceramide signalling
+1985	nfg and prongf binds to p75ntr
+1986	signalling to stat3
+1987	trka activation by ngf
+1988	nosip mediated enos trafficking
+1989	mature notch receptor trafficks to plasma membrane
+1990	nicd trafficks to nucleus
+1991	pre-notch processing in the endoplasmic reticulum
+1992	transport of notch receptor precursor to golgi
+1993	crna synthesis
+1994	vrna synthesis
+1995	inhibition of ifn-beta
+1996	inhibition of interferon synthesis
+1997	oxidized gtp and dgtp detoxification
+1998	proline biosynthesis ii (from arginine)
+1999	opsins
+2000	assembly of the orc complex at the origin of replication
+2001	citrulline degradation
+2002	phenylalanine degradation i (aerobic)
+2003	tyrosine biosynthesis iv
+2004	interconversion of polyamines
+2005	polyamines are oxidized to amines, aldehydes and h2o2 by paos
+2006	spermine and spermidine degradation i
+2007	formation of paps
+2008	sulfate activation for sulfonation
+2009	leading strand synthesis
+2010	polymerase switching
+2011	polymerase switching on the c-strand of the telomere
+2012	repair synthesis for gap-filling by dna polymerase in tc-ner
+2013	repair synthesis of patch ~27-30 bases long by dna polymerase
+2014	all-trans-decaprenyl diphosphate biosynthesis
+2015	pyridoxal 5'-phosphate salvage pathway
+2016	vitamins b6 activation to pyridoxal phosphate
+2017	cardiolipin biosynthesis ii
+2018	serine biosynthesis
+2019	superpathway of serine and glycine biosynthesis i
+2020	synthesis of pips at the er membrane
+2021	pi and pc transport between er and golgi membranes
+2022	plc-mediated hydrolysis of pip2
+2023	plk2 and plk4 events
+2024	xanthine and xanthosine salvage
+2025	dna replication initiation
+2026	telomere c-strand synthesis initiation
+2027	translesion synthesis by pol eta
+2028	mitochondrial transcription initiation
+2029	pyrophosphate hydrolysis
+2030	copii (coat protein 2) mediated vesicle transport
+2031	er to golgi transport
+2032	regulation of rheb gtpase activity by ampk
+2033	rap1 signalling
+2034	processing of dna ends prior to end rejoining
+2035	5-phosphoribose 1-diphosphate biosynthesis
+2036	synthesis of ps
+2037	phosphatidylethanolamine biosynthesis iii
+2038	cox reactions
+2039	dna damage recognition in gg-ner
+2040	assembly of the rad51-ssdna nucleoprotein complex
+2041	retinoate biosynthesis ii
+2042	translesion synthesis by hrev1
+2043	amine compound slc transporters
+2044	rhesus glycoproteins mediate ammonium transport.
+2045	regulation of commissural axon pathfinding by slit and robo
+2046	processing of dna double-strand break ends
+2047	pentose phosphate pathway (non-oxidative branch)
+2048	l-serine degradation
+2049	glycine biosynthesis i
+2050	bile salt and organic anion slc transporters
+2051	cation-coupled chloride cotransporters
+2052	transport of inorganic cations/anions and amino acids/oligopeptides
+2053	sodium-coupled sulphate, di- and tri-carboxylate transporters
+2054	amino acid and oligopeptide slc transporters
+2055	proton/oligonucleotide cotransporters
+2056	amino acid transport across the plasma membrane
+2057	proton-coupled monocarboxylate transport
+2058	organic anion transporters
+2059	na+/cl- dependent neurotransmitter transporters
+2060	vitamin b1 (thiamin) metabolism
+2061	sodium-coupled phosphate cotransporters
+2062	organic anion transport
+2063	organic cation/anion/zwitterion transport
+2064	organic cation transport
+2065	sodium/calcium exchangers
+2066	vpr-mediated induction of apoptosis by mitochondrial outer membrane permeabilization
+2067	multifunctional anion exchangers
+2068	transport of fatty acids
+2069	transport of nucleosides and free purine and pyrimidine bases across the plasma membrane
+2070	facilitative na+-independent glucose transporters
+2071	class ii gluts
+2072	inositol transporters
+2073	zinc efflux and compartmentalization by the slc30 family
+2074	zinc transporters
+2075	type ii na+/pi cotransporters
+2076	transport of nucleotide sugars
+2077	formation of the active cofactor, udp-glucuronate
+2078	glucuronidation
+2079	proton-coupled neutral amino acid transporters
+2080	zinc influx into cells by the slc39 gene family
+2081	bicarbonate transporters
+2082	na+-dependent glucose transporters
+2083	reuptake of gaba
+2084	sodium/proton exchangers
+2085	spermidine biosynthesis i
+2086	sulfite oxidation iv
+2087	tachykinin receptors bind tachykinins
+2088	insulin effects increased synthesis of xylulose-5-phosphate
+2089	4-hydroxybenzoate biosynthesis
+2090	4-hydroxyphenylpyruvate biosynthesis
+2091	post-chaperonin tubulin folding pathway
+2092	thiamin salvage iii
+2093	thioredoxin pathway
+2094	thiosulfate disproportionation iii (rhodanese)
+2095	l-dopachrome biosynthesis
+2096	mitochondrial uncoupling proteins
+2097	the fatty acid cycling model
+2098	the proton buffering model
+2099	udp-d-xylose and udp-d-glucuronate biosynthesis

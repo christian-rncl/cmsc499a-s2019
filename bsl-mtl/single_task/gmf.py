@@ -6,7 +6,7 @@ based on: https://github.com/LaceyChen17/neural-collaborative-filtering/blob/mas
 
 import torch
 import torch.nn as nn
-from engine import Engine
+# from engine import Engine
 from utils import use_cuda
 
 class GMF(nn.Module):
@@ -59,11 +59,11 @@ class GMF(nn.Module):
         # print(xUVy)
         return xUVy
 
-class GMFEngine(Engine):
-    def __init__(self, config):
-        self.model = GMF(config)
-        if config['cuda']:
-            use_cuda(True)
-            self.model.cuda()
+# class GMFEngine(Engine):
+#     def __init__(self, config):
+#         self.model = GMF(config)
+#         if config['cuda']:
+#             use_cuda(True)
+#             self.model.cuda()
 
-        super(GMFEngine, self).__init__(config)
+#         super(GMFEngine, self).__init__(config)

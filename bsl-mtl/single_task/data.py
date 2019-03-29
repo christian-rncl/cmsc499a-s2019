@@ -37,12 +37,15 @@ class SingleTaskGenerator(object):
     interactions: df representing interactions
     human: np array 
     '''
-    def __init__(self, interactions, human_feats, virus_feats, pct_test):
+    def __init__(self, interactions, human_feats, virus_feats, pct_test, device):
         # index the dataset such that node1 and node2 are continuous
         self.index_interactions(interactions)
         self.interactions = interactions
         self.human_feats = human_feats
         self.virus_feats = virus_feats
+        # self.device = torch.device('cuda') if cuda else torch.device('cpu')
+        self.device = device
+        print('using device: ', self.device)
         self.split_data(self.indexed_interactions, pct_test)
 
     def split_data(self, interactions, pct_test):
@@ -92,7 +95,11 @@ class SingleTaskGenerator(object):
             Xpairs.append( (v_nodeid, h_nodeid) )
             ys.append(dsetY[i])
 
-        dset = TensorDataset(torch.from_numpy(np.asarray(Xpairs)),torch.stack(human_feats), torch.stack(virus_feats), 
-            torch.from_numpy(np.asarray(ys)))
+        dset = TensorDataset(torch.from_numpy(np.asarray(Xpairs)).to(self.device),
+            torch.stack(human_feats).to(self.device), 
+            torch.stack(virus_feats).to(self.device), 
+            torch.from_numpy(np.asarray(ys)).to(self.device))
+        
+        print('n positives: ', ys[ys==1.0])
 
         return DataLoader(dset, batch_size=bs, shuffle=True)

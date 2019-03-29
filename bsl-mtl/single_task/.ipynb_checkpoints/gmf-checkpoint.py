@@ -6,7 +6,7 @@ based on: https://github.com/LaceyChen17/neural-collaborative-filtering/blob/mas
 
 import torch
 import torch.nn as nn
-from engine import Engine
+# from engine import Engine
 from utils import use_cuda
 
 class GMF(nn.Module):
@@ -46,22 +46,24 @@ class GMF(nn.Module):
         ]
         ## TODO: experiment with bias
 
-    def forward(self, x, y, x_nodes, y_nodes):
+    def forward(self, h_idxs, v_idxs, h_feats, v_feats):
 
-        assert(len(x_nodes) == len(y_nodes))
-        U_xi = self.human(x_nodes)
-        V_yj = self.virus(y_nodes)
-        xUVy = (U_xi.double() * x.double()).sum(1) 
-        xUVy = (xUVy.double() * V_yj.t().double()).sum(1)
-        xUVy = (xUVy.double() * y).sum(1)
+        assert(len(h_idxs) == len(v_idxs))
+        U_xi = self.human(h_idxs)
+        V_yj = self.virus(v_idxs)
+        # except:
+        xUVy = (U_xi.double() * h_feats.double()).sum(1)  # xU
+        xUVy = (xUVy.double() * V_yj.t().double()).sum(1) # xUV
+        xUVy = (xUVy.double() * v_feats.double()).sum(1) # xUVy
 
+        # print(xUVy)
         return xUVy
 
-class GMFEngine(Engine):
-    def __init__(self, config):
-        self.model = GMF(config)
-        if config['cuda']:
-            use_cuda(True)
-            self.model.cuda()
+# class GMFEngine(Engine):
+#     def __init__(self, config):
+#         self.model = GMF(config)
+#         if config['cuda']:
+#             use_cuda(True)
+#             self.model.cuda()
 
-        super(GMFEngine, self).__init__(config)
+#         super(GMFEngine, self).__init__(config)
