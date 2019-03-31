@@ -7,16 +7,17 @@ import numpy as np
 import argparse
 
 
+'''
+    creates dataframes rom interaction csvs, if multiple merges.
+'''
 def read_interaction_csvs(interaction_csvs):
-    '''
-        creates dataframes rom interaction csvs, if multiple merges.
-    '''
     if len(interaction_csvs > 1):
         print('Merging files....')
         dfs = [pd.read_csv(fname) for fname in interaction_csvs]
         return pd.concat(dfs).reset_index()
     else: 
         return pd.read_csv(interaction_files[0])
+
 
 
 if __name__ == "__main__":
