@@ -58,7 +58,6 @@ if __name__ == "__main__":
 
     df = read_interaction_csvs(interaction_csvs)
     df = mp_processpairs(df, mp_pairmatcher, retfn, nworkers)
-    df.drop(columns=['Unnamed: 0', 'index'])
     df.to_csv(outputname)
 
 
