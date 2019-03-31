@@ -39,10 +39,10 @@ def mp_pairmatcher(v, human_idxs, pairs):
     return pd.DataFrame(d)
 
 def retfn(results):
-    try:
-        return pd.concat(results).drop(columns=['index'])
-    except:
-        return pd.concat(results).reset_index()
+    # try:
+    return pd.concat(results, ignore_index=True)
+    # except:
+    #     return pd.concat(results).reset_index()
 
 
 if __name__ == "__main__":

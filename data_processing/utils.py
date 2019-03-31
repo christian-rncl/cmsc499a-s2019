@@ -15,9 +15,10 @@ def fix_and_save_csv(fname):
     assert(fname[-4:] == '.csv')
 
     with open(fname, 'rb') as f:
-        result = chardet.detect(f.read())  # or readline if the file is large
+        result = chardet.detect(f.readline())  # or readline if the file is large
 
-    df = pd.read_csv(fname, encoding=result['encoding'])
+    # print(result['encoding'])
+    df = pd.read_csv(fname, encoding='cp1252') # for hepc task only
 
     df.to_csv(fname)
 
