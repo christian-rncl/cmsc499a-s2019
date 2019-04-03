@@ -14,7 +14,7 @@ def read_interaction_csvs(interaction_csvs):
     if len(interaction_csvs) > 1:
         print('Merging files....')
         dfs = [pd.read_csv(fname) for fname in interaction_csvs]
-        return pd.concat(dfs).reset_index()
+        return pd.concat(dfs).sample(frac=1)
     else: 
         return pd.read_csv(interaction_csvs[0])
 
