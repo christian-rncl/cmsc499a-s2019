@@ -6,7 +6,6 @@ Leiserson Research Group March 1
 import torch
 import torch.nn as nn
 # from engine import Engine
-from utils import use_cuda
 
 class GMF(nn.Module):
 
