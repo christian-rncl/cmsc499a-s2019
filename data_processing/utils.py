@@ -98,3 +98,8 @@ def regex_select(df, column, regex):
 
     print(column, regex)
     return df[df[column].apply(regex_selector)]
+
+def removeObsoletes(df):
+    obsoletes = ['P08107']
+    
+    return df[df.humanUprot != 'P08107']
