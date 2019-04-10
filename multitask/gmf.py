@@ -1,7 +1,6 @@
 '''
 Author(s): Christian Roncal
 Leiserson Research Group March 1
-based on: https://github.com/LaceyChen17/neural-collaborative-filtering/blob/master/src/gmf.py
 '''
 
 import torch
@@ -42,29 +41,21 @@ class GMF(nn.Module):
         if(self.sparse):
             self.sparsity = config['sparsity']
 
-        self.virus, self.human = [self.create_embeddings(*dims, self.sparse) 
-        for dims in [(self.num_virus, self.latent_dim), (self.num_human, self.latent_dim)]
+        self.virus, self.human, self.virus_b, self.human_b = [self.create_embeddings(*dims, self.sparse) 
+            for dims in [(self.num_virus, self.latent_dim), (self.num_human, self.latent_dim),
+                (self.num_virus, 1), (self.num_human, 1)]
         ]
-        ## TODO: experiment with bias
 
-    def forward(self, h_idxs, v_idxs):
+    def forward(self, v_idxs, h_idxs):
+        U_xi = self.virus(v_idxs)
+        V_yj = self.human(h_idxs)
+        UV = U_i * V_j
+        UVbias = UV.sum(1) + self.virus_b(v_idxs).squeeze() + self.human_b(h_idxs).squeeze() 
+        return UVbias
 
-        assert(len(h_idxs) == len(v_idxs))
-        U_xi = self.human(h_idxs)
-        V_yj = self.virus(v_idxs)
-        # except:
+        # for bilinear
         # xUVy = (U_xi.double() * h_feats.double()).sum(1)  # xU
         # xUVy = (xUVy.double() * V_yj.t().double()).sum(1) # xUV
         # xUVy = (xUVy.double() * v_feats.double()).sum(1) # xUVy
 
-        # print(xUVy)
         return xUVy
-
-# class GMFEngine(Engine):
-#     def __init__(self, config):
-#         self.model = GMF(config)
-#         if config['cuda']:
-#             use_cuda(True)
-#             self.model.cuda()
-
-#         super(GMFEngine, self).__init__(config)
