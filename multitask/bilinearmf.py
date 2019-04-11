@@ -30,8 +30,8 @@ class BMF(nn.Module):
             return embedding
 
     def loadAsEmbeddings(self, vfeats, hfeats):
-        self.vfeats = nn.Embedding.from_pretrained(torch.from_numpy(vfeats))
-        self.hfeats = nn.Embedding.from_pretrained(torch.from_numpy(hfeats))
+        self.vfeats = nn.Embedding.from_pretrained(torch.from_numpy(vfeats).float())
+        self.hfeats = nn.Embedding.from_pretrained(torch.from_numpy(hfeats).float())
         self.vfeats.weight.requires_grad=False
         self.hfeats.weight.requires_grad=False
 
@@ -60,13 +60,11 @@ class BMF(nn.Module):
         self.affine_output = torch.nn.Linear(in_features=self.latent_dim, out_features=1)
         self.logistic = torch.nn.Sigmoid()
 
-        
-
 
     def forward(self, v_idxs, h_idxs):
-        U_i = self.virus(v_idxs)
+        U = self.virus(v_idxs)
         x = self.vfeats(v_idxs)
-        V_j = self.human(h_idxs)
+        V = self.human(h_idxs)
         y = self.hfeats(h_idxs)
 
         xUVy = torch.mul(x, U)
@@ -74,7 +72,7 @@ class BMF(nn.Module):
         xUVy = torch.mul(xUVy, y)
 
         logits = self.affine_output(xUVy)
-        return torch.logistic(logits)
+        return self.logistic(logits)
 
         # for bilinear
         # xUVy = (U_xi.double() * h_feats.double()).sum(1)  # xU
