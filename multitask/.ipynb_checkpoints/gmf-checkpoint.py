@@ -48,11 +48,7 @@ class GMF(nn.Module):
 
     def forward(self, v_idxs, h_idxs):
         U_i = self.virus(v_idxs)
-        try:
-            V_j = self.human(h_idxs)
-        except:
-            print(h_idxs)
-            assert False
+        V_j = self.human(h_idxs)
         UV = U_i * V_j
         UVbias = UV.sum(1) + self.virus_b(v_idxs).squeeze() + self.human_b(h_idxs).squeeze() 
         return torch.sigmoid(UVbias)
