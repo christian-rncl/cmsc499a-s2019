@@ -8,7 +8,7 @@ import torch.nn as nn
 import torch.functional 
 # from engine import Engine
 
-class GMF(nn.Module):
+class BMF(nn.Module):
 
     def create_embeddings(self, n_embeddings, dim, sparsity):
         if(self.sparse):
@@ -17,7 +17,7 @@ class GMF(nn.Module):
                 embedding_dim = dim, 
                 sparse = self.sparse)
 
-            nn.init.sparse_(embedding.weight, sparsity=self.sparsity)
+            nn.init.sparse_(embedding.weight, sparsity=self.sparse)
 
             return embedding
 
@@ -29,39 +29,51 @@ class GMF(nn.Module):
 
             return embedding
 
+    def loadAsEmbeddings(self, vfeats, hfeats):
+        self.vfeats = nn.Embedding.from_pretrained(torch.from_numpy(vfeats))
+        self.hfeats = nn.Embedding.from_pretrained(torch.from_numpy(hfeats))
+        self.vfeats.weight.requires_grad=False
+        self.hfeats.weight.requires_grad=False
+
     def __init__(self, config):
-        super(GMF, self).__init__()
+        super(BMF, self).__init__()
 
         self.num_virus = config['num_virus']
         self.num_human = config['num_human']
         self.latent_dim = config['latent_dim']
         self.sparse = config['sparse']
 
-        # % of elements / col to be set to 0
-        if(self.sparse):
-            self.sparsity = config['sparsity']
+        if config['hfeats'] is not None and config['vfeats'] is not None:
+            self.loadAsEmbeddings(config['vfeats'], config['hfeats'])
 
-        # self.virus, self.human, self.virus_b, self.human_b = [self.create_embeddings(*dims, self.sparse) 
-        #     for dims in [(self.num_virus, self.latent_dim), (self.num_human, self.latent_dim),
-        #         (self.num_virus, 1), (self.num_human, 1)]
-        # ]
+        # # % of elements / col to be set to 0
+        # if(self.sparse):
+        #     self.sparsity = config['sparsity']
+
+        # # self.virus, self.human, self.virus_b, self.human_b = [self.create_embeddings(*dims, self.sparse) 
+        # #     for dims in [(self.num_virus, self.latent_dim), (self.num_human, self.latent_dim),
+        # #         (self.num_virus, 1), (self.num_human, 1)]
+        # # ]
         self.virus, self.human = [self.create_embeddings(*dims, self.sparse) 
             for dims in [(self.num_virus, self.latent_dim), (self.num_human, self.latent_dim)]
         ]
         self.affine_output = torch.nn.Linear(in_features=self.latent_dim, out_features=1)
         self.logistic = torch.nn.Sigmoid()
 
+        
+
 
     def forward(self, v_idxs, h_idxs):
         U_i = self.virus(v_idxs)
-        try:
-            V_j = self.human(h_idxs)
-        except:
-            print(h_idxs)
-            assert False
-        UV = torch.mul(U_i, V_j)
-        logits = self.affine_output(UV)
-        # UVbias = UV.sum(1) + self.virus_b(v_idxs).squeeze() + self.human_b(h_idxs).squeeze() 
+        x = self.vfeats(v_idxs)
+        V_j = self.human(h_idxs)
+        y = self.hfeats(h_idxs)
+
+        xUVy = torch.mul(x, U)
+        xUVy = torch.mul(xUVy, V)
+        xUVy = torch.mul(xUVy, y)
+
+        logits = self.affine_output(xUVy)
         return torch.logistic(logits)
 
         # for bilinear
