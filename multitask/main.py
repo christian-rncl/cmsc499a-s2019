@@ -16,7 +16,8 @@ except ImportError:
 
 
 ### Change config to switch between bmf and gmf
-from bmf_config import *
+# from bmf_config import *
+from gmf_config import *
 
 ############################
 ## Optimizer and loss settings
@@ -39,9 +40,11 @@ print('-' * 30)
 ## TensorboardX
 ############################
 def create_summary_writer(model, data_loader, log_dir):
+#     print("aye")
     writer = SummaryWriter(log_dir=log_dir)
     data_loader_iter = iter(data_loader)
     vs, hs, ys = next(data_loader_iter)
+#     print('vs, hs: ', vs, hs)
     try:
         writer.add_graph(model, (vs, hs))
     except Exception as e:
@@ -49,6 +52,7 @@ def create_summary_writer(model, data_loader, log_dir):
     return writer
 
 writer = create_summary_writer(model, train_loader, log_dir)
+print("Writer created")
 
 ############################
 ## Train engine
@@ -71,6 +75,8 @@ def eval_fn(engine, batch):
         vs, hs, ys = batch
         y_pred = model(vs, hs)
         return y_pred, ys
+
+
 
 def thresholded_output_transform(output):
     y_pred, y = output

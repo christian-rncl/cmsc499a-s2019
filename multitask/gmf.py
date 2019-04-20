@@ -31,7 +31,7 @@ class GMF(nn.Module):
             return embedding
 
     def __init__(self, config):
-        super(BMF, self).__init__()
+        super(GMF, self).__init__()
 
         self.num_virus = config['num_virus']
         self.num_human = config['num_human']
@@ -52,4 +52,5 @@ class GMF(nn.Module):
         UV = torch.mul(U, V)
         logits = self.affine_output(UV)
 
+        # print(logts.shape)
         return self.logistic(logits)
