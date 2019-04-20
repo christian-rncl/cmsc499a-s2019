@@ -21,8 +21,11 @@ vtoi_json = f'{path}vtoi.json'
 BS = 64
 # device = 'cpu'
 device = 'cuda'
-DEBUG = True
 epochs = 3
+
+### System settings
+DEBUG = True
+USE_TQDM = True
 
 ### Tensorboard settings 
 log_dir = './logs'

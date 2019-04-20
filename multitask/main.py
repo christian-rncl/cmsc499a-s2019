@@ -96,7 +96,12 @@ Recall(output_transform=thresholded_output_transform).attach(evaluator, 'recall'
 Loss(criterion).attach(evaluator, 'loss')
 
 ## tqdm
-pbar = tqdm
+if USE_TQDM:
+        desc = "Epoch[{}] Iteration[{}/{}] Loss: {:.2f} Accuracy: {:.2f} Precision: {:.2f} Recall {:.2f}"
+        pbar = tqdm(
+                initial=0, leave=False, total=len(train_loader),
+                desc=desc.format(0, 0 , 0, 0)
+        )
 
 ### Eval Metrics
 
@@ -104,8 +109,12 @@ pbar = tqdm
 def log_training_loss(engine):
         iter = (engine.state.iteration - 1) % len(train_loader) + 1
         if iter % log_interval == 0:
-                print("Epoch[{}] Iteration[{}/{}] Loss: {:.2f}"
-                        "".format(engine.state.epoch, iter, len(train_loader), engine.state.output))
+                if USE_TQDM:
+                        pbar.desc = desc.format(engine.state.epoch, iter, len(train_loader), engine.state.output)
+                        pbar.update(log_interval)
+                else:
+                        print("Epoch[{}] Iteration[{}/{}] Loss: {:.2f} Accuracy: {:.2f} Precision: {:.2f} Recall {:.2f}"
+                                .format(engine.state.epoch, iter, len(train_loader), engine.state.output))
                 writer.add_scalar("training/loss", engine.state.output, engine.state.iteration)
 
 @trainer.on(Events.EPOCH_COMPLETED)
