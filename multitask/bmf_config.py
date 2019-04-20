@@ -7,81 +7,88 @@ from data import ProteinInteractionGenerator
 from utils import loadjson
 from bilinearmf import BMF
 
-############################
-##   paths & settings
-############################
-train_csv =f'{path}full_train.csv'
-vfeats_txt = f'{path}vfeats.txt'
-hfeats_txt = f'{path}hfeats.txt'
-htoi_json = f'{path}htoi.json'
-vtoi_json = f'{path}vtoi.json'
+class BMFConfig:
+    def __init__(self, path, debug, device):
+        self.device = device
+        self.create_generator(path, debug)
+        self.create_model()
 
-############################
-##   Load data
-############################
-print('-' * 15, "Loading data", '-' * 15)
+    def create_model(self):
+        print('-' * 15, "Creating model", '-' * 15)
+        config = {
+            'num_virus': self.n_v,
+            'num_human': self.n_h,
+            'vfeats': self.vfeats,
+            'hfeats': self.hfeats,
+            'latent_dim': self.latent_dim,
+            'sparse': False # set false for now because some optimizers dont work with sparse
+        }
 
-print("loading traning matrix at: ", train_csv)
-M = pd.read_csv(train_csv)
+        self.model = BMF(config)
+        self.model.to(self.device)
 
-if DEBUG:
-    print("Making debug dataset.....")
-    pos = M.loc[M['edge'] > 0].sample(frac=1)
-    negs = M.loc[M['edge'] == 0].sample(frac=1)
-    M = pd.concat([pos, negs[:len(pos)]], ignore_index=True).sample(frac=1)
+        print(self.model)
+        print('-' * 15, "Done with model", '-' * 15)
+        print()
 
-print("loading features at: ", vfeats_txt, hfeats_txt)
-vfeats = np.loadtxt(vfeats_txt)
-hfeats = np.loadtxt(hfeats_txt)
+    def create_generator(self, path, debug):
+        ############################
+        ##   paths 
+        ########################### 
+        train_csv =f'{path}full_train.csv'
+        vfeats_txt = f'{path}vfeats.txt'
+        hfeats_txt = f'{path}hfeats.txt'
+        htoi_json = f'{path}htoi.json'
+        vtoi_json = f'{path}vtoi.json'
 
-print("loading indices at: ", vtoi_json, htoi_json)
-htoi = loadjson(htoi_json)
-vtoi = loadjson(vtoi_json)
-print('-' * 15, "Finished loading data", '-' * 15)
-print()
+        ############################
+        ##   Load data
+        ############################
+        print('-' * 15, "Loading data", '-' * 15)
+        print("loading traning matrix at: ", train_csv)
+        M = pd.read_csv(train_csv)
 
-############################
-##   Prepare data (dataloader)
-############################
-print('-' * 15, "Creating data loaders", '-' * 15)
+        if debug:
+            print("Making debug dataset.....")
+            pos = M.loc[M['edge'] > 0].sample(frac=1)
+            negs = M.loc[M['edge'] == 0].sample(frac=1)
+            M = pd.concat([pos, negs[:len(pos)]], ignore_index=True).sample(frac=1)
 
-data_config = {
-    'interactions':M,
-    'htoi':htoi,
-    'vtoi':vtoi,
-    'pct_test':.10,
-    'device': device
-}
+        print("loading features at: ", vfeats_txt, hfeats_txt)
+        vfeats = np.loadtxt(vfeats_txt)
+        hfeats = np.loadtxt(hfeats_txt)
 
-gen = ProteinInteractionGenerator(data_config)
+        print("loading indices at: ", vtoi_json, htoi_json)
+        htoi = loadjson(htoi_json)
+        vtoi = loadjson(vtoi_json)
+        print('-' * 15, "Finished loading data", '-' * 15)
+        print()
 
-train_loader = gen.create_train_loader(BS)
-val_loader = gen.create_val_loader(BS)
-test_loader = gen.create_test_loader(BS)
+        ############################
+        ##   Prepare data (dataloader)
+        ############################
+        print('-' * 15, "Creating Generator", '-' * 15)
 
-print('-' * 15, "Data loaders done", '-' * 15)
-print()
+        data_config = {
+            'interactions':M,
+            'htoi':htoi,
+            'vtoi':vtoi,
+            'pct_test':.10,
+            'device': self.device
+        }
 
-############################
-##  BMF Model
-############################
-print('-' * 15, "Creating model", '-' * 15)
+        self.vfeats = vfeats
+        self.hfeats = hfeats
+        self.n_v = len(vtoi)
+        self.n_h = len(htoi)
+        self.latent_dim = vfeats.shape[1]
+        self.gen = ProteinInteractionGenerator(data_config)
 
-n_v, n_h = len(vtoi), len(htoi)
-latent_dim = vfeats.shape[1]
+        print('-' * 15, "Generator done", '-' * 15)
+        print()
 
-config = {
-    'num_virus': n_v,
-    'num_human': n_h,
-    'vfeats':vfeats,
-    'hfeats':hfeats,
-    'latent_dim': latent_dim,
-    'sparse': False # set false for now because some optimizers dont work with sparse
-}
+    def get_generator(self):
+        return self.gen
 
-model = BMF(config)
-model.to(device)
-print(model)
-
-print('-' * 15, "Done with model", '-' * 15)
-print()
+    def get_model(self):
+        return self.model

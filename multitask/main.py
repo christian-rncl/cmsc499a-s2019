@@ -1,3 +1,8 @@
+"""
+ Christian Roncal 
+ CMSC 499 Dr. Leiserson
+"""
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -8,6 +13,8 @@ from ignite.contrib.handlers import ProgressBar
 
 from tqdm import tqdm
 import argparse
+from bmf_config import BMFConfig
+from gmf_config import GMFConfig
 
 try:
     from tensorboardX import SummaryWriter
@@ -67,24 +74,13 @@ def thresholded_output_transform(output):
 Runs the joint
 """
 def run():
-    ### Optimizer and loss
-    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
-    criterion = nn.BCELoss()
 
     ### Create tensorboardx writer
     writer = create_summary_writer(model, train_loader, log_dir)
     print("Writer created")
 
-    ### Print optim / loss details
-    print('-' * 15, "Optimizer and criterion", '-' * 15)
-    print(optimizer)
-    print()
-    print(criterion)
-    print('-' * 30)
-
     ### Create trainer, evaulator
     trainer = Engine(train_batch)
-
     evaluator = Engine(eval_fn)
 
     #### Attach evaluation metrics
@@ -167,13 +163,13 @@ if __name__ == "__main__":
     ## tensorboard/ignite settings
     parser.add_argument('--logdir', default='./logs/', help="where tensorboard logs will be stored")
     parser.add_argument('--log_interval', default=10, help="log every x iterations")
-    parser.add_argument('--no_tqdm', dest="no_tqdm", action='store_false')
+    parser.add_argument('--no_tqdm', dest="no_tqdm", action='store_true')
 
     args = parser.parse_args()
     print(args)
 
     #### Training settings
-    BSM = args.bs
+    BS = args.bs
     device = 'cuda' if not args.use_cpu else 'cpu'
     epochs = args.epochs
     lr = args.lr
@@ -188,9 +184,29 @@ if __name__ == "__main__":
     log_interval = args.log_interval
 
     if args.model == 'gmf':
-        from bmf_config import *
+        config = GMFConfig(path, DEBUG, device)
     elif args.model == 'bmf':
-        from gmf_config import *
+        config = BMFConfig(path, DEBUG, device)
     else:
         print("Unrecognized model: ", args.model, ". pick betwen 'bmf' or 'gmf'.")
+
+    gen = config.get_generator()
+    train_loader = gen.create_train_loader(BS)
+    val_loader = gen.create_val_loader(BS)
+    test_loader = gen.create_test_loader(BS)
+    print('-' * 15, "Data loaders created", '-' * 15)
+
+    model = config.get_model()
+
+    ### Optimizer and loss
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    criterion = nn.BCELoss()
+
+    print('-' * 15, "Optimizer and criterion", '-' * 15)
+    print(optimizer)
+    print()
+    print(criterion)
+    print('-' * 30)
+
+    run()
 

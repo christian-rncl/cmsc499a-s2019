@@ -5,71 +5,79 @@ import numpy as np
 
 from data import ProteinInteractionGenerator
 from utils import loadjson
-# from bilinearmf import BMF
 from gmf import GMF
 
-############################
-##   paths & settings
-############################
-train_csv =f'{path}full_train.csv'
+class GMFConfig:
+    def __init__(self, path, debug, device):
+        self.device = device
+        self.create_generator(path, debug)
+        self.create_model()
 
-############################
-##   Load data
-############################
-print('-' * 15, "Loading data", '-' * 15)
+    def create_model(self):
 
-print("loading traning matrix at: ", train_csv)
-M = pd.read_csv(train_csv)
+        print('-' * 15, "Creating model", '-' * 15)
 
-if DEBUG:
-    print("Making debug dataset.....")
-    pos = M.loc[M['edge'] > 0].sample(frac=1)
-    negs = M.loc[M['edge'] == 0].sample(frac=1)
-    M = pd.concat([pos, negs[:len(pos)]], ignore_index=True).sample(frac=1)
+        latent_dim = 2799
+        config = {
+            'num_virus': self.n_v,
+            'num_human': self.n_h,
+            'latent_dim': latent_dim,
+            'sparse': False # set false for now because some optimizers dont work with sparse
+        }
 
-htoi = {v:k for k,v in enumerate(M['humanUprot'].unique())}
-vtoi = {v:k for k,v in enumerate(M['virusUprot'].unique())}
+        self.model = GMF(config)
+        self.model.to(self.device)
 
-############################
-##   Prepare data (dataloader)
-############################
-print('-' * 15, "Creating data loaders", '-' * 15)
+        print(self.model)
+        print('-' * 15, "Done with model", '-' * 15)
+        print()
 
-data_config = {
-    'interactions':M,
-    'htoi':htoi,
-    'vtoi':vtoi,
-    'pct_test':.10,
-    'device': device
-}
+    def create_generator(self, path, debug):
+        ############################
+        ##   paths 
+        ########################### 
+        train_csv =f'{path}full_train.csv'
 
-gen = ProteinInteractionGenerator(data_config)
+        ############################
+        ##   Load data
+        ############################
+        print('-' * 15, "Loading data", '-' * 15)
 
-train_loader = gen.create_train_loader(BS)
-val_loader = gen.create_val_loader(BS)
-test_loader = gen.create_test_loader(BS)
+        print("loading traning matrix at: ", train_csv)
+        M = pd.read_csv(train_csv)
 
-print('-' * 15, "Data loaders done", '-' * 15)
-print()
+        if debug:
+            print("Making debug dataset.....")
+            pos = M.loc[M['edge'] > 0].sample(frac=1)
+            negs = M.loc[M['edge'] == 0].sample(frac=1)
+            M = pd.concat([pos, negs[:len(pos)]], ignore_index=True).sample(frac=1)
 
-############################
-##  BMF Model
-############################
-print('-' * 15, "Creating model", '-' * 15)
+        htoi = {v:k for k,v in enumerate(M['humanUprot'].unique())}
+        vtoi = {v:k for k,v in enumerate(M['virusUprot'].unique())}
 
-n_v, n_h = len(vtoi), len(htoi)
-latent_dim = 2799 
+        ############################
+        ##   Prepare data (dataloader)
+        ############################
+        print('-' * 15, "Creating data loaders", '-' * 15)
 
-config = {
-    'num_virus': n_v,
-    'num_human': n_h,
-    'latent_dim': latent_dim,
-    'sparse': False # set false for now because some optimizers dont work with sparse
-}
+        data_config = {
+            'interactions':M,
+            'htoi':htoi,
+            'vtoi':vtoi,
+            'pct_test':.10,
+            'device': self.device
+        }
 
-model = GMF(config)
-model.to(device)
-print(model)
+        self.n_v = len(vtoi)
+        self.n_h = len(htoi)
+        self.gen = ProteinInteractionGenerator(data_config)
 
-print('-' * 15, "Done with model", '-' * 15)
-print()
+        print('-' * 15, "Generator done", '-' * 15)
+        print()
+
+    def get_generator(self):
+        return self.gen
+
+    def get_model(self):
+        return self.model
+
