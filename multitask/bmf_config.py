@@ -17,11 +17,16 @@ hfeats_txt = f'{path}hfeats.txt'
 htoi_json = f'{path}htoi.json'
 vtoi_json = f'{path}vtoi.json'
 
+### General settings
 BS = 64
 # device = 'cpu'
 device = 'cuda'
 DEBUG = True
-n_epochs = 3
+epochs = 3
+
+### Tensorboard settings 
+log_dir = './logs'
+log_interval = 10
 
 ############################
 ##   Load data

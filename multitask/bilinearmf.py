@@ -17,7 +17,7 @@ class BMF(nn.Module):
                 embedding_dim = dim, 
                 sparse = self.sparse)
 
-            nn.init.sparse_(embedding.weight, sparsity=self.sparse)
+            nn.init.sparse_(embedding.weight.data, sparsity=self.sparse)
 
             return embedding
 
@@ -26,7 +26,7 @@ class BMF(nn.Module):
                 num_embeddings = n_embeddings, 
                 embedding_dim = dim)
             # nn.init.xavier_normal_(embedding.weight)
-            nn.init.normal_(embedding.weight)
+            nn.init.normal_(embedding.weight.data)
 
             return embedding
 
@@ -47,18 +47,11 @@ class BMF(nn.Module):
         if config['hfeats'] is not None and config['vfeats'] is not None:
             self.loadAsEmbeddings(config['vfeats'], config['hfeats'])
 
-        # # % of elements / col to be set to 0
-        # if(self.sparse):
-        #     self.sparsity = config['sparsity']
-
-        # # self.virus, self.human, self.virus_b, self.human_b = [self.create_embeddings(*dims, self.sparse) 
-        # #     for dims in [(self.num_virus, self.latent_dim), (self.num_human, self.latent_dim),
-        # #         (self.num_virus, 1), (self.num_human, 1)]
-        # # ]
         self.virus, self.human = [self.create_embeddings(*dims, self.sparse) 
             for dims in [(self.num_virus, self.latent_dim), (self.num_human, self.latent_dim)]
         ]
         self.affine_output = torch.nn.Linear(in_features=self.latent_dim, out_features=1)
+        nn.init.xavier_normal_(self.affine_output.weight.data)
         self.logistic = torch.nn.Sigmoid()
 
 
@@ -74,10 +67,3 @@ class BMF(nn.Module):
 
         logits = self.affine_output(xUVy)
         return self.logistic(logits)
-
-        # for bilinear
-        # xUVy = (U_xi.double() * h_feats.double()).sum(1)  # xU
-        # xUVy = (xUVy.double() * V_yj.t().double()).sum(1) # xUV
-        # xUVy = (xUVy.double() * v_feats.double()).sum(1) # xUVy
-
-        # return torch.sigmoid(xUVy)
