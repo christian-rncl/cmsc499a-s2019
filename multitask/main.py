@@ -7,6 +7,7 @@ from ignite.metrics import Accuracy, Precision, Recall, Loss, RunningAverage
 from ignite.contrib.handlers import ProgressBar
 
 from tqdm import tqdm
+import argparse
 
 try:
     from tensorboardX import SummaryWriter
@@ -16,46 +17,26 @@ except ImportError:
 
 
 ### Change config to switch between bmf and gmf
-# from bmf_config import *
-from gmf_config import *
 
-############################
-## Optimizer and loss settings
-############################
-optimizer = torch.optim.SGD(model.parameters(), 
-                            lr = 1e-3,  
-                            momentum=0.9, 
-                            weight_decay=1e-5)
 
-criterion = nn.BCELoss()
-# criterion = nn.MSELoss()
-
-print('-' * 15, "Optimizer and criterion", '-' * 15)
-print(optimizer)
-print()
-print(criterion)
-print('-' * 30)
 
 ############################
 ## TensorboardX
 ############################
 def create_summary_writer(model, data_loader, log_dir):
-#     print("aye")
     writer = SummaryWriter(log_dir=log_dir)
     data_loader_iter = iter(data_loader)
     vs, hs, ys = next(data_loader_iter)
-#     print('vs, hs: ', vs, hs)
+
     try:
         writer.add_graph(model, (vs, hs))
     except Exception as e:
         print("Failed to save model graph: {}".format(e))
     return writer
 
-writer = create_summary_writer(model, train_loader, log_dir)
-print("Writer created")
 
 ############################
-## Train engine
+## Ignite functions 
 ############################
 
 def train_batch(engine, batch):    
@@ -76,104 +57,140 @@ def eval_fn(engine, batch):
         y_pred = model(vs, hs)
         return y_pred, ys
 
-
-
 def thresholded_output_transform(output):
     y_pred, y = output
     y_pred = torch.round(y_pred)
     return y_pred, y
 
-trainer = Engine(train_batch)
-# trainer = create_supervised_trainer(model, optimizer, criterion, device=device)
 
-### Evaluator 
-# evaluator = create_supervised_evaluator(model, 
-#                                         metrics = {'accuracy': Accuracy(),
-#                                                    'loss': Loss(criterion),
-#                                                    'precision': Precision(output_transform=thresholded_output_transform),
-#                                                    'recall': Recall(output_transform=thresholded_output_transform)
-#                                                    },
-#                                                     device=device)
-evaluator = Engine(eval_fn)
+"""
+Runs the joint
+"""
+def run():
+    ### Optimizer and loss
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    criterion = nn.BCELoss()
 
-Accuracy(output_transform=thresholded_output_transform).attach(evaluator, 'accuracy')
-Precision(output_transform=thresholded_output_transform).attach(evaluator, 'precision')
-Recall(output_transform=thresholded_output_transform).attach(evaluator, 'recall')
-Loss(criterion).attach(evaluator, 'loss')
+    ### Create tensorboardx writer
+    writer = create_summary_writer(model, train_loader, log_dir)
+    print("Writer created")
 
-## tqdm
-if USE_TQDM:
-        desc = "Epoch[{}] Iteration[{}/{}] Loss: {:.2f}"
-        pbar = tqdm(
-                initial=0, leave=False, total=len(train_loader),
-                desc=desc.format(0, 0 , 0, 0)
-        )
+    ### Print optim / loss details
+    print('-' * 15, "Optimizer and criterion", '-' * 15)
+    print(optimizer)
+    print()
+    print(criterion)
+    print('-' * 30)
 
-### Eval Metrics
+    ### Create trainer, evaulator
+    trainer = Engine(train_batch)
 
-@trainer.on(Events.ITERATION_COMPLETED)
-def log_training_loss(engine):
-        iter = (engine.state.iteration - 1) % len(train_loader) + 1
-        if iter % log_interval == 0:
-                if USE_TQDM:
-                        pbar.desc = desc.format(engine.state.epoch, iter, len(train_loader), engine.state.output)
-                        pbar.update(log_interval)
-                else:
-                        print("Epoch[{}] Iteration[{}/{}] Loss: {:.2f}"
-                                .format(engine.state.epoch, iter, len(train_loader), engine.state.output))
-                writer.add_scalar("training/loss", engine.state.output, engine.state.iteration)
+    evaluator = Engine(eval_fn)
 
-@trainer.on(Events.EPOCH_COMPLETED)
-def log_training_results(engine):
-        evaluator.run(train_loader)
-        metrics = evaluator.state.metrics
-        avg_accuracy = metrics['accuracy']
-        avg_loss = metrics['loss']
-        prec = metrics['precision']
-        recall = metrics['recall']
-        print("Training Results - Epoch: {}  Avg accuracy: {:.2f} Avg loss: {:.2f} Precision: {:.2f} Recall: {:.2f}"
-                .format(engine.state.epoch, avg_accuracy, avg_loss, prec, recall))
-        writer.add_scalar("training/avg_loss", avg_loss, engine.state.epoch)
-        writer.add_scalar("training/avg_accuracy", avg_accuracy, engine.state.epoch)
-        writer.add_scalar("training/precision", prec, engine.state.epoch)
-        writer.add_scalar("training/recall", recall, engine.state.epoch)
+    #### Attach evaluation metrics
+    Accuracy(output_transform=thresholded_output_transform).attach(evaluator, 'accuracy')
+    Precision(output_transform=thresholded_output_transform).attach(evaluator, 'precision')
+    Recall(output_transform=thresholded_output_transform).attach(evaluator, 'recall')
+    Loss(criterion).attach(evaluator, 'loss')
 
-@trainer.on(Events.EPOCH_COMPLETED)
-def log_val_results(engine):
-        evaluator.run(val_loader)
-        metrics = evaluator.state.metrics
-        avg_accuracy = metrics['accuracy']
-        avg_loss = metrics['loss']
-        prec = metrics['precision']
-        recall = metrics['recall']
-        print("Training Results - Epoch: {}  Avg accuracy: {:.2f} Avg loss: {:.2f} Precision: {:.2f} Recall: {:.2f}"
-                .format(engine.state.epoch, avg_accuracy, avg_loss, prec, recall))
-        writer.add_scalar("validation/avg_loss", avg_loss, engine.state.epoch)
-        writer.add_scalar("validation/avg_accuracy", avg_accuracy, engine.state.epoch)
-        writer.add_scalar("validation/precision", prec, engine.state.epoch)
-        writer.add_scalar("validation/recall", recall, engine.state.epoch)
+    #### tqdm settings
+    if USE_TQDM:
+            desc = "Epoch[{}] Iteration[{}/{}] Loss: {:.2f}"
+            pbar = tqdm(
+                    initial=0, leave=False, total=len(train_loader),
+                    desc=desc.format(0, 0 , 0, 0)
+            )
 
+    ### Attach on events
+    @trainer.on(Events.ITERATION_COMPLETED)
+    def log_training_loss(engine):
+            iter = (engine.state.iteration - 1) % len(train_loader) + 1
+            if iter % log_interval == 0:
+                    if USE_TQDM:
+                            pbar.desc = desc.format(engine.state.epoch, iter, len(train_loader), engine.state.output)
+                            pbar.update(log_interval)
+                    else:
+                            print("Epoch[{}] Iteration[{}/{}] Loss: {:.2f}"
+                                    .format(engine.state.epoch, iter, len(train_loader), engine.state.output))
+                    writer.add_scalar("training/loss", engine.state.output, engine.state.iteration)
 
+    @trainer.on(Events.EPOCH_COMPLETED)
+    def log_training_results(engine):
+            evaluator.run(train_loader)
+            metrics = evaluator.state.metrics
+            avg_accuracy = metrics['accuracy']
+            avg_loss = metrics['loss']
+            prec = metrics['precision']
+            recall = metrics['recall']
+            print("Training Results - Epoch: {}  Avg accuracy: {:.2f} Avg loss: {:.2f} Precision: {:.2f} Recall: {:.2f}"
+                    .format(engine.state.epoch, avg_accuracy, avg_loss, prec, recall))
+            writer.add_scalar("training/avg_loss", avg_loss, engine.state.epoch)
+            writer.add_scalar("training/avg_accuracy", avg_accuracy, engine.state.epoch)
+            writer.add_scalar("training/precision", prec, engine.state.epoch)
+            writer.add_scalar("training/recall", recall, engine.state.epoch)
 
-print("Training...")
-trainer.run(train_loader, max_epochs=epochs)
-writer.close()
-
-
-### OLD IGNITE
-
-### Attach on events
-# @trainer.on(Events.EPOCH_COMPLETED)
-# def log_training_results(engine):
-#     train_evaluator.run(train_loader)
-#     metrics = train_evaluator.state.metrics
-#     accuracy = metrics['accuracy']
-#     prec = metrics['precision']
-#     rec = metrics['recall']
-#     pbar.log_message(
-#         "\n Training Results - Epoch: {}  Acc: {:.2f} Prec: {:.2f} Rec: {:.2f}"
-#         .format(engine.state.epoch, accuracy, prec, rec))
+    @trainer.on(Events.EPOCH_COMPLETED)
+    def log_val_results(engine):
+            evaluator.run(val_loader)
+            metrics = evaluator.state.metrics
+            avg_accuracy = metrics['accuracy']
+            avg_loss = metrics['loss']
+            prec = metrics['precision']
+            recall = metrics['recall']
+            print("Training Results - Epoch: {}  Avg accuracy: {:.2f} Avg loss: {:.2f} Precision: {:.2f} Recall: {:.2f}"
+                    .format(engine.state.epoch, avg_accuracy, avg_loss, prec, recall))
+            writer.add_scalar("validation/avg_loss", avg_loss, engine.state.epoch)
+            writer.add_scalar("validation/avg_accuracy", avg_accuracy, engine.state.epoch)
+            writer.add_scalar("validation/precision", prec, engine.state.epoch)
+            writer.add_scalar("validation/recall", recall, engine.state.epoch)
 
 
-# RunningAverage(output_transform=lambda x: x).attach(trainer, 'loss')
-# pbar = ProgressBar(persist=True)
+    #### Run the joint
+    print("Training...")
+    trainer.run(train_loader, max_epochs=epochs)
+    writer.close()
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="PPI Matrix Factorization")
+
+    ## Train settings
+    parser.add_argument('--model', choices=['bmf', 'gmf'], help="Choose between 'gmf' and 'bmf'")
+    parser.add_argument('--bs', default=64, help="batch size")
+    parser.add_argument('--epochs', default=15, help="epochs")
+    parser.add_argument('--debug', dest="debug", action='store_true')
+    parser.add_argument('--lr', default=.0001, help="learning rate")
+
+    ## System settings
+    parser.add_argument('--datapath', default='./data/', help="path where data be")
+    parser.add_argument('--cpu', dest="use_cpu", action='store_true', help="Use cpu instead of cuda")
+
+    ## tensorboard/ignite settings
+    parser.add_argument('--logdir', default='./logs/', help="where tensorboard logs will be stored")
+    parser.add_argument('--log_interval', default=10, help="log every x iterations")
+    parser.add_argument('--no_tqdm', dest="no_tqdm", action='store_false')
+
+    args = parser.parse_args()
+    print(args)
+
+    #### Training settings
+    BSM = args.bs
+    device = 'cuda' if not args.use_cpu else 'cpu'
+    epochs = args.epochs
+    lr = args.lr
+
+    #### System settings
+    path = args.datapath
+    USE_TQDM = not args.no_tqdm
+    DEBUG = args.debug
+
+    #### Tensorboard settings
+    log_dir = args.logdir
+    log_interval = args.log_interval
+
+    if args.model == 'gmf':
+        from bmf_config import *
+    elif args.model == 'bmf':
+        from gmf_config import *
+    else:
+        print("Unrecognized model: ", args.model, ". pick betwen 'bmf' or 'gmf'.")
+

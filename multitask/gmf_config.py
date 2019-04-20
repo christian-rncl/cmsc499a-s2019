@@ -11,22 +11,7 @@ from gmf import GMF
 ############################
 ##   paths & settings
 ############################
-path = './data/'
 train_csv =f'{path}full_train.csv'
-
-### General settings
-BS = 64
-# device = 'cpu'
-device = 'cuda'
-epochs = 2
-
-### System settings
-DEBUG = True
-USE_TQDM = True
-
-### Tensorboard settings 
-log_dir = './logs'
-log_interval = 10
 
 ############################
 ##   Load data

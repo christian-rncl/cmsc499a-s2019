@@ -10,26 +10,11 @@ from bilinearmf import BMF
 ############################
 ##   paths & settings
 ############################
-path = './data/'
 train_csv =f'{path}full_train.csv'
 vfeats_txt = f'{path}vfeats.txt'
 hfeats_txt = f'{path}hfeats.txt'
 htoi_json = f'{path}htoi.json'
 vtoi_json = f'{path}vtoi.json'
-
-### General settings
-BS = 64
-# device = 'cpu'
-device = 'cuda'
-epochs = 2
-
-### System settings
-DEBUG = True
-USE_TQDM = True
-
-### Tensorboard settings 
-log_dir = './logs'
-log_interval = 10
 
 ############################
 ##   Load data
