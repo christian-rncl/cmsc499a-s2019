@@ -20,6 +20,8 @@ vtoi_json = f'{path}vtoi.json'
 BS = 64
 # device = 'cpu'
 device = 'cuda'
+DEBUG = True
+n_epochs = 3
 
 ############################
 ##   Load data
@@ -28,6 +30,12 @@ print('-' * 15, "Loading data", '-' * 15)
 
 print("loading traning matrix at: ", train_csv)
 M = pd.read_csv(train_csv)
+
+if DEBUG:
+    print("Making debug dataset.....")
+    pos = M.loc[M['edge'] > 0].sample(frac=1)
+    negs = M.loc[M['edge'] == 0].sample(frac=1)
+    M = pd.concat([pos, negs[:len(pos)]], ignore_index=True).sample(frac=1)
 
 print("loading features at: ", vfeats_txt, hfeats_txt)
 vfeats = np.loadtxt(vfeats_txt)

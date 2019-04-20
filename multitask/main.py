@@ -17,6 +17,7 @@ optimizer = torch.optim.SGD(model.parameters(),
                             weight_decay=1e-5)
 
 criterion = nn.BCELoss()
+# criterion = nn.MSELoss()
 
 print('-' * 15, "Optimizer and criterion", '-' * 15)
 print(optimizer)
@@ -75,4 +76,6 @@ def log_training_results(engine):
 
 RunningAverage(output_transform=lambda x: x).attach(trainer, 'loss')
 pbar = ProgressBar(persist=True)
-trainer.run(train_loader, max_epochs=10)
+
+print("Training...")
+trainer.run(train_loader, max_epochs=n_epochs)
