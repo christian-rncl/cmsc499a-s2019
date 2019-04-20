@@ -97,7 +97,7 @@ Loss(criterion).attach(evaluator, 'loss')
 
 ## tqdm
 if USE_TQDM:
-        desc = "Epoch[{}] Iteration[{}/{}] Loss: {:.2f} Accuracy: {:.2f} Precision: {:.2f} Recall {:.2f}"
+        desc = "Epoch[{}] Iteration[{}/{}] Loss: {:.2f}"
         pbar = tqdm(
                 initial=0, leave=False, total=len(train_loader),
                 desc=desc.format(0, 0 , 0, 0)
@@ -113,7 +113,7 @@ def log_training_loss(engine):
                         pbar.desc = desc.format(engine.state.epoch, iter, len(train_loader), engine.state.output)
                         pbar.update(log_interval)
                 else:
-                        print("Epoch[{}] Iteration[{}/{}] Loss: {:.2f} Accuracy: {:.2f} Precision: {:.2f} Recall {:.2f}"
+                        print("Epoch[{}] Iteration[{}/{}] Loss: {:.2f}"
                                 .format(engine.state.epoch, iter, len(train_loader), engine.state.output))
                 writer.add_scalar("training/loss", engine.state.output, engine.state.iteration)
 
@@ -126,7 +126,7 @@ def log_training_results(engine):
         prec = metrics['precision']
         recall = metrics['recall']
         print("Training Results - Epoch: {}  Avg accuracy: {:.2f} Avg loss: {:.2f} Precision: {:.2f} Recall: {:.2f}"
-                .format(engine.state.epoch, avg_accuracy, avg_nll, prec, recall))
+                .format(engine.state.epoch, avg_accuracy, avg_loss, prec, recall))
         writer.add_scalar("training/avg_loss", avg_loss, engine.state.epoch)
         writer.add_scalar("training/avg_accuracy", avg_accuracy, engine.state.epoch)
         writer.add_scalar("training/precision", prec, engine.state.epoch)
@@ -141,7 +141,7 @@ def log_val_results(engine):
         prec = metrics['precision']
         recall = metrics['recall']
         print("Training Results - Epoch: {}  Avg accuracy: {:.2f} Avg loss: {:.2f} Precision: {:.2f} Recall: {:.2f}"
-                .format(engine.state.epoch, avg_accuracy, avg_nll, prec, recall))
+                .format(engine.state.epoch, avg_accuracy, avg_loss, prec, recall))
         writer.add_scalar("validation/avg_loss", avg_loss, engine.state.epoch)
         writer.add_scalar("validation/avg_accuracy", avg_accuracy, engine.state.epoch)
         writer.add_scalar("validation/precision", prec, engine.state.epoch)

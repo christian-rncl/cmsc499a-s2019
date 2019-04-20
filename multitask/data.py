@@ -72,12 +72,13 @@ class ProteinInteractionGenerator(object):
     def create_loader(self, dsetX, dsetY, bs):
         virus_idxs = dsetX['virusUprot'].values
         human_idxs = dsetX['humanUprot'].values
-        ys = dsetY.values
+        ys = torch.from_numpy(dsetY.values).to(self.device, dtype=torch.float32)
+
 
         dset = TensorDataset(
             torch.from_numpy(virus_idxs).to(self.device, dtype=torch.long),
             torch.from_numpy(human_idxs).to(self.device, dtype=torch.long),
-            torch.from_numpy(ys).to(self.device, dtype=torch.float32)
+            ys.view(ys.shape[0], 1)
             )
         
         return DataLoader(dset, batch_size=bs, shuffle=True)
