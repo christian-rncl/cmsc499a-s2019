@@ -21,7 +21,7 @@ vtoi_json = f'{path}vtoi.json'
 BS = 64
 # device = 'cpu'
 device = 'cuda'
-epochs = 3
+epochs = 2
 
 ### System settings
 DEBUG = True
