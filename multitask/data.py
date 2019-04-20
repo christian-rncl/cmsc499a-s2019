@@ -25,8 +25,6 @@ class ProteinInteractionGenerator(object):
         self.vtoi = config['vtoi']
         # index interactions based on htoi and vtoi
         self.index_interactions(config['interactions'])
-        self.hfeats = config['hfeats']
-        self.vfeats = config['vfeats']
         # # self.device = torch.device('cuda') if cuda else torch.device('cpu')
         self.device = config['device']
         print('using device: ', self.device)

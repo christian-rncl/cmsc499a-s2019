@@ -25,7 +25,8 @@ class GMF(nn.Module):
             embedding = nn.Embedding(
                 num_embeddings = n_embeddings, 
                 embedding_dim = dim)
-            nn.init.xavier_normal_(embedding.weight)
+            # nn.init.xavier_normal_(embedding.weight)
+            nn.init.normal_(embedding.weight)
 
             return embedding
 
@@ -49,20 +50,17 @@ class GMF(nn.Module):
             for dims in [(self.num_virus, self.latent_dim), (self.num_human, self.latent_dim)]
         ]
         self.affine_output = torch.nn.Linear(in_features=self.latent_dim, out_features=1)
+        nn.init.nor
         self.logistic = torch.nn.Sigmoid()
 
 
     def forward(self, v_idxs, h_idxs):
-        U_i = self.virus(v_idxs)
-        try:
-            V_j = self.human(h_idxs)
-        except:
-            print(h_idxs)
-            assert False
-        UV = torch.mul(U_i, V_j)
+        U = self.virus(v_idxs)
+        V = self.human(h_idxs)
+        UV = torch.mul(U, V)
         logits = self.affine_output(UV)
-        # UVbias = UV.sum(1) + self.virus_b(v_idxs).squeeze() + self.human_b(h_idxs).squeeze() 
-        return torch.logistic(logits)
+
+        return self.logistic(logits)
 
         # for bilinear
         # xUVy = (U_xi.double() * h_feats.double()).sum(1)  # xU

@@ -25,7 +25,8 @@ class BMF(nn.Module):
             embedding = nn.Embedding(
                 num_embeddings = n_embeddings, 
                 embedding_dim = dim)
-            nn.init.xavier_normal_(embedding.weight)
+            # nn.init.xavier_normal_(embedding.weight)
+            nn.init.normal_(embedding.weight)
 
             return embedding
 
