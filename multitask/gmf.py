@@ -25,8 +25,7 @@ class GMF(nn.Module):
             embedding = nn.Embedding(
                 num_embeddings = n_embeddings, 
                 embedding_dim = dim)
-            # nn.init.xavier_normal_(embedding.weight)
-            nn.init.normal_(embedding.weight.data)
+            embedding.weight.data.uniform_(-.01, .01)
 
             return embedding
 
@@ -38,11 +37,12 @@ class GMF(nn.Module):
         self.latent_dim = config['latent_dim']
         self.sparse = config['sparse']
 
-        self.virus, self.human = [self.create_embeddings(*dims, self.sparse) 
-            for dims in [(self.num_virus, self.latent_dim), (self.num_human, self.latent_dim)]
+        self.virus, self.human, self.vb, self.hb = [self.create_embeddings(*dims, self.sparse) 
+            for dims in [(self.num_virus, self.latent_dim), (self.num_human, self.latent_dim), (self.num_virus, 1), (self.num_human, 1)]
         ]
         self.affine_output = torch.nn.Linear(in_features=self.latent_dim, out_features=1)
-        nn.init.xavier_normal_(self.affine_output.weight.data)
+        # nn.init.xavier_normal_(self.affine_output.weight.data)
+        self.affine_output.weight.data.uniform_(-.01, .01)
         self.logistic = torch.nn.Sigmoid()
 
 
@@ -50,7 +50,8 @@ class GMF(nn.Module):
         U = self.virus(v_idxs)
         V = self.human(h_idxs)
         UV = torch.mul(U, V)
-        logits = self.affine_output(UV)
+        UV = UV + self.vb(v_idxs) + self.hb(h_idxs)
+        UV = UV.sum(1).view(UV.shape[0], 1)
+        # logits = self.affine_output(UV)
 
-        # print(logts.shape)
-        return self.logistic(logits)
+        return self.logistic(UV)

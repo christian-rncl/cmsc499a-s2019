@@ -143,7 +143,7 @@ def run():
                     .format(engine.state.epoch, avg_accuracy, avg_loss, prec, recall, ap))
             writer.add_scalar("validation/avg_loss", avg_loss, engine.state.epoch)
             writer.add_scalar("validation/avg_accuracy", avg_accuracy, engine.state.epoch)
-            writer.add_scalar("validation/precision", prec, engine.state.epoch)
+            writer.add_scalar("v[{}] Iteration[{}/{}] Loss:alidation/precision", prec, engine.state.epoch)
             writer.add_scalar("validation/recall", recall, engine.state.epoch)
             writer.add_scalar("validation/avg precision", ap, engine.state.epoch)
 
@@ -173,7 +173,6 @@ if __name__ == "__main__":
     parser.add_argument('--no_tqdm', dest="no_tqdm", action='store_true')
 
     args = parser.parse_args()
-    print(args)
 
     #### Training settings
     BS = args.bs
@@ -199,23 +198,23 @@ if __name__ == "__main__":
     else:
         print("Unrecognized model: ", args.model, ". pick betwen 'bmf' or 'gmf'.")
 
-#     gen = config.get_generator()
-#     train_loader = gen.create_train_loader(BS)
-#     val_loader = gen.create_val_loader(BS)
-#     test_loader = gen.create_test_loader(BS)
-#     print('-' * 15, "Data loaders created", '-' * 15)
+    gen = config.get_generator()
+    train_loader = gen.create_train_loader(BS)
+    val_loader = gen.create_val_loader(BS)
+    test_loader = gen.create_test_loader(BS)
+    print('-' * 15, "Data loaders created", '-' * 15)
 
-#     model = config.get_model()
+    model = config.get_model()
 
-#     ### Optimizer and loss
-#     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
-#     criterion = nn.BCELoss()
+    ### Optimizer and loss
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    criterion = nn.BCELoss()
 
-#     print('-' * 15, "Optimizer and criterion", '-' * 15)
-#     print(optimizer)
-#     print()
-#     print(criterion)
-#     print('-' * 30)
+    print('-' * 15, "Optimizer and criterion", '-' * 15)
+    print(optimizer)
+    print()
+    print(criterion)
+    print('-' * 30)
 
-#     run()
+    run()
 

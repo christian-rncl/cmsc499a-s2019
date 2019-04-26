@@ -1,29 +1,31 @@
 import pandas as pd
 import numpy as np
 import networkx as nx
+from tqdm import tqdm
 
 from data import ProteinInteractionGenerator
 from utils import loadjson
-from bilinearmf import BMF
+from gmf import GMF
 
 class GMFConfig_dbg:
-    def __init__(self, device, n = 500, m = 100, prob = .50):
+    def __init__(self, device, n = 150, m = 200, prob = .50):
         self.device = device
         self.create_generator(n,m,prob)
-        # self.create_model()
+        self.create_model()
 
     def create_model(self):
+
         print('-' * 15, "Creating model", '-' * 15)
+
+        latent_dim = 2799
         config = {
             'num_virus': self.n_v,
             'num_human': self.n_h,
-            'vfeats': self.vfeats,
-            'hfeats': self.hfeats,
-            'latent_dim': self.latent_dim,
+            'latent_dim': latent_dim,
             'sparse': False # set false for now because some optimizers dont work with sparse
         }
 
-        self.model = BMF(config)
+        self.model = GMF(config)
         self.model.to(self.device)
 
         print(self.model)
@@ -35,15 +37,16 @@ class GMFConfig_dbg:
         ##  generate bipartite
         ########################### 
         print('-' * 15, "Generating graph", '-' * 15)
-        G = nx.bipartite.random_graph(n, m, .5)
+        G = nx.bipartite.random_graph(n, m, .8)
         observed = list(G.edges())
         nodes = list(G.nodes())
         virusUprot = []
         humanUprot = []
         edges = [] 
 
-        for i in range(len(nodes)):
-            for j in range(len(nodes)):
+
+        for i in tqdm(range(len(nodes))):
+            for j in tqdm(range(len(nodes))):
                 virusUprot.append(i) 
                 humanUprot.append(j)
                 if (i, j) in observed:
@@ -51,38 +54,35 @@ class GMFConfig_dbg:
                 else:
                     edges.append(0.0)
 
-        M = pd.DataFrame({'viusUprot': virusUprot, 
+        M = pd.DataFrame({'virusUprot': virusUprot, 
                             'humanUprot': humanUprot,
-                            'edges': edges})
+                            'edge': edges})
 
+
+        htoi = {v:k for k,v in enumerate(M['humanUprot'].unique())}
+        vtoi = {v:k for k,v in enumerate(M['virusUprot'].unique())}
         print('-' * 15, "Dataframe created", '-' * 15)
-
-        htoi = loadjson(htoi_json)
-        vtoi = loadjson(vtoi_json)
         print()
 
-        # ############################
-        # ##   Prepare data (dataloader)
-        # ############################
-        # print('-' * 15, "Creating Generator", '-' * 15)
+        ############################
+        ##   Prepare data (dataloader)
+        ############################
+        print('-' * 15, "Creating data loaders", '-' * 15)
 
-        # data_config = {
-        #     'interactions':M,
-        #     'htoi':htoi,
-        #     'vtoi':vtoi,
-        #     'pct_test':.10,
-        #     'device': self.device
-        # }
+        data_config = {
+            'interactions':M,
+            'htoi':htoi,
+            'vtoi':vtoi,
+            'pct_test':.10,
+            'device': self.device
+        }
 
-        # self.vfeats = vfeats
-        # self.hfeats = hfeats
-        # self.n_v = len(vtoi)
-        # self.n_h = len(htoi)
-        # self.latent_dim = vfeats.shape[1]
-        # self.gen = ProteinInteractionGenerator(data_config)
+        self.n_v = len(vtoi)
+        self.n_h = len(htoi)
+        self.gen = ProteinInteractionGenerator(data_config)
 
-        # print('-' * 15, "Generator done", '-' * 15)
-        # print()
+        print('-' * 15, "Generator done", '-' * 15)
+        print()
 
     def get_generator(self):
         return self.gen
