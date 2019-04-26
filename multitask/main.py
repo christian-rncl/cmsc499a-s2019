@@ -9,12 +9,14 @@ import torch.nn.functional as F
 
 from ignite.engine import Engine, Events, create_supervised_trainer, create_supervised_evaluator
 from ignite.metrics import Accuracy, Precision, Recall, Loss, RunningAverage
+from ignite.contrib.metrics import AveragePrecision
 from ignite.contrib.handlers import ProgressBar
 
 from tqdm import tqdm
 import argparse
 from bmf_config import BMFConfig
 from gmf_config import GMFConfig
+from debug_gmf_config import GMFConfig_dbg
 
 try:
     from tensorboardX import SummaryWriter
@@ -87,6 +89,7 @@ def run():
     Accuracy(output_transform=thresholded_output_transform).attach(evaluator, 'accuracy')
     Precision(output_transform=thresholded_output_transform).attach(evaluator, 'precision')
     Recall(output_transform=thresholded_output_transform).attach(evaluator, 'recall')
+    AveragePrecision().attach(evaluator, 'AP')
     Loss(criterion).attach(evaluator, 'loss')
 
     #### tqdm settings
@@ -118,12 +121,14 @@ def run():
             avg_loss = metrics['loss']
             prec = metrics['precision']
             recall = metrics['recall']
-            print("Training Results - Epoch: {}  Avg accuracy: {:.2f} Avg loss: {:.2f} Precision: {:.2f} Recall: {:.2f}"
-                    .format(engine.state.epoch, avg_accuracy, avg_loss, prec, recall))
+            ap = metrics['AP']
+            print("Training Results - Epoch: {}  Avg accuracy: {:.2f} Avg loss: {:.2f} Precision: {:.2f} Recall: {:.2f} APR: {:.2f}"
+                    .format(engine.state.epoch, avg_accuracy, avg_loss, prec, recall, ap))
             writer.add_scalar("training/avg_loss", avg_loss, engine.state.epoch)
             writer.add_scalar("training/avg_accuracy", avg_accuracy, engine.state.epoch)
             writer.add_scalar("training/precision", prec, engine.state.epoch)
             writer.add_scalar("training/recall", recall, engine.state.epoch)
+            writer.add_scalar("training/avg precision", ap, engine.state.epoch)
 
     @trainer.on(Events.EPOCH_COMPLETED)
     def log_val_results(engine):
@@ -133,12 +138,14 @@ def run():
             avg_loss = metrics['loss']
             prec = metrics['precision']
             recall = metrics['recall']
-            print("Training Results - Epoch: {}  Avg accuracy: {:.2f} Avg loss: {:.2f} Precision: {:.2f} Recall: {:.2f}"
-                    .format(engine.state.epoch, avg_accuracy, avg_loss, prec, recall))
+            ap = metrics['AP']
+            print("Training Results - Epoch: {}  Avg accuracy: {:.2f} Avg loss: {:.2f} Precision: {:.2f} Recall: {:.2f} APR: {:.2f}"
+                    .format(engine.state.epoch, avg_accuracy, avg_loss, prec, recall, ap))
             writer.add_scalar("validation/avg_loss", avg_loss, engine.state.epoch)
             writer.add_scalar("validation/avg_accuracy", avg_accuracy, engine.state.epoch)
             writer.add_scalar("validation/precision", prec, engine.state.epoch)
             writer.add_scalar("validation/recall", recall, engine.state.epoch)
+            writer.add_scalar("validation/avg precision", ap, engine.state.epoch)
 
 
     #### Run the joint
@@ -150,11 +157,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="PPI Matrix Factorization")
 
     ## Train settings
-    parser.add_argument('--model', choices=['bmf', 'gmf'], help="Choose between 'gmf' and 'bmf'")
-    parser.add_argument('--bs', default=64, help="batch size")
-    parser.add_argument('--epochs', default=15, help="epochs")
+    parser.add_argument('--model',  help="Choose between 'gmf' and 'bmf'")
+    parser.add_argument('--bs', default=64, help="batch size", type=int)
+    parser.add_argument('--epochs', default=15, help="epochs", type=int)
     parser.add_argument('--debug', dest="debug", action='store_true')
-    parser.add_argument('--lr', default=.0001, help="learning rate")
+    parser.add_argument('--lr', default=.0001, help="learning rate", type=float)
 
     ## System settings
     parser.add_argument('--datapath', default='./data/', help="path where data be")
@@ -162,7 +169,7 @@ if __name__ == "__main__":
 
     ## tensorboard/ignite settings
     parser.add_argument('--logdir', default='./logs/', help="where tensorboard logs will be stored")
-    parser.add_argument('--log_interval', default=10, help="log every x iterations")
+    parser.add_argument('--log_interval', default=10, help="log every x iterations", type=int)
     parser.add_argument('--no_tqdm', dest="no_tqdm", action='store_true')
 
     args = parser.parse_args()
@@ -187,26 +194,28 @@ if __name__ == "__main__":
         config = GMFConfig(path, DEBUG, device)
     elif args.model == 'bmf':
         config = BMFConfig(path, DEBUG, device)
+    elif args.model == 'gmf_dbg':
+        config = GMFConfig_dbg(device)
     else:
         print("Unrecognized model: ", args.model, ". pick betwen 'bmf' or 'gmf'.")
 
-    gen = config.get_generator()
-    train_loader = gen.create_train_loader(BS)
-    val_loader = gen.create_val_loader(BS)
-    test_loader = gen.create_test_loader(BS)
-    print('-' * 15, "Data loaders created", '-' * 15)
+#     gen = config.get_generator()
+#     train_loader = gen.create_train_loader(BS)
+#     val_loader = gen.create_val_loader(BS)
+#     test_loader = gen.create_test_loader(BS)
+#     print('-' * 15, "Data loaders created", '-' * 15)
 
-    model = config.get_model()
+#     model = config.get_model()
 
-    ### Optimizer and loss
-    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
-    criterion = nn.BCELoss()
+#     ### Optimizer and loss
+#     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+#     criterion = nn.BCELoss()
 
-    print('-' * 15, "Optimizer and criterion", '-' * 15)
-    print(optimizer)
-    print()
-    print(criterion)
-    print('-' * 30)
+#     print('-' * 15, "Optimizer and criterion", '-' * 15)
+#     print(optimizer)
+#     print()
+#     print(criterion)
+#     print('-' * 30)
 
-    run()
+#     run()
 
