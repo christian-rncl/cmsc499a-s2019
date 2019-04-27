@@ -81,6 +81,6 @@ class ProteinInteractionGenerator(object):
             ys.view(ys.shape[0], 1)
             )
         
-        return DataLoader(dset, batch_size=bs, shuffle=True)
+        return DataLoader(dset, batch_size=bs, shuffle=False)
 
 

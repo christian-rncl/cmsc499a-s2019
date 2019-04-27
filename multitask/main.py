@@ -49,21 +49,31 @@ def create_summary_writer(model, data_loader, log_dir):
 ############################
 
 def train_batch(engine, batch):    
+    print("params-------")
+    print(list(model.parameters()))
+    print("end-------")
+    print('grad: ', list(model.parameters())[0].grad)
+    print('grad: ', list(model.parameters())[3].grad)
+    print('grad: ', list(model.parameters())[4].grad)
     model.train()
     optimizer.zero_grad()
     vidxs, hidxs, ys = batch
     pred = model(vidxs, hidxs)
     loss = criterion(pred, ys)
-    loss.backward()
+    loss.backward(retain_graph=True)
     optimizer.step()
         
     return loss.item()
 
 def eval_fn(engine, batch):
     model.eval()
+    print(model.virus.weight.data)
+    print(model.human.weight.data)
     with torch.no_grad():
         vs, hs, ys = batch
         y_pred = model(vs, hs)
+        print("pred: ", torch.round(y_pred))
+        print("gt: ", ys)
         return y_pred, ys
 
 def thresholded_output_transform(output):
@@ -158,7 +168,7 @@ if __name__ == "__main__":
 
     ## Train settings
     parser.add_argument('--model',  help="Choose between 'gmf' and 'bmf'")
-    parser.add_argument('--bs', default=64, help="batch size", type=int)
+    parser.add_argument('--bs', default=9, help="batch size", type=int)
     parser.add_argument('--epochs', default=15, help="epochs", type=int)
     parser.add_argument('--debug', dest="debug", action='store_true')
     parser.add_argument('--lr', default=.0001, help="learning rate", type=float)

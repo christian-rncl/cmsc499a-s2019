@@ -8,7 +8,7 @@ from utils import loadjson
 from gmf import GMF
 
 class GMFConfig_dbg:
-    def __init__(self, device, n = 150, m = 200, prob = .50):
+    def __init__(self, device, n = 3, m = 3, prob = .6):
         self.device = device
         self.create_generator(n,m,prob)
         self.create_model()
@@ -29,6 +29,12 @@ class GMFConfig_dbg:
         self.model.to(self.device)
 
         print(self.model)
+        print("params-------")
+        print(list(self.model.parameters()))
+        print("end-------")
+        print('grad: ', list(self.model.parameters())[0].grad)
+        print('grad: ', list(self.model.parameters())[3].grad)
+        # print('grad: ', list(self.model.parameters())[4].grad)
         print('-' * 15, "Done with model", '-' * 15)
         print()
 
@@ -37,7 +43,7 @@ class GMFConfig_dbg:
         ##  generate bipartite
         ########################### 
         print('-' * 15, "Generating graph", '-' * 15)
-        G = nx.bipartite.random_graph(n, m, .8)
+        G = nx.bipartite.random_graph(n, m, .50)
         observed = list(G.edges())
         nodes = list(G.nodes())
         virusUprot = []
