@@ -40,7 +40,7 @@ class ProteinInteractionGenerator(object):
         print(f'Found {n_pos} positives, and {n_neg} negatives!', n_pos/len(y))
 
         self.Xtrain, self.Xtest, self.yTrain, self.yTest = train_test_split(X,y, test_size=pct_test, random_state=42)
-        self.Xtrain, self.Xval, self.yTrain, self.yVal = train_test_split(self.Xtrain, self.yTrain, test_size=.10, random_state=42)
+        self.Xtrain, self.Xval, self.yTrain, self.yVal = train_test_split(self.Xtrain, self.yTrain, test_size=pct_test, random_state=42)
 
         train_pos = len(self.yTrain[self.yTrain > 0])
         val_pos = len(self.yVal[self.yVal > 0])
@@ -48,7 +48,7 @@ class ProteinInteractionGenerator(object):
 
         print(8 * '-')
         print(f'{train_pos} in training set, {train_pos/len(self.yTrain)}')
-        print(f'{val_pos} in val set, {train_pos/len(self.yVal)}')
+        print(f'{val_pos} in val set, {val_pos/len(self.yVal)}')
         print(f'{test_pos} in test set, {test_pos/len(self.yTest)}')
     
     def index_interactions(self, interactions):

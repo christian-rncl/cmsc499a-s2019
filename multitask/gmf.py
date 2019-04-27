@@ -51,5 +51,7 @@ class GMF(nn.Module):
         V = self.human(h_idxs)
         UV = torch.mul(U, V)
         UV = UV + self.vb(v_idxs) + self.hb(h_idxs)
+        UV =UV.sum(1).unsqueeze(1)
+        # UV = self.affine_output(UV)
 
-        return self.logistic(UV.sum(1).view(UV.shape[0], 1))
+        return self.logistic(UV)

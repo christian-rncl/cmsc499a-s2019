@@ -52,28 +52,29 @@ def train_batch(engine, batch):
     print("params-------")
     print(list(model.parameters()))
     print("end-------")
-    print('grad: ', list(model.parameters())[0].grad)
-    print('grad: ', list(model.parameters())[3].grad)
-    print('grad: ', list(model.parameters())[4].grad)
+
     model.train()
     optimizer.zero_grad()
     vidxs, hidxs, ys = batch
     pred = model(vidxs, hidxs)
     loss = criterion(pred, ys)
-    loss.backward(retain_graph=True)
+    loss.backward()
+    print('grad: ', list(model.parameters())[0].grad)
+    print('grad: ', list(model.parameters())[1].grad)
+    # print('grad: ', list(model.parameters())[4].grad)
     optimizer.step()
         
     return loss.item()
 
 def eval_fn(engine, batch):
     model.eval()
-    print(model.virus.weight.data)
-    print(model.human.weight.data)
+#     print(model.virus.weight.data)
+#     print(model.human.weight.data)
     with torch.no_grad():
         vs, hs, ys = batch
         y_pred = model(vs, hs)
-        print("pred: ", torch.round(y_pred))
-        print("gt: ", ys)
+        # print("pred: ", torch.round(y_pred))
+        # print("gt: ", ys)
         return y_pred, ys
 
 def thresholded_output_transform(output):
@@ -149,7 +150,7 @@ def run():
             prec = metrics['precision']
             recall = metrics['recall']
             ap = metrics['AP']
-            print("Training Results - Epoch: {}  Avg accuracy: {:.2f} Avg loss: {:.2f} Precision: {:.2f} Recall: {:.2f} APR: {:.2f}"
+            print("Evaluation Results - Epoch: {}  Avg accuracy: {:.2f} Avg loss: {:.2f} Precision: {:.2f} Recall: {:.2f} APR: {:.2f}"
                     .format(engine.state.epoch, avg_accuracy, avg_loss, prec, recall, ap))
             writer.add_scalar("validation/avg_loss", avg_loss, engine.state.epoch)
             writer.add_scalar("validation/avg_accuracy", avg_accuracy, engine.state.epoch)
@@ -218,6 +219,8 @@ if __name__ == "__main__":
 
     ### Optimizer and loss
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    # optimizer = torch.optim.SGD(model.parameters(), lr = 0.08, momentum=0.9)
+
     criterion = nn.BCELoss()
 
     print('-' * 15, "Optimizer and criterion", '-' * 15)

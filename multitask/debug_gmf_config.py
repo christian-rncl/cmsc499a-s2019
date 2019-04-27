@@ -29,11 +29,11 @@ class GMFConfig_dbg:
         self.model.to(self.device)
 
         print(self.model)
-        print("params-------")
-        print(list(self.model.parameters()))
-        print("end-------")
-        print('grad: ', list(self.model.parameters())[0].grad)
-        print('grad: ', list(self.model.parameters())[3].grad)
+        # print("params-------")
+        # print(list(self.model.parameters()))
+        # print("end-------")
+        # print('grad: ', list(self.model.parameters())[0].grad)
+        # print('grad: ', list(self.model.parameters())[3].grad)
         # print('grad: ', list(self.model.parameters())[4].grad)
         print('-' * 15, "Done with model", '-' * 15)
         print()
@@ -43,7 +43,7 @@ class GMFConfig_dbg:
         ##  generate bipartite
         ########################### 
         print('-' * 15, "Generating graph", '-' * 15)
-        G = nx.bipartite.random_graph(n, m, .50)
+        G = nx.bipartite.random_graph(n, m, .30)
         observed = list(G.edges())
         nodes = list(G.nodes())
         virusUprot = []
