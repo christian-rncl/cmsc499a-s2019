@@ -8,7 +8,7 @@ from utils import loadjson
 from gmf import GMF
 
 class GMFConfig_dbg:
-    def __init__(self, device, n = 3, m = 3, prob = .6):
+    def __init__(self, device, n = 100, m = 100, prob = .50):
         self.device = device
         self.create_generator(n,m,prob)
         self.create_model()
@@ -17,7 +17,7 @@ class GMFConfig_dbg:
 
         print('-' * 15, "Creating model", '-' * 15)
 
-        latent_dim = 2799
+        latent_dim = 200
         config = {
             'num_virus': self.n_v,
             'num_human': self.n_h,
@@ -38,12 +38,12 @@ class GMFConfig_dbg:
         print('-' * 15, "Done with model", '-' * 15)
         print()
 
-    def create_generator(self, n, m, prob):
+    def create_generator(self, m,n, prob):
         ############################
         ##  generate bipartite
         ########################### 
         print('-' * 15, "Generating graph", '-' * 15)
-        G = nx.bipartite.random_graph(n, m, .30)
+        G = nx.bipartite.random_graph(n, m, prob)
         observed = list(G.edges())
         nodes = list(G.nodes())
         virusUprot = []
@@ -51,8 +51,8 @@ class GMFConfig_dbg:
         edges = [] 
 
 
-        for i in tqdm(range(len(nodes))):
-            for j in tqdm(range(len(nodes))):
+        for i in tqdm(range(n)):
+            for j in tqdm(range(n, m + n)):
                 virusUprot.append(i) 
                 humanUprot.append(j)
                 if (i, j) in observed:

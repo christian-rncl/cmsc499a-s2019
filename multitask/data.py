@@ -32,7 +32,7 @@ class ProteinInteractionGenerator(object):
         self.split_data(config['pct_test'])
 
     def split_data(self, pct_test):
-        # X = self.interactions.drop(['virusUprot', 'humanUprot'], axis=1).values
+        # X = sG = nx.bipartite.random_graph(3,3,1.0)elf.interactions.drop(['virusUprot', 'humanUprot'], axis=1).values
         X = self.interactions[['virusUprot', 'humanUprot']]
         y = self.interactions['edge']
         n_pos = len(y[y > 0])
