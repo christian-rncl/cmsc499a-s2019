@@ -77,8 +77,8 @@ def eval_fn(engine, batch):
     with torch.no_grad():
         vs, hs, ys = batch
         y_pred = model(vs, hs)
-        # print("pred: ", torch.round(y_pred))
-        # print("gt: ", ys)
+        # print("pred: ", torch.flatten(torch.round(y_pred)))
+        # print("gt: ", torch.flatten(ys))
         return y_pred, ys
 
 def thresholded_output_transform(output):
@@ -152,7 +152,10 @@ def run():
             avg_accuracy = metrics['accuracy']
             avg_loss = metrics['loss']
             ap = metrics['AP']
-            print("Training Results - Epoch: {}  Avg accuracy: {:.2f} Avg loss: {:.2f} APR: {:.2f}".format(engine.state.epoch, avg_accuracy, avg_loss, ap))
+        #     print('v: ', list(model.parameters())[0])
+        #     print('h: ', list(model.parameters())[1])
+        #     print('affine: ', list(model.parameters())[4])
+            print("Evaluation Results - Epoch: {}  Avg accuracy: {:.2f} Avg loss: {:.2f} APR: {:.2f}".format(engine.state.epoch, avg_accuracy, avg_loss, ap))
         #     print("Evaluation Results - Epoch: {}  Avg accuracy: {:.2f} Avg loss: {:.2f} Precision: {:.2f} Recall: {:.2f} APR: {:.2f}"
         #             .format(engine.state.epoch, avg_accuracy, avg_loss, prec, recall, ap))
             writer.add_scalar("validation/avg_loss", avg_loss, engine.state.epoch)
@@ -160,6 +163,18 @@ def run():
         #     writer.add_scalar("v[{}] Iteration[{}/{}] Loss:alidation/precision", prec, engine.state.epoch)
         #     writer.add_scalar("validation/recall", recall, engine.state.epoch)
             writer.add_scalar("validation/avg precision", ap, engine.state.epoch)
+
+    @trainer.on(Events.COMPLETED)
+    def log_val_results(engine):
+            evaluator.run(test_loader)
+            metrics = evaluator.state.metrics
+            avg_accuracy = metrics['accuracy']
+            avg_loss = metrics['loss']
+            ap = metrics['AP']
+        #     print('v: ', list(model.parameters())[0])
+        #     print('h: ', list(model.parameters())[1])
+        #     print('affine: ', list(model.parameters())[4])
+            print("Test Results - Epoch: {}  Avg accuracy: {:.2f} Avg loss: {:.2f} APR: {:.2f}".format(engine.state.epoch, avg_accuracy, avg_loss, ap))
 
 
     #### Run the joint
@@ -222,7 +237,7 @@ if __name__ == "__main__":
 
     ### Optimizer and loss    # print('grad: ', list(model.parameters())[0].grad.sum())
     # print('grad: ', list(model.parameters())[1].grad.sum())1
-    optimizer = torch.optim.Adam(model.parameters(), lr=.05)
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 #     optimizer = torch.optim.SGD(model.parameters(), lr = 0.05, momentum=0.9)
 
     criterion = nn.BCELoss()

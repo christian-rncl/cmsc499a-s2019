@@ -5,7 +5,7 @@ Leiserson Research Group March 1
 
 import torch
 import torch.nn as nn
-import torch.functional 
+import torch.nn.functional as F
 # from engine import Engine
 
 class GMF(nn.Module):
@@ -40,10 +40,18 @@ class GMF(nn.Module):
         self.virus, self.human, self.vb, self.hb = [self.create_embeddings(*dims, self.sparse) 
             for dims in [(self.num_virus, self.latent_dim), (self.num_human, self.latent_dim), (self.num_virus, 1), (self.num_human, 1)]
         ]
-        self.affine_output = torch.nn.Linear(in_features=self.latent_dim, out_features=1)
-        nn.init.xavier_normal_(self.affine_output.weight.data)
+        self.affine_output = torch.nn.Linear(in_features=self.latent_dim, out_features=self.latent_dim * 2)
+        self.affine_output1 = torch.nn.Linear(in_features=self.latent_dim * 2, out_features=self.latent_dim)
+        self.affine_output2 = torch.nn.Linear(in_features=self.latent_dim, out_features=1)
+        # nn.init.xavier_normal_(self.affine_output.weight.data)
         self.affine_output.weight.data.uniform_(-.01, .01)
-        self.logistic = torch.nn.Sigmoid()
+        self.affine_output1.weight.data.uniform_(-.01, .01)
+        self.affine_output2.weight.data.uniform_(-.01, .01)
+        self.logistic = nn.Sigmoid()
+        self.dropout = nn.Dropout(p=.5)
+        self.bn = nn.BatchNorm1d(self.latent_dim * 2)
+        self.bn1 = nn.BatchNorm1d(self.latent_dim)
+
 
 
     def forward(self, v_idxs, h_idxs):
@@ -51,7 +59,14 @@ class GMF(nn.Module):
         V = self.human(h_idxs)
         UV = torch.mul(U, V)
         UV = UV + self.vb(v_idxs) + self.hb(h_idxs)
-        # UV =UV.sum(1).unsqueeze(1)
+        # UV =UV.sum(1).unsqueeze(1) # no affine
         UV = self.affine_output(UV)
-
+        UV = self.bn(UV)
+        UV = self.dropout(UV)
+        UV = F.relu(UV)
+        UV = self.affine_output1(UV)
+        UV = self.bn1(UV)
+        UV = self.dropout(UV)
+        UV = F.relu(UV)
+        UV = self.affine_output2(UV)
         return self.logistic(UV)

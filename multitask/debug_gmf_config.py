@@ -8,7 +8,7 @@ from utils import loadjson
 from gmf import GMF
 
 class GMFConfig_dbg:
-    def __init__(self, device, n = 100, m = 100, prob = .50):
+    def __init__(self, device, n = 150, m = 150, prob = .5): 
         self.device = device
         self.create_generator(n,m,prob)
         self.create_model()
