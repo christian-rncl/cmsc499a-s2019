@@ -14,7 +14,7 @@ class GMF(nn.Module):
         if(self.sparse):
             embedding = nn.Embedding(
                 num_embeddings = n_embeddings, 
-                embedding_dim = dim, 
+                embedding_dim = 10, 
                 sparse = self.sparse)
 
             nn.init.sparse_(embedding.weight.data, sparsity=self.sparse)
@@ -36,37 +36,43 @@ class GMF(nn.Module):
         self.num_human = config['num_human']
         self.latent_dim = config['latent_dim']
         self.sparse = config['sparse']
+        self.reg = 1.0
+        self.reg_bias = 1.0
 
         self.virus, self.human, self.vb, self.hb = [self.create_embeddings(*dims, self.sparse) 
             for dims in [(self.num_virus, self.latent_dim), (self.num_human, self.latent_dim), (self.num_virus, 1), (self.num_human, 1)]
         ]
-        self.affine_output = torch.nn.Linear(in_features=self.latent_dim, out_features=self.latent_dim * 2)
-        self.affine_output1 = torch.nn.Linear(in_features=self.latent_dim * 2, out_features=self.latent_dim)
-        self.affine_output2 = torch.nn.Linear(in_features=self.latent_dim, out_features=1)
-        # nn.init.xavier_normal_(self.affine_output.weight.data)
-        self.affine_output.weight.data.uniform_(-.01, .01)
-        self.affine_output1.weight.data.uniform_(-.01, .01)
-        self.affine_output2.weight.data.uniform_(-.01, .01)
-        self.logistic = nn.Sigmoid()
-        self.dropout = nn.Dropout(p=.5)
-        self.bn = nn.BatchNorm1d(self.latent_dim * 2)
-        self.bn1 = nn.BatchNorm1d(self.latent_dim)
-
+        # self.affine_output = torch.nn.Linear(in_features=self.latent_dim, out_features=self.latent_dim * 2)
+        # self.affine_output.weight.data.uniform_(-.01, .01)
+        self.bias = nn.Parameter(torch.ones(1))
+        # self.logistic = nn.Sigmoid()
 
 
     def forward(self, v_idxs, h_idxs):
         U = self.virus(v_idxs)
         V = self.human(h_idxs)
-        UV = torch.mul(U, V)
-        UV = UV + self.vb(v_idxs) + self.hb(h_idxs)
-        # UV =UV.sum(1).unsqueeze(1) # no affine
-        UV = self.affine_output(UV)
-        UV = self.bn(UV)
-        UV = self.dropout(UV)
-        UV = F.relu(UV)
-        UV = self.affine_output1(UV)
-        UV = self.bn1(UV)
-        UV = self.dropout(UV)
-        UV = F.relu(UV)
-        UV = self.affine_output2(UV)
-        return self.logistic(UV)
+        bu = self.vb(v_idxs).squeeze()
+        bv = self.hb(h_idxs).squeeze()
+        biases = (self.bias + bu + bv)
+
+        UV = torch.sum(U*V, dim=1)
+        pred = UV + biases
+        print(pred.shape)
+        return pred
+        # return UV
+
+
+    def l2_regularize(self, array):
+        loss = torch.sum(array ** 2.0)
+        return loss
+
+    def loss(self, prediction, target):
+        loss_mse = F.mse_loss(prediction, target)
+        prior_bias_virus =  self.l2_regularize(self.virus.weight) * self.reg_bias
+        prior_bias_human = self.l2_regularize(self.human.weight) * self.reg_bias
+
+        prior_virus = self.l2_regularize(self.virus.weight) * self.reg
+        prior_human = self.l2_regularize(self.human.weight) * self.reg
+        total = loss_mse + prior_virus + prior_human + prior_bias_virus + prior_bias_human
+        
+        return total

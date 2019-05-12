@@ -17,7 +17,7 @@ class GMFConfig_dbg:
 
         print('-' * 15, "Creating model", '-' * 15)
 
-        latent_dim = 200
+        latent_dim = 10
         config = {
             'num_virus': self.n_v,
             'num_human': self.n_h,
