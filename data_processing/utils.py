@@ -41,7 +41,7 @@ def mp_processpairs(df, worker_fn, ret_fn, nworkers):
     human_idxs = df['humanUprot'].values
     
     # get all observed pairs
-    pairs = [(v, h) for v, h in zip(virus_idxs, human_idxs)]
+    pairs = [(v, h) for v, h in zip(df['virusUprot'].values, df['humanUprot'].values)]
 
     virus_idxs_uniq = df['virusUprot'].unique()
     human_idxs_uniq = df['humanUprot'].unique()
